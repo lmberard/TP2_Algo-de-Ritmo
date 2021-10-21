@@ -2,4 +2,4 @@ aserradero 30 100 50 101
 escuela 250 200 45 1
 yacimiento 125 140 80 4
 universidad 250 140 100 3
-supermercado 150 120 80 11
+supermercado 150 120 80 12
