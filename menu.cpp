@@ -1,10 +1,4 @@
 #include "menu.h"
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
-#include "edificios.h"
-#include "archivos.h"
-#include "colors.h"
 
 using namespace std;
 
@@ -78,48 +72,55 @@ void volver()
     system(CLR_SCREEN);
 }
 
-void procesar_opcion(int opcion_elegida, material_t materiales_array[MAX], edificio_t edificios_array[MAX])
+void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 {
     switch (opcion_elegida)
     {
     case CONSTRUIR_EDIFICIO:
-        // construir_edificio(edificios_array, materiales_array);
+        // construir_edificio(mapa,edificios_array, materiales_array, ubicaciones_array);
+        /*se pide la coordenada en el mapa y se modifica en la lista de edificios y materiales
+        hay que modificar el archivo de ubicaciones_array */
         break;
 
     case LISTAR_CONSTRUIDOS:
-        //
+        // listar_construidos(edificios_array)
+        /*edificio va a tener un atributo que sea cant_construido*/
         break;
 
     case LISTAR_TODOS:
-        listar_todos_edificios(edificios_array);
+        // listar_todos_edificios(edificios_array);
         break;
 
     case DEMOLER_POR_COORDENADA:
-        // demoler_edificio(edificios_array, materiales_array);
+        // demoler_edificio(mapa,edificios_array, materiales_array, ubicaciones_array);
+        /*idem construir*/
         break;
 
     case MOSTRAR_MAPA:
-        // mostrar_mapa();
+        // mostrar_mapa(casillero **mapa);
         break;
 
     case CONSULTAR_COORDENADA:
-        // consultar_coordenada();
+        // consultar_coordenada(casillero **mapa);
         break;
 
     case MOSTRAR_INVENTARIO:
-        // mostrar_inventario();
+        // mostrar_inventario(materiales_array);
         break;
 
     case RECOLECTAR_RECURSOS:
-        // recolectar_recursos();
+        // recolectar_recursos(edificios_array);
+        /*edificio va a tener un atributo que sea cant_construido y cant_mat_producido*/
         break;
 
     case LLUVIA_RECURSOS:
-        // lluvia_recursos();
+        // lluvia_recursos(casillero **mapa, material *materiales_array);
+        /*se genera una coordenada random y se ubica el material en el casillero
+        la lista de materiales es para actualizarla (opcional pero da puntos)*/
         break;
 
     case SALIR:
-        guardar_archivos(edificios_array, materiales_array);
+        // guardar_archivos(mapa, edificios_array, materiales_array, ubicaciones_array);
         break;
 
     default:

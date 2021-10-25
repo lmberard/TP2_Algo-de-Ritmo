@@ -1,6 +1,13 @@
 #ifndef MENU_H
 #define MENU_H
-#include "edificios.h"
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+#include "colors.h"
+//#include "materiales.h"
+//#include "ubicaciones.h"
+//#include "edificios.h"
+//#include "utiles.h"
 
 const int OPCION_MINIMA = 1;
 const int OPCION_MAXIMA = 10;
@@ -38,11 +45,11 @@ void volver();
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: Realiza la opcion pedida
-void procesar_opcion(int opcion_elegida, material_t materiales_array[MAX], edificio_t edificios_array[MAX]);
+void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 
-// pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
-// post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
-bool es_opcion_valida(int elegida);
+    // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
+    // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
+    bool es_opcion_valida(int elegida);
 
 string devolver_respuesta();
 
