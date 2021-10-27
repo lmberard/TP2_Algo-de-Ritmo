@@ -13,6 +13,7 @@ class Mapa{
     public: 
 
         Mapa():filas(0),columnas(0),mapa(0){}
+
         Mapa(const string &);
         ~Mapa();
 
@@ -72,11 +73,11 @@ Mapa::~Mapa(){
     delete[] mapa;
 }
 
-Mapa::void consultar_coordenada(int i, int j){
+void Mapa::consultar_coordenada(int i, int j){
     mapa[i][j]->mostrar();
 }
 
-Mapa::void mostrar_mapa(){
+void Mapa::mostrar_mapa(){
     for (int i = 0; i < filas; i++){
         for(int j = 0; j < columnas; j++){
             mapa[i][j]->display();

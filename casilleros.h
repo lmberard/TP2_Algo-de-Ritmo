@@ -2,15 +2,7 @@
 #include <string>
 #include <fstream>
 
-
 using namespace std;
-
-class Edificio{
-    string nombre = "aserradero";
-    public: 
-        string mostrar_nombre()
-        {return nombre;}
-};
 
 class Material{
     string nombre = "Madera";
@@ -21,19 +13,25 @@ class Material{
         int mostrar_cantidad()
         {return cantidad;}
 };
+using namespace std;
 
 class Casillero{
+
   protected:
     int coord_x = 0, coord_y = 0;
+  
   public:
-   void set_coordenadas(int x,int y)
-   {coord_x = x; coord_y = y;}
-   virtual void mostrar() = 0; 
-   virtual void display() = 0; 
-   virtual void agregar_material(Material){};
+
+    void set_coordenadas(int x,int y)
+    {coord_x = x; coord_y = y;}
+    virtual void mostrar() = 0; 
+    virtual void display() = 0; 
+    virtual void agregar_material(Material){};
 };
 
 class CasilleroConstruible: public Casillero {
+
+
   public:
     void mostrar()
       { cout << "Soy un casillero construible" << endl;
