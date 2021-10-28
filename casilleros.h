@@ -1,25 +1,12 @@
+#ifndef CASILLEROS_H
+#define CASILLEROS_H
+
 #include <iostream>
 #include <string>
 #include <fstream>
 #include "colors.h"
+#include "material.h"
 
-using namespace std;
-
-class Material
-{
-    string nombre = "Madera";
-    int cantidad = 60;
-
-public:
-    string mostrar_nombre()
-    {
-        return nombre;
-    }
-    int mostrar_cantidad()
-    {
-        return cantidad;
-    }
-};
 using namespace std;
 
 class Casillero
@@ -48,7 +35,7 @@ public:
         cout << "Soy un casillero construible" << endl;
         cout << "estás en la posición " << coord_x << " " << coord_y << endl;
     }
-    void display() { cout << " T "; }
+    void display() { cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_GREEN_2 << "   " << END_COLOR << " "; } //"T"
 };
 
 class CasilleroTransitable : public Casillero
@@ -62,7 +49,7 @@ public:
              << material.mostrar_nombre() << endl;
         cout << "estás en la posición " << coord_x << " " << coord_y << endl;
     }
-    void display() { cout << " C "; }
+    void display() { cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_LIGHT_GRAY_247 << "   " << END_COLOR << " "; } //"C"
 };
 
 class CasilleroInaccesible : public Casillero
@@ -72,5 +59,7 @@ public:
     {
         cout << "Soy un casillero inaccesible y estás en la posición " << coord_x << " " << coord_y << endl;
     }
-    void display() { cout << " L "; }
+    void display() { cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_BLUE_25 << "   " << END_COLOR << " "; } //"L"
 };
+
+#endif // CASILLEROS.H
