@@ -1,8 +1,12 @@
 #ifndef MENU_H
 #define MENU_H
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <fstream>
 #include <cstdlib>
 #include <iomanip>
+#include <bits/stdc++.h>
 #include "colors.h"
 //#include "materiales.h"
 //#include "ubicaciones.h"
@@ -45,13 +49,15 @@ void volver();
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: Realiza la opcion pedida
-void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
+void procesar_opcion(int opcion_elegida); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 
-    // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
-    // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
-    bool es_opcion_valida(int elegida);
+// pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
+// post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
+bool es_opcion_valida(int elegida);
 
-string devolver_respuesta();
+string devolver_rta_usuario();
+
+void mostrar_menuInicial();
 
 void validar_opcion(int option_elegida);
 

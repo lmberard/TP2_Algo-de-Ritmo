@@ -6,10 +6,11 @@ void mostrar_InstruccionInicial()
 {
     cout << TXT_BOLD << TXT_RED_196 << "RECORDATORIO" << END_COLOR << endl;
     cout << TXT_BOLD << TXT_UNDERLINE << TXT_LIGHT_BLUE_6 << "Para ver el menu de Andypolis se necesitan los siguientes archivos:" << END_COLOR << endl;
-    msjeInstruccion("\t-> materiales.txt\n\t-> edificios.txt\n\t->mapa.txt\n\t->ubicaciones.txt\n");
+    msjeInstruccion("\t-> materiales.txt\n\t-> edificios.txt\n\t-> mapa.txt\n\t-> ubicaciones.txt\n");
     cout << TXT_BOLD << TXT_UNDERLINE << TXT_LIGHT_BLUE_6 << "El formato de los mismos es el siguiente:" << END_COLOR << endl;
-    msjeInstruccion("\t-> materiales.txt:\n\tmaterial cantidad\n\n\t->edificios.txt:\n\tnombre madera metal piedra cant_construidos max_cant_permitidos\n");
-    cout << TXT_BOLD << TXT_LIGHT_BLUE_6 << "Estan separados por un espacio ' '" << END_COLOR << endl;
+    msjeInstruccion("\t-> materiales.txt:\n\tmaterial cantidad\n\n\t-> edificios.txt:\n\tnombre madera metal piedra max_cant_permitidos\n\n\t-> ubicaciones.txt:\n\tnombre_edificio (coord_x, coord_y)\n\n\t-> mapa.txt:\n\tcant_filas cant_columnas\n\tL T C ... ");
+    cout << TXT_BOLD << TXT_RED_196 << "En caso de no tener esos formatos, los resultados no seran los correctos" << END_COLOR << endl;
+    cout << TXT_BOLD << TXT_LIGHT_BLUE_6 << "\n¿Desea continuar? (SI/NO) " << END_COLOR << endl;
 }
 
 void mostrar_menu()
@@ -33,14 +34,42 @@ void mostrar_menu()
     msjeInstruccion("Ingrese la opcion con un NUMERO del 1 al 10:");
 }
 
-string devolver_respuesta()
+string devolver_rta_usuario()
 {
     string rta = " ";
-    cout << TXT_BOLD << TXT_RED_196 << "En caso de no tener esos formatos, los resultados no seran los correctos" << END_COLOR << endl;
-    cout << TXT_BOLD << TXT_LIGHT_BLUE_6 << "\n¿Desea continuar? (SI/NO) " << END_COLOR << endl;
     cin >> rta;
     transform(rta.begin(), rta.end(), rta.begin(), ::tolower);
     return rta;
+}
+
+void mostrar_menuInicial()
+{
+    system(CLR_SCREEN);
+    int opcion_elegida;
+    do
+    {
+        mostrar_menu();
+        cin >> opcion_elegida;
+        while (!es_opcion_valida(opcion_elegida))
+        {
+            if (!cin.good())
+            {
+                cin.clear();
+                cin.ignore(100, '\n');
+                msjeError("Se tiene que ingresar un numero entero del 1 al 10.\nIntentemos de nuevo:");
+                mostrar_menu();
+                cin >> opcion_elegida;
+            }
+            cin.clear();
+            cin.ignore(100, '\n');
+            msjeError("Ese numero de opcion no es valido, intentemos otra vez:");
+            mostrar_menu();
+            cin >> opcion_elegida;
+        }
+        procesar_opcion(opcion_elegida); //, materiales_array, edificios_array);
+    } while (opcion_elegida != SALIR);
+
+    // return 0;
 }
 
 void validar_opcion(int opcion_elegida)
