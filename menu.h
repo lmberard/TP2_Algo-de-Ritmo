@@ -8,10 +8,6 @@
 #include <iomanip>
 #include <bits/stdc++.h>
 #include "colors.h"
-//#include "materiales.h"
-//#include "ubicaciones.h"
-//#include "edificios.h"
-//#include "utiles.h"
 
 const int OPCION_MINIMA = 1;
 const int OPCION_MAXIMA = 10;
@@ -55,10 +51,16 @@ void procesar_opcion(int opcion_elegida); // material *materiales_array, edifici
 // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
 bool es_opcion_valida(int elegida);
 
+// pre: -
+// post: Obtiene una respuesta del usuario y la devuelve en minusculas.
 string devolver_rta_usuario();
 
+// pre: Existen los archivos txt correspondientes
+// post: se muestra el menu Principal
 void mostrar_menuInicial();
 
+// pre: -
+// post: se verifica que lo ingresado sea una opcion dentro del rango del menu.
 void validar_opcion(int option_elegida);
 
 #endif // MENU_H

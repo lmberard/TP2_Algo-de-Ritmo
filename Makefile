@@ -13,7 +13,7 @@ colors.o: colors.cpp colors.h
 menu.o: menu.cpp menu.h colors.h
 	$(CC) $(FLAGS) menu.o
 
-andypolis: menu.cpp main.cpp colors.cpp
+andypolis: menu.cpp main.cpp colors.cpp 
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:

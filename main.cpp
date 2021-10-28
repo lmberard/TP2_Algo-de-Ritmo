@@ -1,11 +1,24 @@
+#include <iostream>
+#include <string>
+#include <fstream>
 #include "menu.h"
-//#include "edificios.h"
-//#include "archivos.h"
+//#include "mapa.h"
 
 using namespace std;
 
 int main()
 {
+
+    /*
+    ACA SE CREARIAN LOS VECTORES Y EL MAPA
+    */
+
+    // Mapa andypolis("mapa.txt");
+
+    // ESTAS FUNCIONES IRIAN EN LA FUNCION DE procesar_opcion que esta en menu.cpp
+    // andypolis.consultar_coordenada(0, 0);
+    // andypolis.mostrar_mapa();
+
     string rta = " ";
     do
     {
@@ -16,7 +29,7 @@ int main()
             mostrar_menuInicial();
             return 0;
         }
-        else
+        else if (rta != "no")
             msjeError("Error. Opciones validas: 'si' o 'no'");
     } while (rta != "no");
 

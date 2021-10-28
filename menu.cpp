@@ -56,7 +56,7 @@ void mostrar_menuInicial()
             {
                 cin.clear();
                 cin.ignore(100, '\n');
-                msjeError("Se tiene que ingresar un numero entero del 1 al 10.\nIntentemos de nuevo:");
+                msjeError("Se tiene que ingresar un numero entero del " + to_string(OPCION_MINIMA) + "al" + to_string(OPCION_MAXIMA) + ".\nIntentemos de nuevo:");
                 mostrar_menu();
                 cin >> opcion_elegida;
             }
@@ -66,10 +66,8 @@ void mostrar_menuInicial()
             mostrar_menu();
             cin >> opcion_elegida;
         }
-        procesar_opcion(opcion_elegida); //, materiales_array, edificios_array);
+        procesar_opcion(opcion_elegida);
     } while (opcion_elegida != SALIR);
-
-    // return 0;
 }
 
 void validar_opcion(int opcion_elegida)
@@ -80,7 +78,7 @@ void validar_opcion(int opcion_elegida)
         {
             cin.clear();
             cin.ignore(100, '\n');
-            msjeError("Se tiene que ingresar un numero entero del 1 al 6.\nIntentemos de nuevo:");
+            msjeError("Se tiene que ingresar un numero entero del" + to_string(OPCION_MINIMA) + "al" + to_string(OPCION_MAXIMA) + "\nIntentemos de nuevo:");
             mostrar_menu();
             cin >> opcion_elegida;
         }
@@ -126,11 +124,11 @@ void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio
         break;
 
     case MOSTRAR_MAPA:
-        // mostrar_mapa(casillero **mapa);
+        // andypolis.mostrar_mapa();
         break;
 
     case CONSULTAR_COORDENADA:
-        // consultar_coordenada(casillero **mapa);
+        // andypolis.consultar_coordenada(0, 0);
         break;
 
     case MOSTRAR_INVENTARIO:
