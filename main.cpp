@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include "menu.h"
-//#include "mapa.h"
+#include "mapa.h"
 
 using namespace std;
 
@@ -13,11 +13,7 @@ int main()
     ACA SE CREARIAN LOS VECTORES Y EL MAPA
     */
 
-    // Mapa andypolis("mapa.txt");
-
-    // ESTAS FUNCIONES IRIAN EN LA FUNCION DE procesar_opcion que esta en menu.cpp
-    // andypolis.consultar_coordenada(0, 0);
-    // andypolis.mostrar_mapa();
+    Mapa andypolis("mapa.txt");
 
     string rta = " ";
     do
@@ -26,7 +22,7 @@ int main()
         rta = devolver_rta_usuario();
         if (rta == "si")
         {
-            mostrar_menuInicial();
+            mostrar_menuInicial(andypolis);
             return 0;
         }
         else if (rta != "no")
