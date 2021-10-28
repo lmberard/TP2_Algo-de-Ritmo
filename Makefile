@@ -7,19 +7,13 @@ NORMAL= \e[0m
 
 all: andypolis
 
-archivos.o: archivos.cpp archivos.h colors.h
-	$(CC) $(FLAGS) archivos.o
-
 colors.o: colors.cpp colors.h
 	$(CC) $(FLAGS) colors.o
-
-edificios.o: edificios.cpp edificios.h menu.h colors.h
-	$(CC) $(FLAGS) edificios.o
 
 menu.o: menu.cpp menu.h colors.h
 	$(CC) $(FLAGS) menu.o
 
-andypolis: archivos.cpp menu.cpp edificios.cpp main.cpp colors.cpp
+andypolis: menu.cpp main.cpp colors.cpp
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:
