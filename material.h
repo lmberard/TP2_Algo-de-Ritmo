@@ -10,18 +10,24 @@ using namespace std;
 
 class Material
 {
+private:
+    // string nombre;
+    // int cantidad;
     string nombre = "Madera";
-    int cantidad = 60;
+    int cantidad = 50;
 
 public:
-    string mostrar_nombre()
-    {
-        return nombre;
-    }
-    int mostrar_cantidad()
-    {
-        return cantidad;
-    }
+    // Material(string name, int cantidad);
+
+    //~Material();
+
+    string mostrar_nombre();
+
+    int mostrar_cantidad();
+
+    void modificar_cantidad(int cantidad);
+
+    void mostrar_material();
 };
 
 #endif // MATERIAL.H
