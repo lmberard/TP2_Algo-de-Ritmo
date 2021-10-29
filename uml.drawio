@@ -1,5 +1,305 @@
 <mxfile host="65bd71144e">
-    <diagram id="HC1Cu2epK2iE6NDyu72z">
-        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
+    <diagram id="HC1Cu2epK2iE6NDyu72z" name="Page-1">
+        <mxGraphModel dx="1472" dy="2184" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="2" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Casillero" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#6F0000;fillColor=#a20025;" parent="1" vertex="1">
+                    <mxGeometry x="699" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="+ coord_x&#10;+ coord_y&#10;+ tipo" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="2" vertex="1">
+                    <mxGeometry y="26" width="160" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="2" vertex="1">
+                    <mxGeometry y="90" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="+ mostrar()&#10;+ Casillero()&#10;+ ~Casillero()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="98" width="160" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.574;entryY=0.98;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="6" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="440" y="190"/>
+                            <mxPoint x="791" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="CasilleroTransitable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#6F0000;fillColor=#a20025;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="270" width="160" height="178" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="+ *material" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="6" vertex="1">
+                    <mxGeometry y="26" width="160" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="6" vertex="1">
+                    <mxGeometry y="80" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="+ mostrar()&#10;+ bool esta:vacio&#10;+ agregar_contenido&#10;(nombre,cant)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="6" vertex="1">
+                    <mxGeometry y="88" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.574;entryY=1.026;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="10" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="790" y="215"/>
+                            <mxPoint x="791" y="162"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="CasilleroConstruible" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#6F0000;fillColor=#a20025;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="270" width="160" height="178" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="+ *edificio" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="10" vertex="1">
+                    <mxGeometry y="26" width="160" height="74" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="10" vertex="1">
+                    <mxGeometry y="100" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="+ mostrar()&#10;+ bool esta:vacio&#10;+ constuir(nombre)&#10;+ destruir()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="10" vertex="1">
+                    <mxGeometry y="108" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.567;entryY=0.98;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="14" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1150" y="190"/>
+                            <mxPoint x="790" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="CasilleroInhabitable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#6F0000;fillColor=#a20025;" parent="1" vertex="1">
+                    <mxGeometry x="1070" y="270" width="160" height="138" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="-" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="14" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="14" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="+ mostrar()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="14" vertex="1">
+                    <mxGeometry y="78" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Mapa" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#B20000;fillColor=#e51400;" parent="1" vertex="1">
+                    <mxGeometry x="693.5" y="-194" width="171" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="+ casillero **&#10;+ filas&#10;+ columnas" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="18" vertex="1">
+                    <mxGeometry y="26" width="171" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="90" width="171" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="+ coord_random()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="18" vertex="1">
+                    <mxGeometry y="98" width="171" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="22" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="510"/>
+                            <mxPoint x="430" y="510"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="Material" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#001DBC;fillColor=#0050ef;" parent="1" vertex="1">
+                    <mxGeometry x="339" y="492" width="160" height="228" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="+ nombre&#10;+ cantidad" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="22" vertex="1">
+                    <mxGeometry y="26" width="160" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="22" vertex="1">
+                    <mxGeometry y="90" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="+ material&#10;+ ~material&#10;+ obtener_nombre&#10;+ obtener_cant&#10;+ modificar_cant(ínt cant)&#10;+ mostrar_material()&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="22" vertex="1">
+                    <mxGeometry y="98" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="26" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Edificio" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="470" width="160" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="+ nombre&#10;+ piedra&#10;+ madera&#10;+ metal&#10;+ cant_max&#10;+ cant_constu" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="26" vertex="1">
+                    <mxGeometry y="26" width="160" height="94" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="26" vertex="1">
+                    <mxGeometry y="120" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="26" vertex="1">
+                    <mxGeometry y="128" width="160" height="132" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="30" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="410" y="760"/>
+                            <mxPoint x="790" y="760"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="EdificioMina" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="334" y="840" width="170" height="248" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="+ cant_mat_producido&#10;+ cant_construido&#10;+ ubicaciones" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="30" vertex="1">
+                    <mxGeometry y="26" width="170" height="64" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="30" vertex="1">
+                    <mxGeometry y="90" width="170" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="30" vertex="1">
+                    <mxGeometry y="98" width="170" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.492;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="34" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="788.7199999999998" y="731.0540000000001" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="610" y="760"/>
+                            <mxPoint x="789" y="760"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="EdificioAserradero" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="840" width="160" height="228" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="+ cant_mat_producido&#10;+ cant_construido" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="34" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="34" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="34" vertex="1">
+                    <mxGeometry y="78" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="38" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="EdificioFabrica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="840" width="160" height="218" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="+ cant_mat_producido&#10;+ cant_construido" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="38" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="38" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="38" vertex="1">
+                    <mxGeometry y="78" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="42" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="970" y="760"/>
+                            <mxPoint x="790" y="760"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="EdificioEscuela" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="890" y="840" width="160" height="218" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="+ cant_mat_producido&#10;+ cant_construido" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="42" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="42" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="42" vertex="1">
+                    <mxGeometry y="78" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="46" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1161" y="760"/>
+                            <mxPoint x="790" y="760"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="EdificioObelisco" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="1081" y="840" width="160" height="218" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="+ cant_mat_producido&#10;+ cant_construido" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="46" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="46" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="46" vertex="1">
+                    <mxGeometry y="78" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontColor=#0D0D0D;strokeColor=#000000;" parent="1" source="50" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1350" y="760"/>
+                            <mxPoint x="790" y="760"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="EdificioPlantaElectrica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#2D7600;fillColor=#60a917;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="840" width="160" height="218" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="+ cant_mat_producido&#10;+ cant_construido" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="50" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="50" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="+ edificio()&#10;+ ~edificio()&#10;+ obtener_nombre()&#10;+ obtener_piedra()&#10;+ obtener_madera()&#10;+ obtener_metal()&#10;+ obtener_cant_max()&#10;+ mostrar_edificio&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="50" vertex="1">
+                    <mxGeometry y="78" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="List (Template)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fontColor=#ffffff;labelBorderColor=none;labelBackgroundColor=none;swimlaneFillColor=#E8E8E8;strokeColor=#314354;fillColor=#647687;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="-150" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="+ tam&#10;+ T dato" style="text;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;strokeColor=#000000;" parent="71" vertex="1">
+                    <mxGeometry y="26" width="160" height="54" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="71" vertex="1">
+                    <mxGeometry y="80" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="+ obtener_tam&#10;+ buscar(dato)&#10;+ agregar&#10;+ eliminar" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#0D0D0D;labelBorderColor=none;labelBackgroundColor=none;" parent="71" vertex="1">
+                    <mxGeometry y="88" width="160" height="72" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="DUDA: es necesario armar una clase lista/mapa? que metodos deberia tener? una clase o alcanza&amp;nbsp; simplemente con vectores/matrices dinamicas?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="414" y="-70" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="La lista se usaria para los materiales, ubicaciones y edificios que leo de los archivos txrt" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="210" y="50" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="Principalmente:&lt;br&gt;METAL (I)&lt;br&gt;PIEDRA (S)&lt;br&gt;MADERA (w)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="220" y="510" width="114" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="Brinda 15 piedras" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="357" y="1080" width="114" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="Brinda 25 maderas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="553" y="1068" width="114" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="Brinda 40 metales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="733" y="1068" width="114" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="no brinda materiales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="901.5" y="1064" width="137" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="no brinda materiales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="1092.5" y="1064" width="137" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="no brinda materiales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#BF152C;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="1281.5" y="1058" width="137" height="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="1. Construir edificio por nombre.&amp;nbsp;&#10;2. Listar los edificios construidos.&amp;nbsp;&#10;3. Listar todos los edificios.&amp;nbsp;&#10;4. Demoler un edificio por coordenada.&amp;nbsp;&#10;5. Mostrar mapa.&amp;nbsp;&#10;6. Consultar coordenada.&amp;nbsp;&#10;7. Mostrar inventario.&amp;nbsp;&#10;8. Recolectar recursos producidos.&amp;nbsp;&#10;9. Lluvia de recursos.&amp;nbsp;&#10;10. Guardar y salir." style="text;whiteSpace=wrap;html=1;fontColor=#BF152C;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1281.5" y="10" width="401.5" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="&lt;span style=&quot;color: rgb(23 , 17 , 191)&quot;&gt;MAPA&lt;br&gt;2. Listar edificios construidos&lt;/span&gt;&lt;br&gt;5. Mostrar mapa.&amp;nbsp;&lt;br&gt;6. Consultar coordenada.&amp;nbsp;&lt;br&gt;8. Recolectar recursos producidos&lt;br&gt;9. Lluvia de recursos" style="text;whiteSpace=wrap;html=1;fontSize=20;fontColor=#271DBF;" vertex="1" parent="1">
+                    <mxGeometry x="890.75" y="-170" width="380" height="135" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="CASILLERO CONSTRUIBLE:&lt;br&gt;1. Construir edificio por nombre.&lt;br&gt;4. Demoler un edificio por coordenada.&amp;nbsp;" style="text;whiteSpace=wrap;html=1;fontSize=20;fontColor=#1D11BF;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="440" width="401.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="RECORRER LA LISTA:&lt;br&gt;3. Listar todos los edificios&amp;nbsp;&lt;br&gt;7. Mostrar inventario.&amp;nbsp;" style="text;whiteSpace=wrap;html=1;fontSize=20;fontColor=#1711BF;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="80" width="283" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
     </diagram>
 </mxfile>
