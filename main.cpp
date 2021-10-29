@@ -3,6 +3,7 @@
 #include <fstream>
 #include "menu.h"
 #include "mapa.h"
+#include "material.h"
 
 using namespace std;
 
