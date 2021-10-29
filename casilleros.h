@@ -6,6 +6,8 @@
 #include <fstream>
 #include "colors.h"
 #include "material.h"
+#include "edificios.h"
+#include "ciudad.h"
 
 using namespace std;
 
@@ -23,11 +25,13 @@ public:
     }
     virtual void mostrar() = 0;
     virtual void display() = 0;
-    virtual void agregar_material(Material){};
+    // virtual void agregar_material(Ciudad andypolis) = 0;
+    // virtual void agregar_edificio(Ciudad andypolis) = 0;
 };
 
 class CasilleroConstruible : public Casillero
 {
+    Edificio edificio;
 
 public:
     void mostrar()
@@ -36,6 +40,20 @@ public:
         cout << "estás en la posición " << coord_x << " " << coord_y << endl;
     }
     void display() { cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_GREEN_2 << "   " << END_COLOR << " "; } //"T"
+
+    void construir_edificio(Ciudad andypolis, string nombre)
+    {
+        andypolis.agregar_edificio(nombre);
+        andypolis.restar_materiales(nombre, edificio);
+        // andypolis.agregar_coordenada();
+    }
+
+    void destruir_edificio(Ciudad andypolis, string nombre, Edificio edificio)
+    {
+        andypolis.destruir_edificio(nombre, edificio);
+        andypolis.recolectar_materiales_reciclados(edificio);
+        // andypolis.eliminar_coordenada()
+    }
 };
 
 class CasilleroTransitable : public Casillero
@@ -50,6 +68,14 @@ public:
         cout << "estás en la posición " << coord_x << " " << coord_y << endl;
     }
     void display() { cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_LIGHT_GRAY_247 << "   " << END_COLOR << " "; } //"C"
+
+    // para la funcion de lluvia de materiales:
+    void agregar_material(string nombre, int cantidad, Ciudad andypolis)
+    {
+
+        material = new Material(nombre, cantidad);
+        andypolis.agregar_material(nombre, cantidad, material);
+    }
 };
 
 class CasilleroInaccesible : public Casillero
