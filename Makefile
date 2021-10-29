@@ -13,10 +13,13 @@ colors.o: colors.cpp colors.h
 mapa.o: mapa.cpp mapa.h material.h casilleros.h
 	$(CC) $(FLAGS) mapa.o
 
-menu.o: menu.cpp menu.h colors.h mapa.h casilleros.h mapa.cpp material.h
+material.o: material.cpp material.h 
+	$(CC) $(FLAGS) material.o
+
+menu.o: menu.cpp menu.h colors.h mapa.h casilleros.h mapa.cpp material.cpp
 	$(CC) $(FLAGS) menu.o
 
-andypolis: menu.cpp main.cpp colors.cpp mapa.cpp casilleros.h material.h
+andypolis: menu.cpp main.cpp colors.cpp mapa.cpp casilleros.h material.h material.cpp
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:
