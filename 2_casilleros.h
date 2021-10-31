@@ -17,17 +17,14 @@ class Casillero{
   
   public:
 
-    Casillero(int coord_x, int coord_y){
-      this->coord_x = coord_x;
-      this->coord_y = coord_y;
-    };
+    Casillero(int x, int y):coord_x(x),coord_y(y){};
     virtual ~Casillero(){};
 
     virtual void mostrar() = 0; 
     virtual void display() = 0; 
 
     virtual void agregar(Edificio*){
-     // cout << "No puedes construir en este casillero" << endl;
+      cout << "No puedes construir en este casillero" << endl;
     };
 };
 
