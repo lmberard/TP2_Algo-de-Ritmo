@@ -1,4 +1,11 @@
-#include "mapa.h"
+#include "mapa.hpp"
+
+Mapa::Mapa()
+{
+    this->filas = 0;
+    this->columnas = 0;
+    this->mapa = 0;
+}
 
 Mapa::Mapa(const string &PATH)
 {
@@ -17,52 +24,45 @@ Mapa::Mapa(const string &PATH)
 
     archivo_mapa >> filas_;
     archivo_mapa >> columnas_;
-    filas = stoi(filas_);
-    columnas = stoi(columnas_);
+    this->filas = stoi(filas_);
+    this->columnas = stoi(columnas_);
 
-    mapa = new Casillero **[filas];
+    this->mapa = new Casillero **[filas];
 
     for (int i = 0; i < filas; i++)
     {
-        mapa[i] = new Casillero *[columnas];
+        this->mapa[i] = new Casillero *[columnas];
         for (int j = 0; j < columnas; j++)
         {
             archivo_mapa >> casillero;
             if (casillero == "L")
-            {
-                mapa[i][j] = new CasilleroInaccesible;
-                mapa[i][j]->set_coordenadas(i, j);
-            }
+                this->mapa[i][j] = new CasilleroInaccesible(i, j);
+
             if (casillero == "T")
-            {
-                mapa[i][j] = new CasilleroConstruible;
-                mapa[i][j]->set_coordenadas(i, j);
-            }
+                this->mapa[i][j] = new CasilleroConstruible(i, j);
+
             if (casillero == "C")
-            {
-                mapa[i][j] = new CasilleroTransitable;
-                mapa[i][j]->set_coordenadas(i, j);
-            }
+                this->mapa[i][j] = new CasilleroTransitable(i, j);
         }
     }
 }
 
 Mapa::~Mapa()
 {
-
-    /*for (int i = 0; i < filas; i++)
-        for (int j = 0; j < columnas; j++)
-            delete mapa[i][j];*/
+    /*
+        for (int i = 0; i < filas; i++)
+            for (int j = 0; j < columnas; j++)
+                delete mapa[i][j];*/
 
     for (int i = 0; i < filas; i++)
-        delete[] mapa[i];
+        delete[] this->mapa[i];
 
-    delete[] mapa;
+    delete[] this->mapa;
 }
 
 void Mapa::consultar_coordenada(int i, int j)
 {
-    mapa[i][j]->mostrar();
+    this->mapa[i][j]->mostrar();
 }
 
 void Mapa::mostrar_mapa()
@@ -71,8 +71,14 @@ void Mapa::mostrar_mapa()
     {
         for (int j = 0; j < columnas; j++)
         {
-            mapa[i][j]->display();
+            this->mapa[i][j]->display();
         }
         cout << endl;
     }
+}
+
+void Mapa::agregar_edificio(int x, int y, Edificio *edificio)
+{
+    cout << "falta jeje" << endl;
+    // mapa[x][y]->agregar(edificio);
 }
