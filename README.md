@@ -9,8 +9,10 @@
 </ul>
 
 <h2>Compilacion:</h2>
+Comando "make" en terminal de Linux
 
 <h2>Ejecución:</h2>
+Comando "./andypolis" en terminal de Linux
 
 <h2>Archivos:</h2>
 <ul>
