@@ -1,25 +1,29 @@
-PROGRAM=tp1
-CC := g++
-FLAGS := -Wall -Werror -Wconversion -pedantic -g
-LDLFLAGS=-lm
-GREEN= \e[92m
-NORMAL= \e[0m
+PROGRAM= andypolis
+CC:= g++
+FLAGS:= -Wall -Werror -Wconversion -pedantic -g
+LDLFLAGS= -lm
 
 all: andypolis
 
-colors.o: colors.cpp colors.h
+colors.o: colors.cpp colors.hpp
 	$(CC) $(FLAGS) colors.o
 
-mapa.o: mapa.cpp mapa.h material.h casilleros.h
-	$(CC) $(FLAGS) mapa.o
-
-material.o: material.cpp material.h 
+material.o: material.cpp material.hpp 
 	$(CC) $(FLAGS) material.o
 
-menu.o: menu.cpp menu.h colors.h mapa.h casilleros.h mapa.cpp material.cpp
+edificio.o: material.hpp edificio.hpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp
+	$(CC) $(FLAGS) edificio.o
+
+casillero.o: edificio.hpp material.hpp casillero.hpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp 
+	$(CC) $(FLAGS) casillero.o
+
+mapa.o: casillero.hpp edificio.hpp material.hpp mapa.hpp mapa.cpp
+	$(CC) $(FLAGS) mapa.o
+
+menu.o: casillero.hpp edificio.hpp material.hpp mapa.hpp menu.cpp menu.hpp
 	$(CC) $(FLAGS) menu.o
 
-andypolis: menu.cpp main.cpp colors.cpp mapa.cpp casilleros.h material.h material.cpp
+andypolis: casillero.hpp edificio.hpp material.hpp mapa.hpp main.cpp colors.cpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp mapa.cpp material.cpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp menu.cpp 
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:
