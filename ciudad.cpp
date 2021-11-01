@@ -1,6 +1,6 @@
 
-#include "ciudad.h"
-
+#include "ciudad.hpp"
+/*
 // para la funcion de CONSTRUIR edificio por nombre y coordenada
 void Ciudad::agregar_edificio(string nombre)
 {
@@ -67,4 +67,4 @@ void Ciudad::agregar_material(string nombre, int cantidad, Material material)
         if (material.nombre == this->materiales[i].nombre)
             this->materiales[i].modificar_cantidad(cantidad);
     }
-}
+}*/
