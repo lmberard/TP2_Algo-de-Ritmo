@@ -7,7 +7,8 @@
 #include <cstdlib>
 #include <iomanip>
 #include <bits/stdc++.h>
-#include "colors.h"
+#include "colors.hpp"
+#include "mapa.hpp"
 
 const int OPCION_MINIMA = 1;
 const int OPCION_MAXIMA = 10;
@@ -45,7 +46,7 @@ void volver();
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: Realiza la opcion pedida
-void procesar_opcion(int opcion_elegida); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
+void procesar_opcion(int opcion_elegida, Mapa &andypolis); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
@@ -57,10 +58,10 @@ string devolver_rta_usuario();
 
 // pre: Existen los archivos txt correspondientes
 // post: se muestra el menu Principal
-void mostrar_menuInicial();
+void mostrar_menuInicial(Mapa &andypolis);
 
 // pre: -
 // post: se verifica que lo ingresado sea una opcion dentro del rango del menu.
-void validar_opcion(int option_elegida);
+void validar_opcion(int option_elegida, Mapa &andypolis);
 
 #endif // MENU_H

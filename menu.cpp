@@ -1,4 +1,6 @@
-#include "menu.h"
+#include "menu.hpp"
+#include "casillero.hpp"
+#include "mapa.hpp"
 
 using namespace std;
 
@@ -42,7 +44,7 @@ string devolver_rta_usuario()
     return rta;
 }
 
-void mostrar_menuInicial()
+void mostrar_menuInicial(Mapa &andypolis)
 {
     system(CLR_SCREEN);
     int opcion_elegida;
@@ -66,7 +68,7 @@ void mostrar_menuInicial()
             mostrar_menu();
             cin >> opcion_elegida;
         }
-        procesar_opcion(opcion_elegida);
+        procesar_opcion(opcion_elegida, andypolis);
     } while (opcion_elegida != SALIR);
 }
 
@@ -99,7 +101,7 @@ void volver()
     system(CLR_SCREEN);
 }
 
-void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
+void procesar_opcion(int opcion_elegida, Mapa &andypolis)
 {
     switch (opcion_elegida)
     {
@@ -124,11 +126,13 @@ void procesar_opcion(int opcion_elegida) // material *materiales_array, edificio
         break;
 
     case MOSTRAR_MAPA:
-        // andypolis.mostrar_mapa();
+        andypolis.mostrar_mapa();
+        volver();
         break;
 
     case CONSULTAR_COORDENADA:
-        // andypolis.consultar_coordenada(0, 0);
+        andypolis.consultar_coordenada(0, 0);
+        volver();
         break;
 
     case MOSTRAR_INVENTARIO:
