@@ -1,6 +1,6 @@
-#include "menu.h"
-#include "casilleros.h"
-#include "mapa.h"
+#include "menu.hpp"
+#include "casillero.hpp"
+#include "mapa.hpp"
 
 using namespace std;
 
