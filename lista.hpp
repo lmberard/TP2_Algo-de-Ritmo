@@ -40,7 +40,7 @@ public:
 
     //PRE: 1 <= pos <= cantidad
     //POS: devuelve el dato que esta arriba
-    Dato consulta(int pos){
+    Dato operator[](int pos){
         Nodo<Dato>* aux = obtener_nodo(pos);
         return aux->obtener_dato();
     }
