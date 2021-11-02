@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const string PATH_UBICACIONES = "ubicaciones.txt";
+const string PATH_UBICACIONES_PRUEBA = "ubicaciones.txt";
 const int MAX = 200;
 
 struct Ubicacion

@@ -28,7 +28,7 @@ int main()
 */
 bool procesar_ubicaciones(Ubicacion ubicaciones[MAX])
 {
-    ifstream archivo_entrada(PATH_UBICACIONES);
+    ifstream archivo_entrada(PATH_UBICACIONES_PRUEBA);
 
     if (archivo_entrada)
     {
@@ -84,7 +84,7 @@ bool procesar_ubicaciones(Ubicacion ubicaciones[MAX])
 bool guardar_ubicaciones(Ubicacion ubicaciones[MAX])
 {
     ofstream ubicaciones_out;
-    ubicaciones_out.open(PATH_UBICACIONES);
+    ubicaciones_out.open(PATH_UBICACIONES_PRUEBA);
     string separador = " ";
     string vacio = " ";
     size_t i = 0;
