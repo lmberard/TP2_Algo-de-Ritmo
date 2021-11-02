@@ -1,13 +1,13 @@
 #ifndef LISTA_H_INCLUDED
 #define LISTA_H_INCLUDED
 #include <iostream>
-#include "nodos.h"
+#include "nodo.hpp"
 
 template <class Dato>
 class Lista {
     // Atributos
 private:
-    Nodo<Dato*>* primero;
+    Nodo<Dato>* primero;
     int cantidad;
 
     // Metodos
@@ -22,16 +22,15 @@ public:
 
     //PRE: 1 <= pos <= cantidad + 1
     //POS: agrega d arriba de la pila e incrementa tope en 1
-    void alta(Dato* d, int pos){
-        Nodo<Dato*>* nuevo = new Nodo<Dato*>(d);
-        std::cout << "Pido memoria en: " << nuevo << std::endl;
-        Nodo<Dato*>* siguiente = primero;
+    void alta(Dato d, int pos){
+        Nodo<Dato>* nuevo = new Nodo<Dato>(d);
+        Nodo<Dato>* siguiente = primero;
 
         if (pos == 1) {
             primero = nuevo;
         }
         else{
-            Nodo<Dato*>* anterior = obtener_nodo(pos - 1);
+            Nodo<Dato>* anterior = obtener_nodo(pos - 1);
             siguiente = anterior->obtener_siguiente();
             anterior->cambiar_siguiente(nuevo);
         }
@@ -41,8 +40,8 @@ public:
 
     //PRE: 1 <= pos <= cantidad
     //POS: devuelve el dato que esta arriba
-    Dato* consulta(int pos){
-        Nodo<Dato*>* aux = obtener_nodo(pos);
+    Dato consulta(int pos){
+        Nodo<Dato>* aux = obtener_nodo(pos);
         return aux->obtener_dato();
     }
 
@@ -50,16 +49,15 @@ public:
     //PRE: 1 <= pos <= cantidad
     //POS: devuelve el dato que esta arriba y decrementa tope
     void baja(int pos){
-        Nodo<Dato*>* baja = primero;
+        Nodo<Dato>* baja = primero;
         if (pos == 1)
             primero = baja->obtener_siguiente();
         else {
-            Nodo<Dato*>* anterior = obtener_nodo(pos - 1);
+            Nodo<Dato>* anterior = obtener_nodo(pos - 1);
             baja = anterior->obtener_siguiente();
             anterior->cambiar_siguiente(baja->obtener_siguiente());
         }
         cantidad--;
-        std::cout << "Libero memoria en: " << baja << std::endl;
 
         delete baja;
     }
@@ -95,8 +93,8 @@ public:
 
 
 private:
-    Nodo<Dato*>* obtener_nodo(int pos){
-    Nodo<Dato*>* aux = primero;
+    Nodo<Dato>* obtener_nodo(int pos){
+    Nodo<Dato>* aux = primero;
     for (int i = 1; i < pos; i++)
         aux = aux->obtener_siguiente();
     return aux;
