@@ -9,8 +9,8 @@
 #include "edificio.hpp"
 #include "mapa.hpp"
 #include "ubicaciones.hpp"
-//#include "lista.hpp"
-// include "parser.hpp"
+#include "lista.hpp"
+#include "parser.hpp"
 
 // Para la lluvia de materiales
 const int CANT_MAX_RANDOM_MADERA = 0;
@@ -19,6 +19,8 @@ const int CANT_MAX_RANDOM_METAL = 2;
 const int CANT_MIN_RANDOM_METAL = 4;
 const int CANT_MAX_RANDOM_PIEDRA = 1;
 const int CANT_MIN_RANDOM_PIEDRA = 2;
+
+const int CANT_TIPOS_DE_EDIFICIOS = 6;
 
 class Ciudad
 {
@@ -29,7 +31,7 @@ private:
     Material **materiales;
     // Lista<Material> materiales;
     Ubicacion *ubicaciones;
-    // Parser parser;
+    Parser parser;
 
     int cant_edificios;
     int cant_materiales;
@@ -53,8 +55,12 @@ public:
     void construir_edificio(string nombre, int x, int y);
 
     // PRE:
-    // POST: Se recorre la lista de edificios y se muestra por la terminal con sus respectivos atributos
+    // POST: ??
     void listar_edificios_construidos();
+
+    // PRE:
+    // POST: Se recorre la lista de edificios y se muestra por la terminal con sus respectivos atributos
+    void listar_edificios();
 
     // PRE:
     // POST: se elimina un edificio segun su nombre y coordenadas del mapa. Se recolectan los materiales reciclados, se agregan a la lista y se elimina la ubicacion de la lista de ubicaciones
