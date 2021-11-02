@@ -40,6 +40,10 @@ public:
 
     // PRE:
     // POS:
+    int obtener_piedra();
+
+    // PRE:
+    // POS:
     int obtener_cant_max();
 
     // PRE:

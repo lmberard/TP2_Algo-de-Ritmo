@@ -26,6 +26,11 @@ int Edificio::obtener_metal()
     return this->metal;
 }
 
+int Edificio::obtener_piedra()
+{
+    return this->piedra;
+}
+
 int Edificio::obtener_cant_max()
 {
     return this->cant_max_construccion;
