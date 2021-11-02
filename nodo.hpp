@@ -44,9 +44,9 @@ public:
         return siguiente;
     }
 
-    ~Nodo(){
+    /*~Nodo(){
         delete dato;
-    }
+    }*/
 };
 
 #endif // NODO_H_INCLUDED
