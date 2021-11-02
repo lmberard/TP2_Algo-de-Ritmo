@@ -7,13 +7,6 @@
 #include "colors.hpp"
 #include "material.hpp"
 
-struct Ubicacion
-{
-    string nombre_edificio;
-    int coord_x;
-    int coord_y;
-};
-
 class Edificio
 {
 
