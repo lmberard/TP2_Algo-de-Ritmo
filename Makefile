@@ -23,7 +23,10 @@ mapa.o: casillero.hpp edificio.hpp material.hpp mapa.hpp mapa.cpp
 menu.o: casillero.hpp edificio.hpp material.hpp mapa.hpp menu.cpp menu.hpp
 	$(CC) $(FLAGS) menu.o
 
-andypolis: casillero.hpp edificio.hpp material.hpp mapa.hpp main.cpp colors.cpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp mapa.cpp material.cpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp menu.cpp 
+ciudad.o: ciudad.hpp ciudad.cpp edificio.cpp material.cpp mapa.cpp
+	$(CC) $(FLAGS) ciudad.o
+
+andypolis: casillero.hpp edificio.hpp material.hpp mapa.hpp main.cpp ciudad.cpp colors.cpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp mapa.cpp material.cpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp menu.cpp 
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:
