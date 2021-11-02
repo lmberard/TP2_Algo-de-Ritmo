@@ -7,8 +7,19 @@
 #include "lista.hpp"
 #include "material.hpp"
 #include "edificio.hpp"
+#include "edificioAserradero.hpp"
+#include "edificioEscuela.hpp"
+#include "edificioFabrica.hpp"
+#include "edificioMina.hpp"
+#include "edificioPlantaElectrica.hpp"
+#include "edificioObelisco.hpp"
+#include "ubicaciones.hpp"
 
 using namespace std;
+
+const string PATH_MATERIALES = "materiales.txt";
+const string PATH_EDIFICIOS = "edificios.txt";
+const string PATH_UBICACIONES = "ubicaciones.txt";
 
 class Parser
 {
@@ -16,11 +27,13 @@ class Parser
 public:
     // PRE:
     // POS:
-    void cargar(Lista<Edificio> &edificios, const string &PATH);
+    void cargar(Lista<Edificio> &edificios);
 
     // PRE:
     // POS:
-    void cargar(Lista<Material> &materiales, const string &PATH);
+    void cargar(Lista<Material> &materiales);
+
+    void cargar(Lista<Ubicacion> &ubicaciones);
 };
 
 #endif // PARSER_HPP

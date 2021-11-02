@@ -17,13 +17,19 @@ edificio.o: material.hpp edificio.hpp edificio.cpp edificioAserradero.cpp edific
 casillero.o: edificio.hpp material.hpp casillero.hpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp 
 	$(CC) $(FLAGS) casillero.o
 
-mapa.o: casillero.hpp edificio.hpp material.hpp mapa.hpp mapa.cpp
+mapa.o: casillero.hpp edificio.hpp material.hpp mapa.hpp mapa.cpp lista.hpp nodo.hpp
 	$(CC) $(FLAGS) mapa.o
 
 menu.o: casillero.hpp edificio.hpp material.hpp mapa.hpp menu.cpp menu.hpp
 	$(CC) $(FLAGS) menu.o
 
-andypolis: casillero.hpp edificio.hpp material.hpp mapa.hpp main.cpp colors.cpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp mapa.cpp material.cpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp menu.cpp 
+parser.o: parser.hpp parser.cpp lista.hpp nodo.hpp
+	$(CC) $(FLAGS) parser.o
+
+ciudad.o: ciudad.hpp ciudad.cpp edificio.cpp material.cpp mapa.cpp lista.hpp
+	$(CC) $(FLAGS) ciudad.o
+
+andypolis: casillero.hpp edificio.hpp material.hpp mapa.hpp main.cpp ciudad.cpp parser.cpp colors.cpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp mapa.cpp material.cpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp menu.cpp 
 	$(CC) $(FLAGS) $^ -o andypolis
 
 clean:
