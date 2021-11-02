@@ -28,7 +28,7 @@ void Material::modificar_cantidad(int cantidad)
     this->cantidad += cantidad;
 }
 
-void Material::obtener_material()
+void Material::mostrar_material()
 {
     cout << "Tipo de Material:" << this->nombre << "\nCantidad:" << to_string(this->cantidad) << endl;
 }

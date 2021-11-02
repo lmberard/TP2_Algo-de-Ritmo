@@ -39,7 +39,7 @@ public:
 
     // PRE:
     // POS:
-    void obtener_material();
+    void mostrar_material();
 };
 
 #endif // MATERIAL_HPP
