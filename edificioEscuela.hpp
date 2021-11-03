@@ -12,6 +12,7 @@ public:
     // PRE:
     // POS:
     Escuela(int s, int w, int m, int p);
+    Escuela(Edificio *edificio);
 
     // PRE:
     // POS:

@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     PlantaElectrica(int s, int w, int m, int p);
+    PlantaElectrica(Edificio *edificio);
 
     // PRE:
     // POS:

@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     Obelisco(int s, int w, int m, int p);
+    Obelisco(Edificio *edificio);
 
     // PRE:
     // POS:

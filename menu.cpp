@@ -48,7 +48,7 @@ string devolver_rta_usuario()
     return rta;
 }
 
-void mostrar_menuInicial(Mapa &andypolis)
+void mostrar_menuInicial(Mapa &andypolis, Lista<Edificio*> & edificios, Parser parser)
 {
     system(CLR_SCREEN);
     int opcion_elegida;
@@ -72,7 +72,7 @@ void mostrar_menuInicial(Mapa &andypolis)
             mostrar_menu();
             cin >> opcion_elegida;
         }
-        procesar_opcion(opcion_elegida, andypolis);
+        procesar_opcion(opcion_elegida, andypolis, edificios, parser);
     } while (opcion_elegida != SALIR);
 }
 
@@ -105,24 +105,43 @@ void volver()
     system(CLR_SCREEN);
 }
 
-void procesar_opcion(int opcion_elegida, Mapa &andypolis)
+void procesar_opcion(int opcion_elegida, Mapa &andypolis, Lista<Edificio*> & edificios, Parser & parser)
 {
 
     //ESTA PARTE DEBERIA ESTAR EN OTRO LADO 
-    Parser parser;
-    Lista<Edificio*> edificios;
+    
     //Lista<Material*> materiales;
-    parser.cargar(edificios,"edificios.txt");
+   
     //parser.cargar(materiales,"materiales.txt");
-
+  int i = 1;
+  string nombre = "Yacimiento";
    
     switch (opcion_elegida)
     {
+  
     case CONSTRUIR_EDIFICIO:
         // construir_edificio(mapa,edificios_array, materiales_array, ubicaciones_array);
         /*se pide la coordenada en el mapa y se modifica en la lista de edificios y materiales
         hay que modificar el archivo de ubicaciones_array */
-         andypolis.agregar_edificio(0,3, new Aserradero(1,1,1,1));
+       
+        while(edificios[i]->obtener_nombre() == nombre){i++;}
+
+        if(nombre == "Yacimiento")
+            andypolis.agregar_edificio(0,2, new Yacimiento(edificios[--i]));
+        if(nombre == "Aserradero")
+            andypolis.agregar_edificio(0,3, new Aserradero(edificios[--i]));
+        if(nombre == "Escuela")
+            andypolis.agregar_edificio(0,3, new Escuela(edificios[--i]));
+        if(nombre == "Fabrica")
+            andypolis.agregar_edificio(0,3, new Fabrica(edificios[--i]));
+        if(nombre == "Mina")
+            andypolis.agregar_edificio(0,3, new Mina(edificios[--i]));
+        if(nombre == "Obelisco")
+            andypolis.agregar_edificio(0,3, new Obelisco(edificios[--i]));
+        if(nombre == "Planta Electrica")
+            andypolis.agregar_edificio(0,3, new PlantaElectrica(edificios[--i]));
+        
+        i = 1;
         break;
 
     case LISTAR_CONSTRUIDOS:
@@ -133,7 +152,7 @@ void procesar_opcion(int opcion_elegida, Mapa &andypolis)
 
     case LISTAR_TODOS:
         // listar_todos_edificios(edificios_array);
-        for(int i = 1; i < edificios.mostrar_cantidad(); i++ ){
+        for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
            cout << edificios[i]->obtener_nombre() << '\t'
                 << edificios[i]->obtener_madera() << '\t'
                 << edificios[i]->obtener_metal()  << '\t'
@@ -179,6 +198,7 @@ void procesar_opcion(int opcion_elegida, Mapa &andypolis)
 
     case SALIR:
         // guardar_archivos(mapa, edificios_array, materiales_array, ubicaciones_array);
+        parser.borrar(edificios);
         break;
 
     default:

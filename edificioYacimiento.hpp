@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     Yacimiento(int s, int w, int m, int p);
+    Yacimiento(Edificio *edificio);
 
     // PRE:
     // POS:

@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     Fabrica(int s, int w, int m, int p);
+    Fabrica(Edificio *edificio);
 
     // PRE:
     // POS:

@@ -11,6 +11,14 @@ Edificio::Edificio(int s, int w, int m, int p)
     // this->cant_mat_que_produce = 0;
 }
 
+Edificio::Edificio(Edificio * edificio)
+{
+    madera = edificio->obtener_madera();
+    piedra = edificio->obtener_piedra();
+    metal  = edificio->obtener_metal();
+    cant_max_construccion = edificio->obtener_cant_max();
+}
+
 string Edificio::obtener_nombre()
 {
     return nombre;

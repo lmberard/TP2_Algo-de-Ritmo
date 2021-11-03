@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     Aserradero(int s, int w, int m, int p);
+    Aserradero(Edificio *edificio);
 
     // PRE:
     // POS:

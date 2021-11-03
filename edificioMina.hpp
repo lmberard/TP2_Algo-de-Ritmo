@@ -11,6 +11,7 @@ public:
     // PRE:
     // POS:
     Mina(int s, int w, int m, int p);
+    Mina(Edificio *edificio);
 
     // PRE:
     // POS:

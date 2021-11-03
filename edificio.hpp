@@ -26,7 +26,7 @@ public:
     // POS:
     Edificio(int s, int w, int m, int p);
     // virtual ~Edificio() = 0;
-
+    Edificio(Edificio* edificio);
     // PRE:
     // POS:
     string obtener_nombre();
