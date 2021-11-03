@@ -1,6 +1,6 @@
 #include "parser.hpp"
 
-void Parser::cargar(Lista<Edificio> &edificios)
+void Parser::cargar(Lista<Edificio *> edificios)
 {
     fstream archivo_edificios(PATH_EDIFICIOS, ios::in);
 
@@ -20,25 +20,24 @@ void Parser::cargar(Lista<Edificio> &edificios)
         archivo_edificios >> madera;
         archivo_edificios >> metal;
         archivo_edificios >> permitidos;
-        /*
-                if (nombre == "aserradero")
-                    edificios.alta(new EdificioAserradero(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 1);
-                if (nombre == "escuela")
-                    edificios.alta(new EdificioEscuela(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 2);
-                if (nombre == "mina")
-                    edificios.alta(new EdificioMina(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 3);
-                // revisar planta electrica
-                if (nombre == "planta")
-                    edificios.alta(new EdificioPlantaElectrica(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 4);
-                if (nombre == "obelisco")
-                    edificios.alta(new EdificioObelisco(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 5);
-                if (nombre == "fabrica")
-                    edificios.alta(new EdificioFabrica(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 6);
-                    */
+
+        if (nombre == "aserradero")
+            edificios.alta(new EdificioAserradero(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 1);
+        if (nombre == "escuela")
+            edificios.alta(new EdificioEscuela(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 2);
+        if (nombre == "mina")
+            edificios.alta(new EdificioMina(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 3);
+        // revisar planta electrica
+        if (nombre == "planta")
+            edificios.alta(new EdificioPlantaElectrica(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 4);
+        if (nombre == "obelisco")
+            edificios.alta(new EdificioObelisco(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 5);
+        if (nombre == "fabrica")
+            edificios.alta(new EdificioFabrica(nombre, stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)), 6);
     }
 }
 
-void Parser::cargar(Lista<Material> &materiales)
+void Parser::cargar(Lista<Material *> materiales)
 {
     fstream archivo_materiales(PATH_MATERIALES, ios::in);
 
@@ -58,7 +57,7 @@ void Parser::cargar(Lista<Material> &materiales)
     }
 }
 
-void Parser::cargar(Lista<Ubicacion> &ubicaciones)
+void Parser::cargar(Lista<Ubicacion *> ubicaciones)
 {
     /*    ifstream archivo_entrada(PATH_UBICACIONES);
 

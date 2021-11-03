@@ -7,30 +7,26 @@ class CasilleroTransitable : public Casillero
     Material *material = 0;
 
 public:
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: se crea un casilleroTransitable en las coordenadas (x,y)
     CasilleroTransitable(int x, int y);
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: se destruye el casillero
     ~CasilleroTransitable();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal el tipo de casillero, sus coordenadas y su contenido
     void mostrar();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal el tipo de casillero, sus coordenadas y su contenido
     void display();
 
-    // para la funcion de lluvia de materiales:
-
-    /* void agregar_material(string nombre, int cantidad, Ciudad andypolis)
-     {
-
-         material = new Material(nombre, cantidad);
-         andypolis.agregar_material(nombre, cantidad, material);
-     }*/
+    // LLUVIA DE RECURSOS------------------------------
+    // PRE: -
+    // POS: Se agrega un material en el casillero
+    void agregar_material(string nombre, int cantidad);
 };
 
 #endif // CASILLEROTRANSITABLE_HPP

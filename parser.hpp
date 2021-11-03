@@ -27,13 +27,13 @@ class Parser
 public:
     // PRE:
     // POS:
-    void cargar(Lista<Edificio> &edificios);
+    void cargar(Lista<Edificio *> edificios);
 
     // PRE:
     // POS:
-    void cargar(Lista<Material> &materiales);
+    void cargar(Lista<Material *> materiales);
 
-    void cargar(Lista<Ubicacion> &ubicaciones);
+    void cargar(Lista<Ubicacion *> ubicaciones);
 };
 
 #endif // PARSER_HPP

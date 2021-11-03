@@ -8,37 +8,39 @@ class CasilleroConstruible : public Casillero
 
 public:
     // PRE:
-    // POS:
+    // POS: se crea un casillero construible en la posicion (x,y)
     CasilleroConstruible(int x, int y);
 
     // PRE:
-    // POS:
+    // POS: se destruye el casillero construible
     ~CasilleroConstruible();
 
     // PRE:
-    // POS:
+    // POS: se agrega un edificio en el casillero
     void agregar(Edificio *edificio);
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal el tipo de casillero, sus coordenadas y su contenido
     void mostrar();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal el tipo de casillero, sus coordenadas y su contenido
     void display();
-    /*
-        void construir_edificio(Ciudad andypolis, string nombre)
-        {
-            andypolis.agregar_edificio(nombre);
-            andypolis.restar_materiales(nombre, edificio);
-            // andypolis.agregar_coordenada();
-        }
 
-        void destruir_edificio(Ciudad andypolis, string nombre, Edificio edificio)
-        {
-            andypolis.destruir_edificio(nombre, edificio);
-            andypolis.recolectar_materiales_reciclados(edificio);
-            // andypolis.eliminar_coordenada()
-        }*/
+    // PRE: -
+    // POS: devuelve el material que construye (casilleroConstruible)
+    string devolver_material_produccion();
+
+    // PRE: -
+    // POS: devuelve la cantidad del material que construye (casilleroConstruible)
+    int devolver_cant_material_produccion();
+
+    // PRE: -
+    // POS: el edificio del casillero apunta al objeto ya construido en la lista de edificios
+    void construir_edificio(string nombre);
+
+    // PRE: -
+    // POS: el edificio del casillero apunta a null
+    void destruir_edificio();
 };
 #endif // CASILLEROONSTRUIBLE_HPP

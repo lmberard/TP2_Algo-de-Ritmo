@@ -20,10 +20,21 @@ void CasilleroTransitable ::display()
     cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_LIGHT_GRAY_247 << "   " << END_COLOR << " ";
 }
 
-// para la funcion de lluvia de materiales:
-/* void agregar_material(string nombre, int cantidad, Ciudad andypolis)
- {
-
-     material = new Material(nombre, cantidad);
-     andypolis.agregar_material(nombre, cantidad, material);
- }*/
+void CasilleroTransitable ::agregar_material(string nombre, int cantidad) // Lista<Edificio> *edificios
+{
+    /*
+    //APUNTO this->edificio al objeto edificio que este en la lista de edificios ya construido
+    if(nombre == "aserradero")
+        this->edificio = edificios->aserradero();
+    if(nombre == "escuela")
+        this->edificio = edificios->escuela();
+    if(nombre == "fabrica")
+        this->edificio = edificios->fabrica();
+    if(nombre == "planta electrica")
+        this->edificio = edificios->planta_electrica();
+    if(nombre == "obelisco")
+        this->edificio = edificios->obelisco();
+    if(nombre == "mina")
+        this->edificio = edificios->mina();
+    */
+}
