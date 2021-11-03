@@ -5,16 +5,16 @@
 const int FABRICA_CANT_MATERIAL_PROD = 40;
 const string FABRICA_MATERIAL_PROD = "metal";
 
-class EdificioFabrica : public Edificio
+class Fabrica : public Edificio
 {
 public:
     // PRE:
     // POS:
-    EdificioFabrica(string n, int s, int w, int m, int p);
+    Fabrica(int s, int w, int m, int p);
 
     // PRE:
     // POS:
-    ~EdificioFabrica();
+    ~Fabrica();
 };
 
 #endif // EDIFICIOFABRICA_HPP

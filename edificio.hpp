@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 #include "colors.hpp"
-#include "material.hpp"
+//#include "material.hpp"
 
 class Edificio
 {
@@ -19,11 +19,12 @@ protected:
 
     string mat_que_produce;
     int cant_mat_que_produce;
+    string codigo; 
 
 public:
     // PRE:
     // POS:
-    Edificio(string n, int s, int w, int m, int p);
+    Edificio(int s, int w, int m, int p);
     // virtual ~Edificio() = 0;
 
     // PRE:
@@ -48,6 +49,10 @@ public:
 
     // PRE:
     // POS:
+    string obtener_codigo();
+
+    // PRE:
+    // POS:
     int obtener_cant_mat_producido();
 
     // PRE:
@@ -57,6 +62,7 @@ public:
     // PRE:
     // POS:
     void mostrar_edificio();
+
 };
 
 #endif // EDIFICIO_HPP

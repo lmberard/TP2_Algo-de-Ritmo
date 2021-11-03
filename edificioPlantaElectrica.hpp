@@ -5,16 +5,16 @@
 const int PLANTA_ELECTRICA_CANT_MATERIAL_PROD = 0;
 const string PLANTA_ELECTRICA_MATERIAL_PROD = "No brinda materiales";
 
-class EdificioPlantaElectrica : public Edificio
+class PlantaElectrica : public Edificio
 {
 public:
     // PRE:
     // POS:
-    EdificioPlantaElectrica(string n, int s, int w, int m, int p);
+    PlantaElectrica(int s, int w, int m, int p);
 
     // PRE:
     // POS:
-    ~EdificioPlantaElectrica();
+    ~PlantaElectrica();
 };
 
 #endif // EDIFICIOPLANTAELECTRICA_HPP

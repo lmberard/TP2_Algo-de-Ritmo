@@ -5,16 +5,16 @@
 const int OBELISCO_CANT_MATERIAL_PROD = 0;
 const string OBELISCO_MATERIAL_PROD = "No brinda materiales";
 
-class EdificioObelisco : public Edificio
+class Obelisco : public Edificio
 {
 public:
     // PRE:
     // POS:
-    EdificioObelisco(string n, int s, int w, int m, int p);
+    Obelisco(int s, int w, int m, int p);
 
     // PRE:
     // POS:
-    ~EdificioObelisco();
+    ~Obelisco();
 };
 
 #endif // EDIFICIOOBELISCO_HPP

@@ -5,15 +5,15 @@
 const int MINA_CANT_MATERIAL_PROD = 15;
 const string MINA_MATERIAL_PROD = "piedra";
 
-class EdificioMina : public Edificio
+class Mina : public Edificio
 {
 public:
     // PRE:
     // POS:
-    EdificioMina(string n, int s, int w, int m, int p);
+    Mina(int s, int w, int m, int p);
 
     // PRE:
     // POS:
-    ~EdificioMina();
+    ~Mina();
 };
 #endif // EDIFICIOMINA_HPP

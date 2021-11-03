@@ -5,16 +5,16 @@
 const int ESCUELA_CANT_MATERIAL_PROD = 0;
 const string ESCUELA_MATERIAL_PROD = "No brinda materiales";
 
-class EdificioEscuela : public Edificio
+class Escuela : public Edificio
 {
 
 public:
     // PRE:
     // POS:
-    EdificioEscuela(string n, int s, int w, int m, int p);
+    Escuela(int s, int w, int m, int p);
 
     // PRE:
     // POS:
-    ~EdificioEscuela();
+    ~Escuela();
 };
 #endif // EDIFICIOESCUELA_HPP

@@ -1,12 +1,13 @@
 #include "edificioEscuela.hpp"
 #include "edificio.hpp"
-EdificioEscuela::EdificioEscuela(string n, int s, int w, int m, int p) : Edificio(n, s, w, m, p)
+Escuela::Escuela(int s, int w, int m, int p) : Edificio(s, w, m, p)
 {
-
-    this->cant_mat_que_produce = ESCUELA_CANT_MATERIAL_PROD;
-    this->mat_que_produce = ESCUELA_MATERIAL_PROD;
+    nombre = "Escuela";
+    codigo = "E";
+    cant_mat_que_produce = ESCUELA_CANT_MATERIAL_PROD;
+    mat_que_produce = ESCUELA_MATERIAL_PROD;
 }
 
-EdificioEscuela::~EdificioEscuela()
+Escuela::~Escuela()
 {
 }
