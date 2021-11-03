@@ -5,10 +5,11 @@
 // FALTA REVISAR PARSER
 void Ciudad::procesar_archivos()
 {
-    // this->parser.cargar(this->edificios);
-    // this->parser.cargar(this->materiales);
-    // this->parser.cargar(this->ubicaciones);
-    cout << "falta hacer jeje" << endl;
+    this->parser.cargar(this->edificios, PATH_EDIFICIOS);
+    this->parser.cargar(this->materiales, PATH_MATERIALES);
+    this->mapa.cargar_ubicaciones()
+            cout
+        << "falta hacer jeje" << endl;
 }
 
 // ya esta

@@ -79,6 +79,52 @@ void Mapa::mostrar_mapa()
 
 void Mapa::agregar_edificio(int x, int y, Edificio *edificio)
 {
-    cout << "falta jeje" << endl;
-    // mapa[x][y]->agregar(edificio);
+    //cout << "falta jeje" << endl;
+     mapa[x][y]->agregar(edificio);
+}
+
+void Mapa::cargar_ubicaciones(const string& PATH){
+    fstream archivo_ubicaciones(PATH, ios::in);
+
+    if (!archivo_ubicaciones.is_open())
+    {
+        cout << "No se encontro un archivo con nombre \"" << PATH << "\", se va a crear el archivo" << endl;
+        archivo_ubicaciones.open(PATH, ios::out);
+        archivo_ubicaciones.close();
+        archivo_ubicaciones.open(PATH, ios::in);
+    }
+
+    string nombre, aux, coord_x, coord_y;
+    int i = 0;
+    while (getline(archivo_ubicaciones, nombre, ' ')){
+        if (nombre != "planta"){
+            ubicaciones[i].nombre = nombre;
+            getline(archivo_ubicaciones, aux, '(');
+
+            getline(archivo_ubicaciones, coord_x, ',');
+            ubicaciones[i].coord_x = stoi(coord_x);
+
+            getline(archivo_ubicaciones, aux, ' ');
+            getline(archivo_ubicaciones, coord_y, ')');
+            ubicaciones[i].coord_y = stoi(coord_y);
+            getline(archivo_ubicaciones, aux);
+        }
+        else{
+
+            getline(archivo_ubicaciones, aux, ' ');
+            ubicaciones[i].nombre = nombre + " " + aux;
+
+            getline(archivo_ubicaciones, aux, ' ');
+
+            getline(archivo_ubicaciones, coord_x, ',');
+            ubicaciones[i].coord_x = stoi(coord_x);
+
+            getline(archivo_ubicaciones, aux, ' ');
+            getline(archivo_ubicaciones, coord_y, ')');
+            ubicaciones[i].coord_y = stoi(coord_y);
+            getline(archivo_ubicaciones, aux);
+        }
+
+        i++;
+    }
 }

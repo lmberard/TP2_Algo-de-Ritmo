@@ -9,6 +9,8 @@
 #include "casilleroInaccesible.hpp"
 #include "casilleroConstruible.hpp"
 #include "edificio.hpp"
+#include "lista.hpp"
+#include "ubicaciones.hpp"
 
 class Mapa
 {
@@ -17,6 +19,7 @@ class Mapa
     int columnas;
 
     Casillero ***mapa;
+    Ubicacion ubicaciones[80];
 
 public:
     // PRE:
@@ -42,6 +45,10 @@ public:
     // PRE:
     // POS:
     void agregar_edificio(int, int, Edificio *);
+
+
+    void cargar_ubicaciones(const string& PATH);
+
 };
 
 #endif // MAPA_HPP
