@@ -7,7 +7,7 @@
 #include "colors.hpp"
 #include "material.hpp"
 #include "edificio.hpp"
-#include "ciudad.hpp"
+//#include "ciudad.hpp"
 
 using namespace std;
 

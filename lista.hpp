@@ -22,25 +22,29 @@ public:
 
     //PRE: 1 <= pos <= cantidad + 1
     //POS: agrega d arriba de la pila e incrementa tope en 1
-    void alta(Dato d, int pos){
+    void alta(Dato d){
         Nodo<Dato>* nuevo = new Nodo<Dato>(d);
         Nodo<Dato>* siguiente = primero;
 
-        if (pos == 1) {
+        if (1) {
             primero = nuevo;
         }
-        else{
+        /*else{
             Nodo<Dato>* anterior = obtener_nodo(pos - 1);
             siguiente = anterior->obtener_siguiente();
             anterior->cambiar_siguiente(nuevo);
-        }
+        }*/
         nuevo->cambiar_siguiente(siguiente);
         cantidad++;
     }
 
+    int mostrar_cantidad(){
+        return cantidad;
+    }
+
     //PRE: 1 <= pos <= cantidad
     //POS: devuelve el dato que esta arriba
-    Dato operator[](int pos){
+    Dato & operator[](int pos){
         Nodo<Dato>* aux = obtener_nodo(pos);
         return aux->obtener_dato();
     }

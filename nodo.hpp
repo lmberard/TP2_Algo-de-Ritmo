@@ -34,7 +34,7 @@ public:
 
     //PRE:
     //POS:
-    Dato obtener_dato(){
+    Dato & obtener_dato(){
         return dato;
     }
 
