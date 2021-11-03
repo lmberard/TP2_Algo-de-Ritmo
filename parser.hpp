@@ -22,6 +22,7 @@ using namespace std;
 
 class Parser
 {
+ 
 
 public:
     // PRE:
@@ -31,8 +32,10 @@ public:
     // PRE:
     // POS:
     //void cargar(Lista<Material*> &materiales, const string &PATH);
-      void cargar(Ubicacion  ubicaciones[80], const string& PATH);
     //void mostrar(const string &PATH);
+
+  void borrar(Lista<Edificio*> & edificios);
+
 };
 
 #endif // PARSER_HPP

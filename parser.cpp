@@ -64,3 +64,11 @@ void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
             materiales.alta(new Metal(nombre, stoi(cantidad)), 3);
     }
 */
+ void Parser::borrar(Lista<Edificio*> & edificios){
+
+    //ofstream archivo_edificios(PATH);
+
+		  for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
+          delete edificios[i];
+      }
+    }
