@@ -1,6 +1,6 @@
 #include "parser.hpp"
 
-void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
+void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
 {
     fstream archivo_edificios(PATH, ios::in);
 
@@ -37,8 +37,8 @@ void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
             edificios.alta(new PlantaElectrica(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
     }
 }
-/*
-void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
+
+void Parser::cargar(Lista<Material *> &materiales, const string &PATH)
 {
     fstream archivo_materiales(PATH, ios::in);
 
@@ -53,14 +53,7 @@ void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
     string nombre, cantidad;
     while (archivo_materiales >> nombre)
     {
-
-        archivo_materiales >> cantidad;
-
-        if (nombre == "piedra")
-            materiales.alta(new Piedra(nombre, stoi(cantidad)), 1);
-        if (nombre == "madera")
-            materiales.alta(new Madera(nombre, stoi(cantidad)), 2);
-        if (nombre == "metal")
-            materiales.alta(new Metal(nombre, stoi(cantidad)), 3);
+        archivo_materiales >> cantidad >> cantidad;
+        materiales.alta(new Metal(nombre, stoi(cantidad)));
     }
-*/
+}
