@@ -42,5 +42,9 @@ public:
     // PRE: -
     // POS: el edificio del casillero apunta a null
     void destruir_edificio();
+
+    // PRE: -
+    // POS: agrega un material en el casillero (casilleroTransitable)
+    void agregar_material(string nombre, int cantidad);
 };
 #endif // CASILLEROONSTRUIBLE_HPP

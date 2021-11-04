@@ -24,7 +24,7 @@ public:
 
     // PRE: -
     // POS: se destruye el casillero
-    virtual ~Casillero(){};
+    virtual ~Casillero();
 
     // PRE: -
     // POS: Muestra por la terminal el tipo de casillero, sus coordenadas y su contenido
@@ -37,25 +37,26 @@ public:
     // LLUVIA DE RECURSOS -----------------------------------------
     // PRE: -
     // POS: agrega un material en el casillero (casilleroTransitable)
-    virtual void agregar_material(string nombre, int cantidad);
+    virtual void agregar_material(string nombre, int cantidad) = 0;
 
     // RECOLECTAR MATERIALES --------------------------------------
     // PRE: -
     // POS: devuelve el material que construye (casilleroConstruible)
-    virtual string devolver_material_produccion();
+    virtual string devolver_material_produccion() = 0;
 
     // PRE: -
     // POS: devuelve la cantidad del material que construye (casilleroConstruible)
-    virtual int devolver_cant_material_produccion();
+    virtual int devolver_cant_material_produccion() = 0;
 
     // CONSTRUIR / DESTRUIR EDIFICIO ------------------------------
+    void agregar(Edificio *);
     // PRE: -
     // POS: agrega un edificio en el casillero (casilleroConstruible)
-    virtual void construir_edificio(string nombre);
+    virtual void construir_edificio(string nombre) = 0;
 
     // PRE: -
     // POS: se destruye el edificio del casillero (casilleroConstruible)
-    virtual void destruir_edificio();
+    virtual void destruir_edificio() = 0;
 };
 
 #endif // CASILLERO_HPP

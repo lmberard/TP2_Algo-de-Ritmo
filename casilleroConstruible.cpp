@@ -60,3 +60,8 @@ void CasilleroConstruible ::destruir_edificio()
 {
     this->edificio = 0;
 }
+
+void CasilleroConstruible ::agregar_material(string nombre, int cantidad)
+{
+    cout << "No se puede agregar material en este casillero" << endl;
+}

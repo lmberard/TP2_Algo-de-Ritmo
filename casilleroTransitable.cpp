@@ -38,3 +38,36 @@ void CasilleroTransitable ::agregar_material(string nombre, int cantidad) // Lis
         this->edificio = edificios->mina();
     */
 }
+
+string CasilleroTransitable ::devolver_material_produccion()
+{
+    // cout << "No hay materiales producidos en este casillero" << endl;
+    return "Este casillero no produce materiales";
+}
+
+// PRE: -
+// POS: devuelve la cantidad del material que construye (casilleroConstruible)
+int CasilleroTransitable ::devolver_cant_material_produccion()
+{
+    // cout << "No hay materiales producidos en este casillero" << endl;
+    return 0;
+}
+
+// CONSTRUIR / DESTRUIR EDIFICIO ------------------------------
+void CasilleroTransitable ::agregar(Edificio *)
+{
+    cout << "No se puede agregar un edificio en este casillero" << endl;
+}
+// PRE: -
+// POS: agrega un edificio en el casillero (casilleroConstruible)
+void CasilleroTransitable ::construir_edificio(string nombre)
+{
+    cout << "No se puede construir un edificio en este casillero" << endl;
+}
+
+// PRE: -
+// POS: se destruye el edificio del casillero (casilleroConstruible)
+void CasilleroTransitable ::destruir_edificio()
+{
+    cout << "No se puede construir ni destruir un edificio en este casillero." << endl;
+}
