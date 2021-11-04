@@ -27,8 +27,6 @@ void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
             edificios.alta(new Fabrica(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "escuela")
             edificios.alta(new Escuela(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
-        if (nombre == "yacimiento")
-            edificios.alta(new Yacimiento(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "mina")
             edificios.alta(new Mina(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "obelisco")
@@ -54,6 +52,6 @@ void Parser::cargar(Lista<Material *> &materiales, const string &PATH)
     while (archivo_materiales >> nombre)
     {
         archivo_materiales >> cantidad >> cantidad;
-        materiales.alta(new Metal(nombre, stoi(cantidad)));
+        materiales.alta(new Material(nombre, stoi(cantidad)));
     }
 }
