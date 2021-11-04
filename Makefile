@@ -14,7 +14,7 @@ material.o: material.cpp material.hpp
 edificio.o: material.hpp edificio.hpp edificio.cpp edificioAserradero.cpp edificioEscuela.cpp edificioFabrica.cpp edificioMina.cpp edificioObelisco.cpp edificioPlantaElectrica.cpp
 	$(CC) $(FLAGS) edificio.o
 
-casillero.o: edificio.hpp material.hpp casillero.hpp casillero.cpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp 
+casillero.o: edificio.hpp material.hpp casillero.hpp casillero.cpp casilleroConstruible.hpp casilleroInaccesible.hpp casilleroTransitable.hpp casilleroConstruible.cpp casilleroInaccesible.cpp casilleroTransitable.cpp 
 	$(CC) $(FLAGS) casillero.o
 
 mapa.o: casillero.hpp edificio.hpp material.hpp mapa.hpp mapa.cpp lista.hpp nodo.hpp
