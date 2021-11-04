@@ -2,28 +2,20 @@
 #include "ciudad.hpp"
 
 // CONSTRUCTOR-DESTRUCTOR--------------------------
-// FALTA REVISAR PARSER
-void Ciudad::procesar_archivos()
-{
-    this->parser.cargar(this->edificios, PATH_EDIFICIOS);
-    this->parser.cargar(this->materiales, PATH_MATERIALES);
-    this->mapa.cargar_ubicaciones()
-            cout
-        << "falta hacer jeje" << endl;
-}
-
-// ya esta
 Ciudad::Ciudad()
 {
-    this->cant_materiales = 0;
-    this->cant_edificios = CANT_TIPOS_DE_EDIFICIOS;
-    this->cant_ubicaciones = 0;
+    parser.cargar(edificios, PATH_EDIFICIOS);
+    parser.cargar(materiales, PATH_MATERIALES);
+    mapa = Mapa(PATH_MAPA);
+    mapa.cargar_ubicaciones(PATH_UBICACIONES);
+
+    cant_materiales = materiales.mostrar_cantidad();
+    cant_edificios = edificios.mostrar_cantidad();
+    cant_ubicaciones = ubicaciones.mostrar_cantidad();
 }
 
-// ya esta - REVISAR
 Ciudad::~Ciudad()
 {
-    // destruir la memoria de los vectores?
 }
 
 // FUNCIONES DEL MENU PRINCIPAL--------------------
@@ -77,25 +69,21 @@ void Ciudad::demoler_edificio(int x, int y)
     cout << "falta hacer jeje" << endl;
 }
 
-// ya esta
 void Ciudad::mostrar_mapa()
 {
     this->mapa.mostrar_mapa();
 }
 
-// ya esta
 void Ciudad::consultar_coordenada(int x, int y)
 {
     this->mapa.consultar_coordenada(x, y);
 }
 
-// ya esta
 void Ciudad::mostrar_inventario()
 {
-
-    for (int i = 0; i < this->cant_materiales; i++)
+    for (int i = 0; i < cant_materiales; i++)
     {
-        this->materiales[i]->mostrar_material();
+        materiales[i]->mostrar_material();
     }
 }
 
@@ -183,6 +171,40 @@ void Ciudad::restar_materiales_construccion(string nombre_edificio)
             for (int j = 0; j < this->cant_edificios; j++)
             {
                 if (this->materiales[j]->obtener_nombre() == "madera")
+                    this->materiales[j]->modificar_cantidad(-this->edificios[i]->obtener_madera());
+
+                if (this->materiales[j]->obtener_nombre() == "piedra")
+                    this->materiales[j]->modificar_cantidad(-this->edificios[i]->obtener_piedra());
+
+                if (this->materiales[j]->obtener_nombre() == "metal")
+                    this->materiales[j]->modificar_cantidad(-this->edificios[i]->obtener_metal());
+            }
+        }
+    }
+}
+
+void Ciudad::agregar_ubicacion(string nombre_edificio, int x, int y)
+{
+    cout << "hola";
+}
+
+// DESTRUIR EDIFICIO
+// falta
+void Ciudad::destruir_edificio(string nombre_edificio, int x, int y)
+{
+    cout << "falta hacer jeje" << endl;
+}
+
+void Ciudad::recolectar_materiales_reciclados(string nombre_edificio)
+{
+    for (int i = 0; i < this->cant_edificios; i++)
+    {
+        if (this->edificios[i]->obtener_nombre() == nombre_edificio)
+        {
+            // recorro la lista de materiales y modifico la cantidad
+            for (int j = 0; j < this->cant_edificios; j++)
+            {
+                if (this->materiales[j]->obtener_nombre() == "madera")
                     this->materiales[j]->modificar_cantidad(this->edificios[i]->obtener_madera() / 2);
 
                 if (this->materiales[j]->obtener_nombre() == "piedra")
@@ -196,63 +218,7 @@ void Ciudad::restar_materiales_construccion(string nombre_edificio)
 }
 
 // ya esta
-void Ciudad::agregar_ubicacion(string nombre_edificio, int x, int y)
-{
-    // Creo memoria para una nueva ubicacion y lo copio todo
-    Ubicacion *nuevas_ubicaciones = new Ubicacion[this->cant_ubicaciones + 1];
-    for (int i = 0; i < this->cant_ubicaciones; i++)
-    {
-        nuevas_ubicaciones[i] = this->ubicaciones[i];
-    }
-    // agrego la nueva ubicacion:
-    nuevas_ubicaciones[this->cant_ubicaciones].nombre = nombre_edificio;
-    nuevas_ubicaciones[this->cant_ubicaciones].coord_x = x;
-    nuevas_ubicaciones[this->cant_ubicaciones].coord_y = y;
-
-    // borro lo anterior
-    if (this->cant_ubicaciones != 0)
-        delete this->ubicaciones;
-
-    // apunto a lo nuevo y aumento cantidad
-    this->ubicaciones = nuevas_ubicaciones;
-    this->cant_ubicaciones++;
-}
-
-// DESTRUIR EDIFICIO
-// falta
-void Ciudad::destruir_edificio(string nombre_edificio, int x, int y)
-{
-    cout << "falta hacer jeje" << endl;
-}
-
-// falta
-void Ciudad::recolectar_materiales_reciclados(string nombre_edificio)
-{
-    cout << "falta hacer jeje" << endl;
-}
-
-// ya esta
 void Ciudad::eliminar_ubicacion(string nombre_edificio, int x, int y)
 {
-    // Creo memoria para una nueva ubicacion y lo copio todo
-    Ubicacion *nuevas_ubicaciones = new Ubicacion[this->cant_ubicaciones - 1];
-
-    int j = 0;
-    for (int i = 0; i < this->cant_ubicaciones; i++)
-    {
-        // me salteo la ubicacion que quiero borrar
-        if (this->ubicaciones[i].nombre != nombre_edificio && this->ubicaciones[i].coord_x != x && this->ubicaciones[i].coord_y == y)
-        {
-            nuevas_ubicaciones[i] = this->ubicaciones[j];
-            j++;
-        }
-    }
-
-    // borro lo anterior
-    if (this->cant_ubicaciones != 0)
-        delete this->ubicaciones;
-
-    // apunto a lo nuevo y aumento cantidad
-    this->ubicaciones = nuevas_ubicaciones;
-    this->cant_ubicaciones--;
+    cout << "hola";
 }

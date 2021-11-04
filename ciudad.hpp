@@ -22,15 +22,18 @@ const int CANT_MIN_RANDOM_PIEDRA = 2;
 
 const int CANT_TIPOS_DE_EDIFICIOS = 6;
 
+const string PATH_UBICACIONES = "ubicaciones.txt";
+const string PATH_MATERIALES = "materiales.txt";
+const string PATH_EDIFICIOS = "edificios.txt";
+const string PATH_MAPA = "mapa.txt";
+
 class Ciudad
 {
 private:
     Mapa mapa;
-    Edificio **edificios;
-    // Lista<Edificio> edificios;
-    Material **materiales;
-    // Lista<Material> materiales;
-    Ubicacion *ubicaciones;
+    Lista<Edificio *> edificios;
+    Lista<Material *> materiales;
+    // Lista<Ubicacion> ubicaciones; //esta en mapa
     Parser parser;
 
     int cant_edificios;
@@ -40,10 +43,7 @@ private:
 public:
     // CONSTRUCTOR-DESTRUCTOR--------------------------
     // PRE:
-    // POST: Se procesaron los archivos de mapa.txt, materiales.txt, ubicaciones.txt y mapa.txt y se guardaron en las listas.
-    void procesar_archivos();
-    // PRE:
-    // POST: se construye la instancia de Ciudad con listas vacias y cantidades=0
+    // POST: se construye la instancia de Ciudad con los datos cargados de los archivos txt
     Ciudad();
     // PRE:
     // POST: se destruyen las listas, clases y la instancia de Ciudad.
