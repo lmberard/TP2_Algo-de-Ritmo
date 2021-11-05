@@ -2,9 +2,6 @@
 #define EDIFICIOMINA_HPP
 #include "edificio.hpp"
 
-const int MINA_CANT_MATERIAL_PROD = 15;
-const string MINA_MATERIAL_PROD = "piedra";
-
 class Mina : public Edificio
 {
 public:

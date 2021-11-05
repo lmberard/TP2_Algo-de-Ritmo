@@ -9,24 +9,34 @@
 
 class Edificio
 {
-
 protected:
+
     string nombre;
+    string codigo; 
+
     int piedra;
     int madera;
     int metal;
+
     int cant_max_construccion;
 
     string mat_que_produce;
     int cant_mat_que_produce;
-    string codigo; 
 
 public:
+
     // PRE:
     // POS:
     Edificio(int s, int w, int m, int p);
+
+    // PRE:
+    // POS:
     // virtual ~Edificio() = 0;
+
+    // PRE:
+    // POS:
     Edificio(Edificio* edificio);
+    
     // PRE:
     // POS:
     string obtener_nombre();
