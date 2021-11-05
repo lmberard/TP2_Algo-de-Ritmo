@@ -1,6 +1,6 @@
 #include "parser.hpp"
 
-void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
+void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
 {
     fstream archivo_edificios(PATH, ios::in);
 
@@ -27,6 +27,8 @@ void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
             edificios.alta(new Fabrica(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "escuela")
             edificios.alta(new Escuela(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
+        if (nombre == "yacimiento")
+            edificios.alta(new Yacimiento(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "mina")
             edificios.alta(new Mina(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "obelisco")
@@ -36,7 +38,7 @@ void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
     }
 }
 
-void Parser::cargar(Lista<Material *> &materiales, const string &PATH)
+void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
 {
     fstream archivo_materiales(PATH, ios::in);
 
@@ -51,7 +53,31 @@ void Parser::cargar(Lista<Material *> &materiales, const string &PATH)
     string nombre, cantidad;
     while (archivo_materiales >> nombre)
     {
-        archivo_materiales >> cantidad >> cantidad;
-        materiales.alta(new Material(nombre, stoi(cantidad)));
+
+        archivo_materiales >> cantidad;
+        if (nombre == "piedra")
+            materiales.alta(new Piedra(stoi(cantidad)));
+        if (nombre == "madera")
+            materiales.alta(new Madera(stoi(cantidad)));
+        if (nombre == "metal")
+            materiales.alta(new Metal(stoi(cantidad)));
     }
 }
+
+ void Parser::borrar(Lista<Edificio*> & edificios){
+
+    //ofstream archivo_edificios(PATH);
+
+		  for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
+          delete edificios[i];
+      }
+    }
+
+    void Parser::borrar(Lista<Material*> & materiales){
+
+    //ofstream archivo_edificios(PATH);
+
+		  for(int i = 1; i < materiales.mostrar_cantidad()+1; i++ ){
+          delete materiales[i];
+      }
+    }

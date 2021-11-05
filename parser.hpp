@@ -11,28 +11,36 @@
 
 #include "edificioAserradero.hpp"
 #include "edificioEscuela.hpp"
+#include "edificioYacimiento.hpp"
 #include "edificioObelisco.hpp"
 #include "edificioMina.hpp"
 #include "edificioFabrica.hpp"
 #include "edificioPlantaElectrica.hpp"
 
+#include "materialMadera.hpp"
+#include "materialMetal.hpp"
+#include "materialPiedra.hpp"
+
+
 using namespace std;
 
 class Parser
 {
+ 
 
 public:
-  // PRE:
-  // POS:
-  void cargar(Lista<Edificio *> &edificios, const string &PATH);
+    // PRE:
+    // POS:
+    void cargar(Lista<Edificio*> &edificios, const string &PATH);
 
-  void cargar(Lista<Material *> &materiales, const string &PATH);
+    // PRE:
+    // POS:
+    void cargar(Lista<Material*> &materiales, const string &PATH);
+    //void mostrar(const string &PATH);
 
-  // PRE:
-  // POS:
-  // void cargar(Lista<Material*> &materiales, const string &PATH);
-  void cargar(Ubicacion ubicaciones[80], const string &PATH);
-  // void mostrar(const string &PATH);
+  void borrar(Lista<Edificio*> & edificios);
+  void borrar(Lista<Material*> & materiales);
+
 };
 
 #endif // PARSER_HPP

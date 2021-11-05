@@ -48,7 +48,7 @@ string devolver_rta_usuario()
     return rta;
 }
 
-void mostrar_menuInicial(Mapa &andypolis)
+void mostrar_menuInicial(Ciudad &andypolis)
 {
     system(CLR_SCREEN);
     int opcion_elegida;
@@ -105,82 +105,70 @@ void volver()
     system(CLR_SCREEN);
 }
 
-void procesar_opcion(int opcion_elegida, Mapa &andypolis)
+void procesar_opcion(int opcion_elegida, Ciudad &andypolis)
 {
 
-    //ESTA PARTE DEBERIA ESTAR EN OTRO LADO 
-    Parser parser;
-    Lista<Edificio*> edificios;
-    //Lista<Material*> materiales;
-    parser.cargar(edificios,"edificios.txt");
-    //parser.cargar(materiales,"materiales.txt");
-
-   
     switch (opcion_elegida)
     {
+  
     case CONSTRUIR_EDIFICIO:
-        // construir_edificio(mapa,edificios_array, materiales_array, ubicaciones_array);
-        /*se pide la coordenada en el mapa y se modifica en la lista de edificios y materiales
-        hay que modificar el archivo de ubicaciones_array */
-         andypolis.agregar_edificio(0,3, new Aserradero(1,1,1,1));
+    //De este, falta: todos los mensajes, chequear las validaciones existentes, crear la validacion del casillero
+    //subir la direccion del edificio creado a ubicacion. 
+       andypolis.construir(1,8,"escuela");
+       volver();
         break;
 
     case LISTAR_CONSTRUIDOS:
-          
-        // listar_construidos(edificios_array)
-        /*edificio va a tener un atributo que sea cant_construido*/
+        //FALTA HACERLO LINDO Y VALIDAR EN CASO DE NO HABER CONSTRUIDOS
+        andypolis.mostrar_ubicaciones();
+        volver();
         break;
 
     case LISTAR_TODOS:
-        // listar_todos_edificios(edificios_array);
-        for(int i = 1; i < edificios.mostrar_cantidad(); i++ ){
-           cout << edificios[i]->obtener_nombre() << '\t'
-                << edificios[i]->obtener_madera() << '\t'
-                << edificios[i]->obtener_metal()  << '\t'
-                << edificios[i]->obtener_piedra() << '\t'
-                << edificios[i]->obtener_cant_max() << '\t'
-                << edificios[i]->obtener_cant_max() << '\t' //ESTO HABRIA QUE RESTARLO CON CUANTOS HAY YA
-                << edificios[i]->obtener_cant_mat_producido() << ' '
-                << edificios[i]->obtener_mat_producido()    
-                << endl;
-        }
+        //FALTA HACERLO LINDO, CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
+        andypolis.listar_edificios();
         volver();
         break;
 
     case DEMOLER_POR_COORDENADA:
-        // demoler_edificio(mapa,edificios_array, materiales_array, ubicaciones_array);
-        /*idem construir*/
+        //Faltan todos los mensajes y los chequeos y borrarlo de la lista de ubicaciones
+        andypolis.demoler_edificio(3,2);
+        volver();
         break;
 
     case MOSTRAR_MAPA:
+        //TERMINADO
         andypolis.mostrar_mapa();
         volver();
         break;
 
     case CONSULTAR_COORDENADA:
+        //FALTAN VARIOS MENSAJES Y CHEQUEOS
         andypolis.consultar_coordenada(0, 3);
         volver();
         break;
 
     case MOSTRAR_INVENTARIO:
-        // mostrar_inventario(materiales_array);
+        //FALTA MOSTRARLO LINDO CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
+        //LOS MATERIALES SON UNA CLASE QUE DICE LA CANTIDAD!!!! ESTO NO ESTA MUY BIEN, CORREGIR SOLO 
+        //SI HAY TIEMPO
+        andypolis.mostrar_inventario();
+        volver();
         break;
 
     case RECOLECTAR_RECURSOS:
-        // recolectar_recursos(edificios_array);
-        /*edificio va a tener un atributo que sea cant_construido y cant_mat_producido*/
+        //FALTA TODO
         break;
 
     case LLUVIA_RECURSOS:
-        // lluvia_recursos(casillero **mapa, material *materiales_array);
-        /*se genera una coordenada random y se ubica el material en el casillero
-        la lista de materiales es para actualizarla (opcional pero da puntos)*/
+        //FALTA TODO
         break;
 
     case SALIR:
-        // guardar_archivos(mapa, edificios_array, materiales_array, ubicaciones_array);
+        // FALTA GUARDAR EL ARCHIVO UBICACIONES Y MATERIALES
+        //y "LIMPIAR" el mapa si quedaron edificios construidos
         break;
-
+    //FALTA emprolijar tooooooodo el codigo
     default:
         msjeError("Error: opcion invalida");
     }
