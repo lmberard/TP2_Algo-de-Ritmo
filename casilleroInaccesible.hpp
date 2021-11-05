@@ -20,6 +20,8 @@ public:
     // PRE:
     // POS:
     void display();
+
+    void demoler(){};
 };
 
 #endif // CASILLEROINACCESIBLE_HPP

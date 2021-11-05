@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "lista.hpp"
 
 using namespace std;
 

@@ -3,10 +3,9 @@
 
 using namespace std;
 
-Material::Material(string nombre, int cantidad)
+Material::Material(int cant)
 {
-    this->nombre = nombre;
-    this->cantidad = cantidad;
+    cantidad = cant;
 }
 
 Material::~Material()
@@ -25,7 +24,7 @@ int Material::obtener_cantidad()
 
 void Material::modificar_cantidad(int cantidad)
 {
-    this->cantidad += cantidad;
+    this->cantidad = cantidad;
 }
 
 void Material::mostrar_material()

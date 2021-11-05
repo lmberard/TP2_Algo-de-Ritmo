@@ -1,6 +1,5 @@
 #include "edificio.hpp"
 
-
 Edificio::Edificio(int s, int w, int m, int p)
 {
     piedra = s;

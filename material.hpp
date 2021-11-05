@@ -10,16 +10,17 @@ using namespace std;
 
 class Material
 {
-private:
+protected:
     string nombre;
     int cantidad;
+    string codigo;
     // string nombre = "Madera";
     // int cantidad = 50;
 
 public:
     // PRE:
     // POS:
-    Material(string nombre, int cant);
+    Material(int cant);
 
     // PRE:
     // POS:

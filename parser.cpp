@@ -37,7 +37,7 @@ void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
             edificios.alta(new PlantaElectrica(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
     }
 }
-/*
+
 void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
 {
     fstream archivo_materiales(PATH, ios::in);
@@ -55,20 +55,29 @@ void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
     {
 
         archivo_materiales >> cantidad;
-
         if (nombre == "piedra")
-            materiales.alta(new Piedra(nombre, stoi(cantidad)), 1);
+            materiales.alta(new Piedra(stoi(cantidad)));
         if (nombre == "madera")
-            materiales.alta(new Madera(nombre, stoi(cantidad)), 2);
+            materiales.alta(new Madera(stoi(cantidad)));
         if (nombre == "metal")
-            materiales.alta(new Metal(nombre, stoi(cantidad)), 3);
+            materiales.alta(new Metal(stoi(cantidad)));
     }
-*/
+}
+
  void Parser::borrar(Lista<Edificio*> & edificios){
 
     //ofstream archivo_edificios(PATH);
 
 		  for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
           delete edificios[i];
+      }
+    }
+
+    void Parser::borrar(Lista<Material*> & materiales){
+
+    //ofstream archivo_edificios(PATH);
+
+		  for(int i = 1; i < materiales.mostrar_cantidad()+1; i++ ){
+          delete materiales[i];
       }
     }

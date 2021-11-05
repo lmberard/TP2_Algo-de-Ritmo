@@ -40,5 +40,9 @@ public:
             andypolis.recolectar_materiales_reciclados(edificio);
             // andypolis.eliminar_coordenada()
         }*/
+    void demoler(){
+        delete edificio;
+        edificio = NULL;
+    }
 };
 #endif // CASILLEROONSTRUIBLE_HPP

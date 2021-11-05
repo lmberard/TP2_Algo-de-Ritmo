@@ -22,6 +22,7 @@ public:
     // PRE:
     // POS:
     void display();
+    void agregar(Edificio *);
 
     // para la funcion de lluvia de materiales:
 
@@ -31,6 +32,8 @@ public:
          material = new Material(nombre, cantidad);
          andypolis.agregar_material(nombre, cantidad, material);
      }*/
+
+     void demoler(){};
 };
 
 #endif // CASILLEROTRANSITABLE_HPP

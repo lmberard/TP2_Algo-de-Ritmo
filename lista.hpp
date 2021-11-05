@@ -3,6 +3,8 @@
 #include <iostream>
 #include "nodo.hpp"
 
+using namespace std;
+
 template <class Dato>
 class Lista {
     // Atributos
@@ -65,7 +67,6 @@ public:
 
         delete baja;
     }
-
 
     //PRE: -
     //POS: devuelve true si la pila esta vacia, false si no

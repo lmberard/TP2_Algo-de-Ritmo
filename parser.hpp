@@ -17,6 +17,10 @@
 #include "edificioFabrica.hpp"
 #include "edificioPlantaElectrica.hpp"
 
+#include "materialMadera.hpp"
+#include "materialMetal.hpp"
+#include "materialPiedra.hpp"
+
 
 using namespace std;
 
@@ -31,10 +35,11 @@ public:
 
     // PRE:
     // POS:
-    //void cargar(Lista<Material*> &materiales, const string &PATH);
+    void cargar(Lista<Material*> &materiales, const string &PATH);
     //void mostrar(const string &PATH);
 
   void borrar(Lista<Edificio*> & edificios);
+  void borrar(Lista<Material*> & materiales);
 
 };
 

@@ -7,7 +7,7 @@ Mapa::Mapa()
     this->mapa = 0;
 }
 
-Mapa::Mapa(const string &PATH)
+void Mapa::cargar(const string &PATH)
 {
 
     fstream archivo_mapa(PATH, ios::in);
@@ -49,10 +49,10 @@ Mapa::Mapa(const string &PATH)
 
 Mapa::~Mapa()
 {
-    /*
-        for (int i = 0; i < filas; i++)
-            for (int j = 0; j < columnas; j++)
-                delete mapa[i][j];*/
+    
+    for (int i = 0; i < filas; i++)
+        for (int j = 0; j < columnas; j++)
+            delete mapa[i][j];
 
     for (int i = 0; i < filas; i++)
         delete[] this->mapa[i];
@@ -94,37 +94,40 @@ void Mapa::cargar_ubicaciones(const string& PATH){
         archivo_ubicaciones.open(PATH, ios::in);
     }
 
+    Ubicacion ubicacion;
+
     string nombre, aux, coord_x, coord_y;
-    int i = 0;
     while (getline(archivo_ubicaciones, nombre, ' ')){
         if (nombre != "planta"){
-            ubicaciones[i].nombre = nombre;
+            ubicacion.nombre = nombre;
             getline(archivo_ubicaciones, aux, '(');
 
             getline(archivo_ubicaciones, coord_x, ',');
-            ubicaciones[i].coord_x = stoi(coord_x);
+            ubicacion.coord_x = stoi(coord_x);
 
             getline(archivo_ubicaciones, aux, ' ');
             getline(archivo_ubicaciones, coord_y, ')');
-            ubicaciones[i].coord_y = stoi(coord_y);
+            ubicacion.coord_y = stoi(coord_y);
             getline(archivo_ubicaciones, aux);
+            
+            ubicaciones.alta(ubicacion);
         }
-        else{
+        /*else{
 
             getline(archivo_ubicaciones, aux, ' ');
-            ubicaciones[i].nombre = nombre + " " + aux;
+            ubicacion.nombre = nombre + " " + aux;
 
             getline(archivo_ubicaciones, aux, ' ');
 
             getline(archivo_ubicaciones, coord_x, ',');
-            ubicaciones[i].coord_x = stoi(coord_x);
+            ubicacion.coord_x = stoi(coord_x);
 
             getline(archivo_ubicaciones, aux, ' ');
             getline(archivo_ubicaciones, coord_y, ')');
-            ubicaciones[i].coord_y = stoi(coord_y);
+            ubicacion.coord_y = stoi(coord_y);
             getline(archivo_ubicaciones, aux);
-        }
+             ubicaciones.alta(ubicacion);
 
-        i++;
+        }*/
     }
 }

@@ -38,6 +38,8 @@ public:
     // PRE:
     // POS:
     virtual void agregar(Edificio *);
+
+    virtual void demoler() = 0;
 };
 
 #endif // CASILLERO_HPP

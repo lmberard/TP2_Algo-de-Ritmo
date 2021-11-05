@@ -10,6 +10,8 @@
 #include "colors.hpp"
 #include "mapa.hpp"
 #include "lista.hpp"
+#include "parser.hpp"
+#include "ciudad.hpp"
 
 const int OPCION_MINIMA = 1;
 const int OPCION_MAXIMA = 10;
@@ -47,7 +49,7 @@ void volver();
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: Realiza la opcion pedida
-void procesar_opcion(int opcion_elegida, Mapa &andypolis); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
+void procesar_opcion(int opcion_elegida, Ciudad &andypolis); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
@@ -59,7 +61,7 @@ string devolver_rta_usuario();
 
 // pre: Existen los archivos txt correspondientes
 // post: se muestra el menu Principal
-void mostrar_menuInicial(Mapa &andypolis);
+void mostrar_menuInicial(Ciudad & andypolis);
 
 // pre: -
 // post: se verifica que lo ingresado sea una opcion dentro del rango del menu.
