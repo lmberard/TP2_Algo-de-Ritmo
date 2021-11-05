@@ -94,15 +94,19 @@ public:
 
     // PRE:
     // POST: se recolectan los recursos producidos de los edificios construidos y se guardan en la lista de materiales
-    // void recolectar_recursos();
+    void recolectar_recursos();
 
     // PRE:
     // POST: se crean materiales nuevos aleatoriamente y se colocan en los casilleros transitorios y luego se guardan en la lista de materiales(opcional?)
-    // void lluvia_recursos();
+    void lluvia_recursos();
 
     // PRE:
     // POST: se guarda lo de la lista de edificios, materiales y ubicaciones en sus archivos txt
-    // void guardar_archivos();
+    void guardar_archivos();
+
+    bool guardar_ubicaciones();
+
+    bool guardar_materiales();
 };
 
 #endif // CIUDAD_HPP

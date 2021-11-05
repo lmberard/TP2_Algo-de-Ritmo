@@ -5,8 +5,7 @@
 
 using namespace std;
 
- Parser parser;
-
+Parser parser;
 
 void mostrar_InstruccionInicial()
 {
@@ -110,65 +109,65 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis)
 
     switch (opcion_elegida)
     {
-  
+
     case CONSTRUIR_EDIFICIO:
-    //De este, falta: todos los mensajes, chequear las validaciones existentes, crear la validacion del casillero
-    //subir la direccion del edificio creado a ubicacion. 
-       andypolis.construir(1,8,"escuela");
-       volver();
+        // De este, falta: todos los mensajes, chequear las validaciones existentes, crear la validacion del casillero
+        // subir la direccion del edificio creado a ubicacion.
+        andypolis.construir(1, 8, "escuela");
+        volver();
         break;
 
     case LISTAR_CONSTRUIDOS:
-        //FALTA HACERLO LINDO Y VALIDAR EN CASO DE NO HABER CONSTRUIDOS
+        // FALTA HACERLO LINDO Y VALIDAR EN CASO DE NO HABER CONSTRUIDOS
         andypolis.mostrar_ubicaciones();
         volver();
         break;
 
     case LISTAR_TODOS:
-        //FALTA HACERLO LINDO, CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
+        // FALTA HACERLO LINDO, CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
         andypolis.listar_edificios();
         volver();
         break;
 
     case DEMOLER_POR_COORDENADA:
-        //Faltan todos los mensajes y los chequeos y borrarlo de la lista de ubicaciones
-        andypolis.demoler_edificio(3,2);
+        // Faltan todos los mensajes y los chequeos y borrarlo de la lista de ubicaciones
+        andypolis.demoler_edificio(3, 2);
         volver();
         break;
 
     case MOSTRAR_MAPA:
-        //TERMINADO
+        // TERMINADO
         andypolis.mostrar_mapa();
         volver();
         break;
 
     case CONSULTAR_COORDENADA:
-        //FALTAN VARIOS MENSAJES Y CHEQUEOS
+        // FALTAN VARIOS MENSAJES Y CHEQUEOS
         andypolis.consultar_coordenada(0, 3);
         volver();
         break;
 
     case MOSTRAR_INVENTARIO:
-        //FALTA MOSTRARLO LINDO CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
-        //LOS MATERIALES SON UNA CLASE QUE DICE LA CANTIDAD!!!! ESTO NO ESTA MUY BIEN, CORREGIR SOLO 
-        //SI HAY TIEMPO
+        // FALTA MOSTRARLO LINDO CREO QUE HAY QUE ASUMIR QUE VIENE TODO BIEN
+        // LOS MATERIALES SON UNA CLASE QUE DICE LA CANTIDAD!!!! ESTO NO ESTA MUY BIEN, CORREGIR SOLO
+        // SI HAY TIEMPO
         andypolis.mostrar_inventario();
         volver();
         break;
 
     case RECOLECTAR_RECURSOS:
-        //FALTA TODO
+        // FALTA TODO
         break;
 
     case LLUVIA_RECURSOS:
-        //FALTA TODO
+        // FALTA TODO
         break;
 
     case SALIR:
-        // FALTA GUARDAR EL ARCHIVO UBICACIONES Y MATERIALES
-        //y "LIMPIAR" el mapa si quedaron edificios construidos
+        andypolis.guardar_archivos();
+        // y "LIMPIAR" el mapa si quedaron edificios construidos
         break;
-    //FALTA emprolijar tooooooodo el codigo
+    // FALTA emprolijar tooooooodo el codigo
     default:
         msjeError("Error: opcion invalida");
     }

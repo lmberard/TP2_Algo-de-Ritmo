@@ -147,3 +147,73 @@ void Ciudad::consultar_coordenada(int x, int y)
 {
     mapa.consultar_coordenada(x, y);
 }
+
+void Ciudad::recolectar_recursos()
+{
+    // recorro la lista de ubicaciones
+    // busco la ubicacion en mapa
+    // guardo en materiales
+}
+
+void Ciudad::lluvia_recursos()
+{
+    srand((unsigned)time(NULL));
+    // int i = 0, cant_permitida = 1, x = 0, y = 0;
+
+    /*REVISAR MADERA Y PIEDRA PROQUE DIVIDE POR CERO Y NO DAHH AUNQUE LO PROBE SIN ESE COMPILADOR Y FUNCIONA
+    VER OTRA FORMA!!!*/
+    int cant_madera = rand() % (CANT_MAX_RANDOM_MADERA - CANT_MIN_RANDOM_MADERA) + CANT_MIN_RANDOM_MADERA;
+    int cant_piedra = rand() % (CANT_MAX_RANDOM_PIEDRA - CANT_MIN_RANDOM_PIEDRA) + CANT_MIN_RANDOM_PIEDRA;
+    int cant_metal = rand() % (CANT_MAX_RANDOM_METAL - CANT_MIN_RANDOM_METAL) + CANT_MIN_RANDOM_METAL;
+
+    cout << cant_madera << endl;
+    cout << cant_piedra << endl;
+    cout << cant_metal << endl;
+}
+
+void Ciudad::guardar_archivos()
+{
+    if (!guardar_materiales())
+        cout << "No se pudieron guardar los materiales" << endl;
+    else if (!guardar_ubicaciones())
+        cout << "No se pudieron guardar las ubicaciones" << endl;
+    else
+        cout << "Se guardaron los cambios en ubicaciones.txt y materiales.txt! Hasta pronto :)" << endl;
+}
+
+bool Ciudad::guardar_ubicaciones()
+{
+    ofstream ubicaciones_out;
+    ubicaciones_out.open("ubicaciones.txt");
+
+    if (ubicaciones_out.is_open())
+    {
+        for (int i = 1; i < mapa.cant_edificios() + 1; i++)
+        {
+            ubicaciones_out << mapa.ubicacion_nombre(i) << " "
+                            << "(" << mapa.ubicacion_coord_x(i) << ", "
+                            << mapa.ubicacion_coord_y(i) << ")" << endl;
+        }
+        return true;
+    }
+    else
+        return false;
+}
+
+bool Ciudad::guardar_materiales()
+{
+    ofstream materiales_out;
+    materiales_out.open("materiales.txt");
+
+    if (materiales_out.is_open())
+    {
+        for (int i = 1; i < materiales.mostrar_cantidad() + 1; i++)
+        {
+            materiales_out << materiales[i]->obtener_nombre() << " "
+                           << materiales[i]->obtener_cantidad() << endl;
+        }
+        return true;
+    }
+    else
+        return false;
+}
