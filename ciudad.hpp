@@ -36,10 +36,6 @@ private:
     // Lista<Ubicacion> ubicaciones; //esta en mapa
     Parser parser;
 
-    int cant_edificios;
-    int cant_materiales;
-    int cant_ubicaciones;
-
 public:
     // CONSTRUCTOR-DESTRUCTOR--------------------------
     // PRE:
@@ -123,6 +119,52 @@ public:
     // PRE:
     // POST: se elimina la ubicacion de la lista de ubicaciones
     void eliminar_ubicacion(string nombre_edificio, int x, int y);
+
+    void procesar_archivos();
+
+    void mostrar_mapa();
+
+    void listar_edificios();
+
+    void mostrar_inventario();
+
+    void consultar_coordenada(int x, int y);
+
+    // FUNCIONES DEL MENU PRINCIPAL--------------------
+    void construir_edificio(string nombre, int x, int y);
+
+    void listar_edificios_construidos();
+
+    void listar_edificios();
+
+    void demoler_edificio(int x, int y);
+
+    void recolectar_recursos();
+
+    void lluvia_recursos();
+
+    void guardar_archivos();
+
+    // FUNCIONES AUXILIARES----------------------------
+    void agregar_material_en_coordenada(string nombre_material, int cantidad, int x, int y);
+
+    void construir(int x, int y, string edificio);
+
+    void restar_materiales_construccion(string nombre_edificio);
+
+    void agregar_ubicacion(string nombre_edificio, int x, int y);
+
+    void demoler_edificio(int x, int y);
+
+    void recolectar_materiales_reciclados(string nombre_edificio);
+
+    void eliminar_ubicacion(string nombre_edificio, int x, int y);
+
+    void chequear_stock(int i);
+
+    void cargar_ubicaciones();
+
+    void mostrar_ubicaciones();
 };
 
 #endif // CIUDAD_HPP

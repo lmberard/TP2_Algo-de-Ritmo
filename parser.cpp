@@ -1,6 +1,6 @@
 #include "parser.hpp"
 
-void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
+void Parser::cargar(Lista<Edificio *> &edificios, const string &PATH)
 {
     fstream archivo_edificios(PATH, ios::in);
 
@@ -27,8 +27,6 @@ void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
             edificios.alta(new Fabrica(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "escuela")
             edificios.alta(new Escuela(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
-        if (nombre == "yacimiento")
-            edificios.alta(new Yacimiento(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "mina")
             edificios.alta(new Mina(stoi(piedra), stoi(madera), stoi(metal), stoi(permitidos)));
         if (nombre == "obelisco")
@@ -38,7 +36,7 @@ void Parser::cargar(Lista<Edificio*> &edificios, const string &PATH)
     }
 }
 
-void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
+void Parser::cargar(Lista<Material *> &materiales, const string &PATH)
 {
     fstream archivo_materiales(PATH, ios::in);
 
@@ -64,20 +62,24 @@ void Parser::cargar(Lista<Material*> &materiales, const string &PATH)
     }
 }
 
- void Parser::borrar(Lista<Edificio*> & edificios){
+void Parser::borrar(Lista<Edificio *> &edificios)
+{
 
-    //ofstream archivo_edificios(PATH);
+    // ofstream archivo_edificios(PATH);
 
-		  for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
-          delete edificios[i];
-      }
+    for (int i = 1; i < edificios.mostrar_cantidad() + 1; i++)
+    {
+        delete edificios[i];
     }
+}
 
-    void Parser::borrar(Lista<Material*> & materiales){
+void Parser::borrar(Lista<Material *> &materiales)
+{
 
-    //ofstream archivo_edificios(PATH);
+    // ofstream archivo_edificios(PATH);
 
-		  for(int i = 1; i < materiales.mostrar_cantidad()+1; i++ ){
-          delete materiales[i];
-      }
+    for (int i = 1; i < materiales.mostrar_cantidad() + 1; i++)
+    {
+        delete materiales[i];
     }
+}

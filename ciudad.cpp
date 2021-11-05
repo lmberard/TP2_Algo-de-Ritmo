@@ -1,6 +1,63 @@
 
 #include "ciudad.hpp"
 
+#include "ciudad.hpp"
+
+// CONSTRUCTOR-DESTRUCTOR--------------------------
+// FALTA REVISAR PARSER
+void Ciudad::procesar_archivos()
+{
+    mapa.cargar("mapa.txt");
+    mapa.cargar_ubicaciones("ubicaciones.txt");
+    parser.cargar(edificios, "edificios.txt");
+    parser.cargar(materiales, "materiales.txt");
+    cargar_ubicaciones();
+}
+
+void Ciudad::mostrar_mapa()
+{
+    mapa.mostrar_mapa();
+}
+
+void Ciudad::listar_edificios()
+{
+    for (int i = 1; i < edificios.mostrar_cantidad() + 1; i++)
+    {
+        cout << edificios[i]->obtener_nombre() << '\t'
+             << edificios[i]->obtener_madera() << '\t'
+             << edificios[i]->obtener_metal() << '\t'
+             << edificios[i]->obtener_piedra() << '\t'
+             << edificios[i]->obtener_cant_max() << '\t'
+             << edificios[i]->obtener_cant_max() << '\t' // ESTO HABRIA QUE RESTARLO CON CUANTOS HAY YA
+             << edificios[i]->obtener_cant_mat_producido() << ' '
+             << edificios[i]->obtener_mat_producido()
+             << endl;
+    }
+}
+
+void Ciudad::mostrar_inventario()
+{
+    for (int i = 1; i < materiales.mostrar_cantidad() + 1; i++)
+    {
+        cout << materiales[i]->obtener_nombre() << '\t'
+             << materiales[i]->obtener_cantidad() << ' '
+             << endl;
+
+        // materiales[i]->mostrar_material();
+    }
+}
+
+Ciudad::~Ciudad()
+{
+    parser.borrar(edificios);
+    parser.borrar(materiales);
+}
+
+void Ciudad::consultar_coordenada(int x, int y)
+{
+    mapa.consultar_coordenada(x, y);
+}
+
 // CONSTRUCTOR-DESTRUCTOR--------------------------
 Ciudad::Ciudad()
 {
@@ -12,10 +69,6 @@ Ciudad::Ciudad()
     cant_materiales = materiales.mostrar_cantidad();
     cant_edificios = edificios.mostrar_cantidad();
     cant_ubicaciones = ubicaciones.mostrar_cantidad();
-}
-
-Ciudad::~Ciudad()
-{
 }
 
 // FUNCIONES DEL MENU PRINCIPAL--------------------
@@ -67,24 +120,6 @@ void Ciudad::demoler_edificio(int x, int y)
     // this->Mapa.destruir_edificio(x,y);
     // this.recolectar_materiales_construccion()
     cout << "falta hacer jeje" << endl;
-}
-
-void Ciudad::mostrar_mapa()
-{
-    this->mapa.mostrar_mapa();
-}
-
-void Ciudad::consultar_coordenada(int x, int y)
-{
-    this->mapa.consultar_coordenada(x, y);
-}
-
-void Ciudad::mostrar_inventario()
-{
-    for (int i = 0; i < cant_materiales; i++)
-    {
-        materiales[i]->mostrar_material();
-    }
 }
 
 // FALTA
@@ -143,23 +178,32 @@ void Ciudad::guardar_archivos()
 }
 
 // FUNCIONES AUXILIARES----------------------------
-
-// LLUVIA DE RECURSOS
-// FALTA
 void Ciudad::agregar_material_en_coordenada(string nombre_material, int cantidad, int x, int y)
 {
     cout << "falta hacer jeje" << endl;
 }
 
-// CONSTRUIR EDIFICIO
-// FALTA
-void Ciudad::agregar_edificio(string nombre_edificio, int x, int y)
+void Ciudad::construir(int x, int y, string edificio)
 {
-    // edificios.agregar(nombre_edificio, x, y);
-    cout << "falta hacer jeje" << endl;
+    chequear_stock(buscar_edificio(edificio));
+    // chequear_casillero()
+
+    if (edificio == "yacimiento")
+        mapa.agregar_edificio(x, y, new Yacimiento(edificios[buscar_edificio(edificio)]));
+    if (edificio == "aserradero")
+        mapa.agregar_edificio(x, y, new Aserradero(edificios[buscar_edificio(edificio)]));
+    if (edificio == "escuela")
+        mapa.agregar_edificio(x, y, new Escuela(edificios[buscar_edificio(edificio)]));
+    if (edificio == "fabrica")
+        mapa.agregar_edificio(x, y, new Fabrica(edificios[buscar_edificio(edificio)]));
+    if (edificio == "mina")
+        mapa.agregar_edificio(x, y, new Mina(edificios[buscar_edificio(edificio)]));
+    if (edificio == "obelisco")
+        mapa.agregar_edificio(x, y, new Obelisco(edificios[buscar_edificio(edificio)]));
+    if (edificio == "planta electrica")
+        mapa.agregar_edificio(x, y, new PlantaElectrica(edificios[buscar_edificio(edificio)]));
 }
 
-// ya esta
 void Ciudad::restar_materiales_construccion(string nombre_edificio)
 {
     // recorro lista de edificios
@@ -188,11 +232,9 @@ void Ciudad::agregar_ubicacion(string nombre_edificio, int x, int y)
     cout << "hola";
 }
 
-// DESTRUIR EDIFICIO
-// falta
-void Ciudad::destruir_edificio(string nombre_edificio, int x, int y)
+void Ciudad::demoler_edificio(int x, int y)
 {
-    cout << "falta hacer jeje" << endl;
+    mapa.demoler_edificio(x, y);
 }
 
 void Ciudad::recolectar_materiales_reciclados(string nombre_edificio)
@@ -217,8 +259,77 @@ void Ciudad::recolectar_materiales_reciclados(string nombre_edificio)
     }
 }
 
-// ya esta
 void Ciudad::eliminar_ubicacion(string nombre_edificio, int x, int y)
 {
     cout << "hola";
+}
+
+int Ciudad::buscar_edificio(string edificio)
+{
+    int i = 1;
+
+    int cantidad = edificios.mostrar_cantidad();
+    while (cantidad && (edificios[i]->obtener_nombre() != edificio))
+    {
+        i++;
+        --cantidad;
+    }
+
+    return i;
+}
+
+void Ciudad::chequear_stock(int i)
+{
+    int cuenta = 0;
+    for (int j = 1; j < materiales.mostrar_cantidad() + 1; j++)
+    {
+        if (materiales[j]->obtener_nombre() == "Piedra")
+        {
+            cuenta = materiales[j]->obtener_cantidad() - edificios[i]->obtener_piedra();
+            if (cuenta < 0)
+            {
+                cout << "falta " << materiales[j]->obtener_nombre() << endl;
+                // flag = 0;
+            }
+            else
+                materiales[j]->modificar_cantidad(cuenta);
+        }
+        if (materiales[j]->obtener_nombre() == "Madera")
+        {
+            cuenta = materiales[j]->obtener_cantidad() - edificios[i]->obtener_madera();
+            if (cuenta < 0)
+            {
+                cout << "falta " << materiales[j]->obtener_nombre() << endl;
+                // flag = 0;
+            }
+            else
+                materiales[j]->modificar_cantidad(cuenta);
+        }
+        if (materiales[j]->obtener_nombre() == "Metal")
+        {
+            cuenta = materiales[j]->obtener_cantidad() - edificios[i]->obtener_metal();
+            if (cuenta < 0)
+            {
+                cout << "falta " << materiales[j]->obtener_nombre() << endl;
+                // flag = 0;
+            }
+            else
+                materiales[j]->modificar_cantidad(cuenta);
+        }
+    }
+}
+
+void Ciudad::cargar_ubicaciones()
+{
+    Ubicacion edificio;
+    for (int i = 1; i < mapa.cant_edificios() + 1; i++)
+    {
+        edificio = mapa.devolver_ubicacion(i);
+        construir(edificio.coord_x, edificio.coord_y, edificio.nombre);
+    }
+}
+
+void Ciudad::mostrar_ubicaciones()
+{
+    mapa.mostrar_ubicaciones();
 }
