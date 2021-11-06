@@ -1,0 +1,3 @@
+escuela (4, 8)
+escuela (3, 4)
+aserradero (0, 2)
