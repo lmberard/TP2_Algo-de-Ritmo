@@ -77,6 +77,16 @@ int Constructor::buscar_edificio(string edificio)
     return pos;
 }
 
+Edificio * Constructor::mostrar_edificio(int i)
+{
+    return edificios[i];
+}
+
+int Constructor::cant_edificios()
+{
+    return edificios.mostrar_cantidad();
+}
+
 Constructor::~Constructor()
 {
 	for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
