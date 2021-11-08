@@ -16,14 +16,13 @@ class Ciudad{
     Lista<Provision> provisiones;
     Lista<Ubicacion> ubicaciones;
 
-    Terreno terreno;
     int filas;
     int columnas;
     Casillero ***mapa;
 
     public:
         Ciudad();
-        Ciudad(const string &,const string &, const string &,Constructor & bob, Recurso & recurso);
+        Ciudad(const string &,const string &, const string &,Terreno & terreno,Constructor & bob, Recurso & recurso);
         ~Ciudad();
 
         void mostrar_mapa();
