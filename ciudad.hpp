@@ -71,4 +71,5 @@ class Ciudad{
             //Si se llenan todos los casilleros decir mensaje 
         }
 
+        void listar_edificios(Constructor & bob);
 };
