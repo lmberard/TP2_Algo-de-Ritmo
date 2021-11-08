@@ -1,6 +1,6 @@
 #include "ciudad.hpp"
 
-Ciudad::Ciudad(const string & PATH1, const string & PATH2, const string & PATH3, Constructor & bob, Recurso & recurso)
+Ciudad::Ciudad(const string & PATH1, const string & PATH2, const string & PATH3,Terreno & terreno, Constructor & bob, Recurso & recurso)
 {
     cargar_provisiones(PATH2,recurso);
     cargar_ubicaciones(PATH3);
@@ -371,3 +371,4 @@ void Ciudad::quitar_ubicacion(int x,int y)
         if(ubicaciones[i].coord_x == x && ubicaciones[i].coord_y == y)
             ubicaciones.baja(i);
 }
+
