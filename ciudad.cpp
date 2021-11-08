@@ -372,3 +372,22 @@ void Ciudad::quitar_ubicacion(int x,int y)
             ubicaciones.baja(i);
 }
 
+void Ciudad::listar_edificios(Constructor & bob)
+{
+    int cant_edificios = bob.cant_edificios();
+    Edificio * edificio; 
+            
+    for(int i = 1; i < cant_edificios + 1; i++){
+        edificio = bob.mostrar_edificio(i);
+        cout << edificio->obtener_nombre() << '\t'
+             << edificio->obtener_madera() << '\t'
+             << edificio->obtener_metal()  << '\t'
+             << edificio->obtener_piedra() << '\t'
+             << edificio->obtener_cant_max() << '\t'
+             << edificio->obtener_cant_max() - construidos(edificio->obtener_nombre()) << '\t' 
+             << edificio->obtener_cant_mat_producido() << ' '
+             << edificio->obtener_mat_producido()    
+             << endl;
+    }
+}
+
