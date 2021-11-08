@@ -26,6 +26,7 @@ int main(){
     andypolis.mostrar_inventario();
     andypolis.recolectar();
     andypolis.mostrar_inventario();
+    andypolis.listar_edificios(bob);
     
     return 0;
 }
