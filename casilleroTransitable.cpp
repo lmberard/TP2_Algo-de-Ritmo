@@ -24,7 +24,8 @@ void CasilleroTransitable ::display()
      andypolis.agregar_material(nombre, cantidad, material);
  }*/
 
-void CasilleroTransitable::agregar(Edificio *)
+bool CasilleroTransitable::agregar(Edificio *)
 {
     cout << "No puedes construir en este casillero" << endl;
+    return NULL;
 }
