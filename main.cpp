@@ -7,16 +7,24 @@
 using namespace std;
 
 int main(){
-    Ciudad andypolis("mapa.txt");
+
+    Constructor bob("edificios.txt");
+    Recurso recurso;
+
+    Ciudad andypolis("mapa.txt","materiales.txt","ubicaciones.txt",bob,recurso);
+    
     andypolis.mostrar_mapa();
     andypolis.consultar_coordenada(3,4);
-    andypolis.chequear_permisos_edificio("aserradero");
-    //andypolis.construir(0,2,"aserradero");
-    //andypolis.demoler_edificio(0,2);
-    //andypolis.demoler_todo();
+    andypolis.chequear_permisos_edificio("aserradero",bob);
+    andypolis.construir(0,3,"aserradero",bob);
+
+    andypolis.construir(8,10,"aserradero",bob);
+    andypolis.demoler_edificio(10,10);
     andypolis.mostrar_ubicaciones();
     andypolis.mostrar_mapa();
+    andypolis.mostrar_inventario();
+    andypolis.recolectar();
+    andypolis.mostrar_inventario();
     
-
     return 0;
 }
