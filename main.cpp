@@ -8,10 +8,11 @@ using namespace std;
 
 int main(){
 
+    Terreno terreno;
     Constructor bob("edificios.txt");
     Recurso recurso;
 
-    Ciudad andypolis("mapa.txt","materiales.txt","ubicaciones.txt",bob,recurso);
+    Ciudad andypolis("mapa.txt","materiales.txt","ubicaciones.txt",terreno,bob,recurso);
     
     andypolis.mostrar_mapa();
     andypolis.consultar_coordenada(3,4);
