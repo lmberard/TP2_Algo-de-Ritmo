@@ -14,9 +14,7 @@ class Constructor{
     Lista<Edificio*> edificios;
         int buscar_edificio(string edificio);
     public: 
-        Constructor();
-        void cargar(const string &PATH);
-        Lista<Edificio*>  lista();
-        void borrar();
+        Constructor(const string & PATH);
+        ~Constructor();
         Edificio * construye(const string & edificio);
 };
