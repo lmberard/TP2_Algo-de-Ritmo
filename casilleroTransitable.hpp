@@ -22,7 +22,7 @@ public:
     // PRE:
     // POS:
     void display();
-    void agregar(Edificio *);
+    bool agregar(Edificio *);
 
     // para la funcion de lluvia de materiales:
 
