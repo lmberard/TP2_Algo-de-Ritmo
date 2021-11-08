@@ -4,9 +4,14 @@ CasilleroConstruible ::CasilleroConstruible() : Casillero(){}
 
 CasilleroConstruible ::~CasilleroConstruible(){}
 
-void CasilleroConstruible ::agregar(Edificio *edificio)
+bool CasilleroConstruible ::agregar(Edificio *edificio)
 {
+    if(this->edificio){
+        cout << "ya hay un edificio aca" << endl;
+        return NULL;
+    }
     this->edificio = edificio;
+    return true;
 }
 
 void CasilleroConstruible ::mostrar()
@@ -25,6 +30,17 @@ void CasilleroConstruible ::display()
         cout << TXT_BLACK_16 << TXT_UNDERLINE << BGND_GREEN_2 << " " << edificio->obtener_codigo() << " " << END_COLOR << " ";
 }
 
+string CasilleroConstruible::obtener_material(){
+    return edificio->obtener_mat_producido();
+}
+
+int CasilleroConstruible::obtener_cantidad(){
+    return edificio->obtener_cant_mat_producido();
+}
+
+Edificio * CasilleroConstruible::mostrar_edificio(){
+    return edificio;
+}
 /*
     void CasilleroConstruible ::construir_edificio(Ciudad andypolis, string nombre)
     {
@@ -39,3 +55,4 @@ void CasilleroConstruible ::display()
         andypolis.recolectar_materiales_reciclados(edificio);
         // andypolis.eliminar_coordenada()
     }*/
+
