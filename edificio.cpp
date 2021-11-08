@@ -18,6 +18,8 @@ Edificio::Edificio(Edificio * edificio)
     piedra = edificio->obtener_piedra();
     metal  = edificio->obtener_metal();
     cant_max_construccion = edificio->obtener_cant_max();
+    mat_que_produce = edificio->obtener_mat_producido();
+    cant_mat_que_produce = edificio->obtener_cant_mat_producido();
 }
 
 string Edificio::obtener_nombre()
@@ -33,6 +35,44 @@ int Edificio::obtener_madera()
 int Edificio::obtener_metal()
 {
     return metal;
+}
+
+int Edificio::obtener_piedra()
+{
+    return piedra;
+}
+
+int Edificio::obtener_cant_max()
+{
+    return cant_max_construccion;
+}
+
+string Edificio::obtener_codigo()
+{
+    return codigo;
+}
+
+int Edificio::obtener_cant_mat_producido()
+{
+    return cant_mat_que_produce;
+}
+
+string Edificio::obtener_mat_producido()
+{
+    return mat_que_produce;
+}
+
+void Edificio::mostrar_edificio()
+{
+    cout << TXT_UNDERLINE << "TIPO DE EDIFICIO:" << END_COLOR << " " + nombre << endl;
+    cout << "\tCantidad de piedra: " << to_string(piedra) << endl;
+    cout << "\tCantidad de madera: " << to_string(madera) << endl;
+    cout << "\tCantidad de metal: " << to_string(metal) << endl;
+    cout << "\tUnidad máxima de construccion: " << to_string(cant_max_construccion) << endl;
+    cout << "\tMaterial que produce: " << mat_que_produce << endl;
+    cout << "\tCantidad de material que produce: " << to_string(cant_mat_que_produce) << endl;
+    cout << endl;
+}
 }
 
 int Edificio::obtener_piedra()
