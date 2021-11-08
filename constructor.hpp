@@ -17,4 +17,6 @@ class Constructor{
         Constructor(const string & PATH);
         ~Constructor();
         Edificio * construye(const string & edificio);
+        int cant_edificios();
+        Edificio * mostrar_edificio(int i);
 };
