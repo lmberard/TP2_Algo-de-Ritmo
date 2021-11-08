@@ -1,19 +1,18 @@
 #include "ciudad.hpp"
 
-Ciudad::Ciudad(const string & PATH)
+Ciudad::Ciudad(const string & PATH1, const string & PATH2, const string & PATH3, Constructor & bob, Recurso & recurso)
 {
-    bob.cargar("edificios.txt");
-    cargar_provisiones("materiales.txt");
-    cargar_ubicaciones("ubicaciones.txt");
+    cargar_provisiones(PATH2,recurso);
+    cargar_ubicaciones(PATH3);
     
-    fstream archivo_mapa(PATH, ios::in);
+    fstream archivo_mapa(PATH1, ios::in);
 
     if (!archivo_mapa.is_open())
     {
-        cout << "No se encontro un archivo con nombre \"" << PATH << "\", se va a crear el archivo" << endl;
-        archivo_mapa.open(PATH, ios::out);
+        cout << "No se encontro un archivo con nombre \"" << PATH1 << "\", se va a crear el archivo" << endl;
+        archivo_mapa.open(PATH1, ios::out);
         archivo_mapa.close();
-        archivo_mapa.open(PATH, ios::in);
+        archivo_mapa.open(PATH1, ios::in);
     }
 
     string casillero, filas_, columnas_;
@@ -35,12 +34,13 @@ Ciudad::Ciudad(const string & PATH)
         }
     }
 
-    cargar_ubicaciones();
+    cargar_ubicaciones(bob);
 }
 
 Ciudad::~Ciudad()
 {
     demoler_todo();
+
     for (int i = 0; i < filas; i++)
         for (int j = 0; j < columnas; j++)
             delete mapa[i][j];
@@ -50,12 +50,9 @@ Ciudad::~Ciudad()
 
     delete[] mapa;
 
-    bob.borrar();
     guardar_ubicaciones();
-    for(int i = 1; i < provisiones.mostrar_cantidad()+1; i++)
-        delete provisiones[i].material;
+    guardar_materiales();
 }
-
 
 void Ciudad::mostrar_mapa()
 {
@@ -69,21 +66,25 @@ void Ciudad::mostrar_mapa()
     }
 }
 
-
 void Ciudad::consultar_coordenada(int i, int j)
 {
     cout << "Hola, estás en la posición" << i << j << endl;
     mapa[i][j]->mostrar();
 }
 
-void Ciudad::construir(int x, int y,const string & eledificio)
+void Ciudad::construir(int x, int y,const string & eledificio, Constructor & bob )
 {
-    Edificio * edificio = bob.construye(eledificio);
-    mapa[x][y]->agregar(edificio);
-    agregar_ubicacion(x,y,eledificio);
+    if(x < filas && y < columnas){
+        Edificio * edificio = bob.construye(eledificio);
+        chequear_stock(edificio,true);
+        if(mapa[x][y]->agregar(edificio))
+            agregar_ubicacion(x,y,eledificio);
+        else 
+            delete edificio;
+    }
 }
 
-void Ciudad::cargar_ubicaciones()
+void Ciudad::cargar_ubicaciones(Constructor & bob)
 {
     Ubicacion ubicacion; 
     for(int i = 1; i < ubicaciones.mostrar_cantidad() +1;i++){
@@ -143,7 +144,7 @@ void Ciudad::cargar_ubicaciones(const string& PATH)
     }
 }
 
-void Ciudad::cargar_provisiones(const string & PATH)
+void Ciudad::cargar_provisiones(const string & PATH,Recurso & recurso)
 {
     fstream archivo_materiales(PATH, ios::in);
 
@@ -176,13 +177,20 @@ void Ciudad::mostrar_inventario()
     }
 }
 
-bool Ciudad::chequear_permisos_edificio(const string & eledificio)
+bool Ciudad::chequear_permisos_edificio(const string & eledificio, Constructor & bob)
 {
     Edificio * edificio = bob.construye(eledificio);
     int flag = 1;
     if(edificio){
-        if(chequear_stock(edificio))
+        if(chequear_stock(edificio, false)){
             flag = 1;
+            if(edificio->obtener_cant_max() > construidos(eledificio))
+                flag = 1;
+            else{
+                flag = 0;
+                cout << "ya hay bastantes de este" << endl;
+            }
+        }
         else
             flag = 0;
         delete edificio;
@@ -194,7 +202,7 @@ bool Ciudad::chequear_permisos_edificio(const string & eledificio)
     return flag;
 }
 
-bool Ciudad::chequear_stock(Edificio * edificio)
+bool Ciudad::chequear_stock(Edificio * edificio, bool construir)
 {
     int cuenta = 0;
     bool flag = 1;
@@ -206,7 +214,7 @@ bool Ciudad::chequear_stock(Edificio * edificio)
                 cout << "falta " << provisiones[j].material->obtener_nombre() << endl;
                 flag = 0;
             }
-            else
+            if(construir)
                 provisiones[j].cantidad = cuenta;
         }
         if(provisiones[j].material->obtener_nombre() == "madera"){
@@ -215,7 +223,7 @@ bool Ciudad::chequear_stock(Edificio * edificio)
                 cout << "falta " << provisiones[j].material->obtener_nombre() << endl;
                 flag = 0;
             }
-            else
+            if(construir)
                 provisiones[j].cantidad = cuenta;
         }
         if(provisiones[j].material->obtener_nombre() == "metal"){
@@ -224,7 +232,7 @@ bool Ciudad::chequear_stock(Edificio * edificio)
                 cout << "falta " << provisiones[j].material->obtener_nombre() << endl;
                 flag = 0;
             }
-            else
+            if(construir)
                 provisiones[j].cantidad = cuenta;
         }
     }
@@ -243,7 +251,29 @@ void Ciudad::agregar_ubicacion(int x,int y,string edificio)
 
 void Ciudad::demoler_edificio(int x, int y)
 {
+    int cuenta = 0;
+    if(x < filas && y < columnas){
+    Edificio *edificio = mapa[x][y]->mostrar_edificio();
+    
+    if(edificio){
+    for(int j = 1; j < provisiones.mostrar_cantidad()+1; j++ ){
+        if(provisiones[j].material->obtener_nombre() == "piedra"){
+            cuenta = provisiones[j].cantidad + edificio->obtener_piedra()/2; 
+            provisiones[j].cantidad = cuenta;
+        }
+        if(provisiones[j].material->obtener_nombre() == "madera"){
+            cuenta = provisiones[j].cantidad + edificio->obtener_madera()/2; 
+            provisiones[j].cantidad = cuenta;
+        }
+        if(provisiones[j].material->obtener_nombre() == "metal"){
+            cuenta = provisiones[j].cantidad + edificio->obtener_metal()/2; 
+            provisiones[j].cantidad = cuenta;
+        }
+    }
     mapa[x][y]->demoler();
+    quitar_ubicacion(x,y);
+    }
+    }
 }
 
 bool Ciudad::guardar_ubicaciones()
@@ -261,6 +291,15 @@ bool Ciudad::guardar_ubicaciones()
     }
     else
         return false;
+}
+
+void Ciudad::guardar_materiales()
+{
+    ofstream archivo_materiales("materiales.txt");
+    for(int i = 1; i < provisiones.mostrar_cantidad()+1; i++){
+        archivo_materiales << provisiones[i].material->obtener_nombre() << ' ' << provisiones[i].cantidad << '\n';
+        delete provisiones[i].material;
+    }
 }
 
 void Ciudad::demoler_todo()
@@ -299,4 +338,36 @@ void Ciudad::mostrar_ubicaciones()
         while (! auxiliar.vacia())
             auxiliar.baja(1);
     }
+}
+
+int Ciudad::construidos(const string &edificio)
+{
+
+    int cant = 0;
+    for(int i = 1; i < ubicaciones.mostrar_cantidad()+1; i++ )
+        if(ubicaciones[i].nombre == edificio)
+            cant++;
+
+    return cant;
+}
+
+void Ciudad::recolectar()
+{
+    string material; 
+    int cantidad;
+ 
+    for(int i = 1; i < ubicaciones.mostrar_cantidad()+1; i++){
+        material = mapa[ubicaciones[i].coord_x][ubicaciones[i].coord_y]->obtener_material();
+        cantidad = mapa[ubicaciones[i].coord_x][ubicaciones[i].coord_y]->obtener_cantidad();
+        for(int j = 1; j < provisiones.mostrar_cantidad()+1; j++)
+            if(material == provisiones[j].material->obtener_nombre())
+                provisiones[j].cantidad += cantidad; 
+    }
+}
+
+void Ciudad::quitar_ubicacion(int x,int y)
+{
+    for(int i = 1; i < ubicaciones.mostrar_cantidad()+1; i++ )
+        if(ubicaciones[i].coord_x == x && ubicaciones[i].coord_y == y)
+            ubicaciones.baja(i);
 }
