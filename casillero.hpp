@@ -32,7 +32,17 @@ public:
 
     // PRE:
     // POS:
-    virtual void agregar(Edificio *);
+    virtual bool agregar(Edificio *);
+
+    virtual string obtener_material();
+    virtual int obtener_cantidad();
+
+    virtual Edificio* mostrar_edificio();
+
+    virtual void demoler() = 0;
+};
+
+#endif // CASILLERO_HPP
 
     virtual void demoler() = 0;
 };
