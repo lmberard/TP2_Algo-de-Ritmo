@@ -17,7 +17,7 @@ public:
 
     // PRE:
     // POS:
-    void agregar(Edificio *edificio);
+    bool agregar(Edificio *edificio);
 
     // PRE:
     // POS:
@@ -44,5 +44,10 @@ public:
         delete edificio;
         edificio = NULL;
     }
+
+    string obtener_material();
+    int obtener_cantidad();
+
+    Edificio * mostrar_edificio();
 };
 #endif // CASILLEROONSTRUIBLE_HPP
