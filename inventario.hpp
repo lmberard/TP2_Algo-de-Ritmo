@@ -92,10 +92,22 @@ class Inventario{
             }
         }
 
+        void agregar_al_inventario(Edificio * edificio){
+
+            int cuenta;
+
+            for(int j = 1; j < materiales1.mostrar_cantidad()+1; j++){
+            if(edificio->obtener_mat_producido() == materiales1[j]->obtener_nombre()){
+                cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_cant_mat_producido();
+                materiales1[j]->modificar_cantidad(cuenta);  
+            }
+        }
+        }
+
         ~Inventario(){
-            //ofstream archivo_materiales("materiales.txt");
+            ofstream archivo_materiales("materiales.txt");
                 for(int i = 1; i < materiales1.mostrar_cantidad()+1; i++){
-                   // archivo_materiales << materiales1[i]->obtener_nombre() << ' ' << materiales1[i]->obtener_cantidad() << '\n';
+                    archivo_materiales << materiales1[i]->obtener_nombre() << ' ' << materiales1[i]->obtener_cantidad() << '\n';
                     delete materiales1[i];
                 }
         }

@@ -13,17 +13,16 @@
 
 class Ciudad{
 
-    Lista<Material*> materiales1;
     Inventario inventario;
 
     Lista<Ubicacion> ubicaciones;
     Lista<Ubicacion> materiales;
 
-    Lista<Ubicacion> coordenadasTransitables;
-
     int filas;
     int columnas;
     Casillero ***mapa;
+
+    Lista<Ubicacion> coordenadasTransitables;
 
     public:
         Ciudad();
@@ -40,11 +39,7 @@ class Ciudad{
 
         bool chequear_permisos_edificio(const string & edificio, Constructor & bob);
 
-        //bool chequear_stock(Edificio * edificio, bool);
-
         void cargar_ubicaciones(const string& PATH);
-
-        void cargar_provisiones(const string & PATH, Recurso & recurso);
 
         void mostrar_inventario();
 
@@ -61,8 +56,6 @@ class Ciudad{
         int construidos(const string &);
 
         void recolectar();
-
-        void guardar_materiales();
 
         void quitar_ubicacion(int x,int y);
         

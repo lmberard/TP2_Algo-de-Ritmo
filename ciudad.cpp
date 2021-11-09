@@ -2,7 +2,6 @@
 
 Ciudad::Ciudad(const string & PATH1, const string & PATH2, const string & PATH3,Terreno & terreno, Constructor & bob, Recurso & recurso)
 {
-    cargar_provisiones(PATH2,recurso);
     inventario.cargar(PATH2,recurso);
     cargar_ubicaciones(PATH3);
     
@@ -53,7 +52,6 @@ Ciudad::~Ciudad()
     delete[] mapa;
 
     guardar_ubicaciones();
-    guardar_materiales();
 }
 
 void Ciudad::mostrar_mapa()
@@ -73,7 +71,7 @@ void Ciudad::consultar_coordenada(int i, int j)
     cout << "Hola, estás en la posición" << i << j << endl;
     mapa[i][j]->mostrar();
 }
-//modificada para que labure con invenario
+
 void Ciudad::construir(int x, int y,const string & eledificio, Constructor & bob )
 {
     if(x < filas && y < columnas){
@@ -146,37 +144,11 @@ void Ciudad::cargar_ubicaciones(const string& PATH)
     }
 }
 
-//ya subida a inventario
-void Ciudad::cargar_provisiones(const string & PATH,Recurso & recurso)
-{
-    fstream archivo_materiales(PATH, ios::in);
-
-    if (!archivo_materiales.is_open())
-    {
-        cout << "No se encontro un archivo con nombre \"" << PATH << "\", se va a crear el archivo" << endl;
-        archivo_materiales.open(PATH, ios::out);
-        archivo_materiales.close();
-        archivo_materiales.open(PATH, ios::in);
-    }
-
-    string nombre, cantidad;
-    while (archivo_materiales >> nombre){
-        archivo_materiales >> cantidad;
-        materiales1.alta(recurso.dar_material(nombre,stoi(cantidad)));
-    }
-}
-
-//ya subida a inventario
 void Ciudad::mostrar_inventario()
 {
     inventario.mostrar_inventario();
-   /* for(int i = 1; i < materiales1.mostrar_cantidad()+1; i++ ){
-           cout << materiales1[i]->obtener_nombre() << '\t'
-                << materiales1[i]->obtener_cantidad() << ' ' 
-                << endl;
-    }*/
 }
-//modificada para que labure con inventario
+
 bool Ciudad::chequear_permisos_edificio(const string & eledificio, Constructor & bob)
 {
     Edificio * edificio = bob.construye(eledificio);
@@ -201,45 +173,7 @@ bool Ciudad::chequear_permisos_edificio(const string & eledificio, Constructor &
     }
     return flag;
 }
-/* YA SUBIDA A INVENTARIO
-bool Ciudad::chequear_stock(Edificio * edificio, bool construir)
-{
-    int cuenta = 0;
-    bool flag = 1;
-        
-    for(int j = 1; j < materiales1.mostrar_cantidad()+1; j++ ){
-        if(materiales1[j]->obtener_nombre() == "piedra"){  
-            cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_piedra();
-            if(cuenta < 0 ){
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
-                flag = 0;
-            }
-            if(construir)
-                materiales1[j]->modificar_cantidad(cuenta);
-        }
-        if(materiales1[j]->obtener_nombre() == "madera"){
-            cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_madera();
-            if(cuenta < 0 ){
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
-                flag = 0;
-            }
-            if(construir)
-                materiales1[j]->modificar_cantidad(cuenta);
-        }
-        if(materiales1[j]->obtener_nombre() == "metal"){
-            cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_metal();
-            if(cuenta < 0 ){
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
-                flag = 0;
-            }
-            if(construir)
-                materiales1[j]->modificar_cantidad(cuenta);
-        }
-    }
 
-    return flag;
-}
-*/
 void Ciudad::agregar_ubicacion(int x,int y,string edificio)
 {
     Ubicacion ubicacion; 
@@ -249,32 +183,17 @@ void Ciudad::agregar_ubicacion(int x,int y,string edificio)
     ubicaciones.alta(ubicacion);
 }
 
-//preparado para que labure con inventario
+
 void Ciudad::demoler_edificio(int x, int y)
 {
-    //int cuenta = 0;
     if(x < filas && y < columnas){
     Edificio *edificio = mapa[x][y]->mostrar_edificio();
     
-    if(edificio){
-        inventario.llenar_stock(edificio);
-    /*
-    for(int j = 1; j < materiales1.mostrar_cantidad()+1; j++ ){
-        if(materiales1[j]->obtener_nombre() == "piedra"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_piedra()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
+        if(edificio){
+            inventario.llenar_stock(edificio);
+            mapa[x][y]->demoler();
+            quitar_ubicacion(x,y);
         }
-        if(materiales1[j]->obtener_nombre() == "madera"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_madera()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
-        }
-        if(materiales1[j]->obtener_nombre() == "metal"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_metal()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
-        }*/
-    }
-    mapa[x][y]->demoler();
-    quitar_ubicacion(x,y);
     }
 }
 
@@ -293,16 +212,6 @@ bool Ciudad::guardar_ubicaciones()
     }
     else
         return false;
-}
-
-//pensado para que lo haga inventario
-void Ciudad::guardar_materiales()
-{
-    ofstream archivo_materiales("materiales.txt");
-    for(int i = 1; i < materiales1.mostrar_cantidad()+1; i++){
-        archivo_materiales << materiales1[i]->obtener_nombre() << ' ' << materiales1[i]->obtener_cantidad() << '\n';
-        delete materiales1[i];
-    }
 }
 
 void Ciudad::demoler_todo()
@@ -359,16 +268,10 @@ int Ciudad::construidos(const string &edificio)
 void Ciudad::recolectar()
 {
     Edificio *edificio;
-    int cuenta;
  
     for(int i = 1; i < ubicaciones.mostrar_cantidad()+1; i++){
         edificio = mapa[ubicaciones[i].coord_x][ubicaciones[i].coord_y]->mostrar_edificio();
-        for(int j = 1; j < materiales1.mostrar_cantidad()+1; j++){
-            if(edificio->obtener_mat_producido() == materiales1[j]->obtener_nombre()){
-                cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_cant_mat_producido();
-                materiales1[j]->modificar_cantidad(cuenta);  
-            }
-        }
+        inventario.agregar_al_inventario(edificio);
     }
 }
 

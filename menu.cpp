@@ -125,7 +125,7 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, R
         break;
 
     case DEMOLER_POR_COORDENADA:
-        andypolis.demoler_edificio(0,3);
+        andypolis.demoler_edificio(0,4);
         volver();
         break;
 
