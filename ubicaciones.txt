@@ -1,4 +1,0 @@
-escuela (2, 4) 
-escuela (1, 8) 
-escuela (4, 7)
-escuela (4, 2) 
