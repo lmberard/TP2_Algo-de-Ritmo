@@ -14,11 +14,6 @@ struct Provision{
     int cantidad;
 };
 
-struct Coordenada{
-    int x;
-    int y;
-};
-
 class Ciudad{
 
     Lista<Provision> provisiones;
@@ -74,8 +69,8 @@ class Ciudad{
         void llenarcoordenadatransitable();
 
         void lluvia(Recurso & recurso);
-
-        void listar_edificios(Constructor & bob);
 };
+
+void listar_edificios(Ciudad & andypolis, Constructor & bob);
 
 #endif //CIUDAD_HPP

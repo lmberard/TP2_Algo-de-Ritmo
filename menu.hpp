@@ -61,8 +61,5 @@ string devolver_rta_usuario();
 // post: se muestra el menu Principal
 void mostrar_menuInicial(Ciudad & andypolis,Constructor & bob, Recurso & recurso);
 
-// pre: -
-// post: se verifica que lo ingresado sea una opcion dentro del rango del menu.
-//void validar_opcion(int option_elegida, Mapa &andypolis);
 
 #endif // MENU_H

@@ -119,7 +119,8 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, R
         break;
 
     case LISTAR_TODOS:
-        andypolis.listar_edificios(bob);
+        //andypolis.listar_edificios(bob);
+        listar_edificios(andypolis,bob);
         volver();
         break;
 
@@ -166,3 +167,4 @@ bool es_opcion_valida(int elegida)
 {
     return (elegida >= OPCION_MINIMA && elegida <= OPCION_MAXIMA);
 }
+
