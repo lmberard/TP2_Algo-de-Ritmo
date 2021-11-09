@@ -1,0 +1,3 @@
+madera 650
+piedra 595
+metal 325
