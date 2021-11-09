@@ -1,5 +1,0 @@
-piedra 9252
-madera 8690
-metal 83027
-oro 90
-hierro 100
