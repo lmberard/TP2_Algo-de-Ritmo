@@ -5,20 +5,20 @@
 #include "ubicaciones.hpp"
 #include "lista.hpp"
 
+
 #include "terreno.hpp"
 #include "constructor.hpp"
 #include "recurso.hpp"
-
-struct Provision{
-    Material* material;
-    int cantidad;
-};
+#include "inventario.hpp"
 
 class Ciudad{
 
-    Lista<Provision> provisiones;
+    Lista<Material*> materiales1;
+    Inventario inventario;
+
     Lista<Ubicacion> ubicaciones;
     Lista<Ubicacion> materiales;
+
     Lista<Ubicacion> coordenadasTransitables;
 
     int filas;
@@ -40,7 +40,7 @@ class Ciudad{
 
         bool chequear_permisos_edificio(const string & edificio, Constructor & bob);
 
-        bool chequear_stock(Edificio * edificio, bool);
+        //bool chequear_stock(Edificio * edificio, bool);
 
         void cargar_ubicaciones(const string& PATH);
 

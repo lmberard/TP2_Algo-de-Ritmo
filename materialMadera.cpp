@@ -9,6 +9,11 @@ Madera::Madera() : Material()
     codigo = "W";
 }
 
+Madera::Madera(int cantidad) : Material(cantidad){
+    nombre = "madera";
+    codigo = "W";
+}
+
 Madera::~Madera()
 {
 }

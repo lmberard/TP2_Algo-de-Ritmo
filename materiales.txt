@@ -1,3 +1,3 @@
-madera 700
-piedra 565
-metal 275
+piedra 9222
+madera 9090
+metal 82977

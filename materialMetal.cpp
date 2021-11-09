@@ -9,6 +9,11 @@ Metal::Metal() : Material()
     codigo = "M";
 }
 
+Metal::Metal(int cantidad) : Material(cantidad){
+    nombre = "metal";
+    codigo = "M";
+}
+
 Metal::~Metal()
 {
 }

@@ -17,6 +17,8 @@ public:
     // POS:
     Madera();
 
+    Madera(int );
+
     // PRE:
     // POS:
     ~Madera();

@@ -11,6 +11,7 @@
 class Recurso{
 
     public:
+     Material* dar_material(const string & material,int cantidad);
      Material* dar_material(const string & material);
 };
 

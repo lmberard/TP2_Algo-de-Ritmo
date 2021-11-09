@@ -18,6 +18,7 @@ public:
     // POS:
     Metal();
 
+    Metal(int );
     // PRE:
     // POS:
     ~Metal();

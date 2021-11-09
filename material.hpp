@@ -13,11 +13,14 @@ class Material
 protected:
     string nombre;
     string codigo;
+    int cantidad = 1;
 
 public:
     // PRE:
     // POS:
     Material();
+
+    Material(int );
 
     // PRE:
     // POS:
@@ -29,6 +32,14 @@ public:
 
     string obtener_codigo(){
         return codigo;
+    }
+
+    int obtener_cantidad(){
+        return cantidad;
+    }
+
+    void modificar_cantidad(int cantidad){
+        this->cantidad = cantidad;
     }
 };
 

@@ -18,6 +18,8 @@ public:
     // POS:
     Piedra();
 
+    Piedra(int );
+
     // PRE:
     // POS:
     ~Piedra();

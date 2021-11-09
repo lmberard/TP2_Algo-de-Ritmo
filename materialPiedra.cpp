@@ -9,4 +9,10 @@ Piedra::Piedra() : Material()
     codigo = "S";
 }
 
+Piedra::Piedra(int cantidad) : Material(cantidad)
+{
+    nombre = "piedra";
+    codigo = "S";
+}
+
 Piedra::~Piedra(){}
