@@ -1,13 +1,14 @@
 #include "casillero.hpp"
 
-Casillero::Casillero(){}
+Casillero::Casillero() {}
 
 bool Casillero::agregar(Edificio *)
 {
     cout << "No puedes construir en este casillero" << endl;
-    return NULL;
+    return false;
 }
 
-Edificio* Casillero::mostrar_edificio(){
+Edificio *Casillero::mostrar_edificio()
+{
     return NULL;
 }

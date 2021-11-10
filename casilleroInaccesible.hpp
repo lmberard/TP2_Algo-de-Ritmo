@@ -5,23 +5,25 @@
 class CasilleroInaccesible : public Casillero
 {
 public:
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Se construye un casillero innacesible
     CasilleroInaccesible();
 
-    // PRE:
-    // POS:
+    // PRE: Existe un casillero innacesible
+    // POS: Se destruye el casillero innacesible
     ~CasilleroInaccesible();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal que tipo de casillero es
     void mostrar();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal un cuadrado con el color del casillero innacesible
     void display();
 
-    void demoler(){};
+    // PRE: -
+    // POS: No hace nada
+    void demoler();
 };
 
 #endif // CASILLEROINACCESIBLE_HPP

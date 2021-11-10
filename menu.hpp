@@ -6,7 +6,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <iomanip>
-#include <bits/stdc++.h>
+#include <cctype>
 #include "colors.hpp"
 #include "lista.hpp"
 #include "ciudad.hpp"
@@ -29,6 +29,10 @@ const int SALIR = 10;
 #define CLR_SCREEN "clear"
 #endif // __linux__
 
+#ifdef __APPLE__
+#define CLR_SCREEN "clear"
+#endif // __MacOsß__ß
+
 #ifdef __MINGW32__
 #define CLR_SCREEN "CLS"
 #endif // __MINGW32__
@@ -47,7 +51,7 @@ void volver();
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: Realiza la opcion pedida
-void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, Recurso & recurso); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
+void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor &bob, Recurso &recurso); // material *materiales_array, edificio *edificios_array, casillero **mapa, ubicacion *ubicaciones_array
 
 // pre: El texto ingresado por el usuario tiene que ser un NUMERO entero
 // post: devuelve true si la opcion recibida esta en el rango valido y sino devuelve false.
@@ -59,7 +63,14 @@ string devolver_rta_usuario();
 
 // pre: Existen los archivos txt correspondientes
 // post: se muestra el menu Principal
-void mostrar_menuInicial(Ciudad & andypolis,Constructor & bob, Recurso & recurso);
+void mostrar_menuInicial(Ciudad &andypolis, Constructor &bob, Recurso &recurso);
 
+// pre: -
+// post: devuelve true si son iguales. Es comparacion case insensitive
+bool char_son_iguales(char &c1, char &c2);
+
+// pre: -
+// post: devuelve true si son iguales. Es comparacion case insensitive
+bool strings_son_iguales(string &str1, string &str2);
 
 #endif // MENU_H

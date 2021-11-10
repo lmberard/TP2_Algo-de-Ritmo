@@ -14,13 +14,15 @@ class Madera : public Material
 
 public:
     // PRE:
-    // POS:
+    // POS: Crea un material madera
     Madera();
 
-    Madera(int );
+    // PRE:
+    // POS: Crea un material madera con una cantidad determinada
+    Madera(int);
 
     // PRE:
-    // POS:
+    // POS: destruye el material madera
     ~Madera();
 };
 

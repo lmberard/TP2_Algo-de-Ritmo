@@ -1,6 +1,6 @@
 #include "constructor.hpp"
 
-Constructor::Constructor(const string & PATH)
+Constructor::Constructor(const string &PATH)
 {
     fstream archivo_edificios(PATH, ios::in);
 
@@ -38,27 +38,28 @@ Constructor::Constructor(const string & PATH)
     }
 }
 
-Edificio * Constructor::construye(const string & edificio){
+Edificio *Constructor::construye(const string &edificio)
+{
 
-    Edificio * construido = NULL;
+    Edificio *construido = NULL;
     int pos = buscar_edificio(edificio);
 
-    if(pos > edificios.mostrar_cantidad())
+    if (pos > edificios.mostrar_cantidad())
         return construido;
 
-    if(edificio == "yacimiento")
+    if (edificio == "yacimiento")
         construido = new Yacimiento(edificios[pos]);
-    if(edificio == "aserradero")
+    if (edificio == "aserradero")
         construido = new Aserradero(edificios[pos]);
-    if(edificio == "escuela")
+    if (edificio == "escuela")
         construido = new Escuela(edificios[pos]);
-    if(edificio == "fabrica")
+    if (edificio == "fabrica")
         construido = new Fabrica(edificios[pos]);
-    if(edificio == "mina")
+    if (edificio == "mina")
         construido = new Mina(edificios[pos]);
-    if(edificio == "obelisco")
+    if (edificio == "obelisco")
         construido = new Obelisco(edificios[pos]);
-    if(edificio == "planta electrica")
+    if (edificio == "planta electrica")
         construido = new PlantaElectrica(edificios[pos]);
 
     return construido;
@@ -68,8 +69,9 @@ int Constructor::buscar_edificio(string edificio)
 {
     int pos = 1;
     int cantidad = edificios.mostrar_cantidad();
-    
-    while(cantidad && (edificios[pos]->obtener_nombre() != edificio)){
+
+    while (cantidad && (edificios[pos]->obtener_nombre() != edificio))
+    {
         pos++;
         --cantidad;
     }
@@ -77,7 +79,7 @@ int Constructor::buscar_edificio(string edificio)
     return pos;
 }
 
-Edificio * Constructor::mostrar_edificio(int i)
+Edificio *Constructor::mostrar_edificio(int i)
 {
     return edificios[i];
 }
@@ -89,7 +91,8 @@ int Constructor::cant_edificios()
 
 Constructor::~Constructor()
 {
-	for(int i = 1; i < edificios.mostrar_cantidad()+1; i++ ){
+    for (int i = 1; i < edificios.mostrar_cantidad() + 1; i++)
+    {
         delete edificios[i];
     }
 }

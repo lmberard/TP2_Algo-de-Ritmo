@@ -9,6 +9,6 @@ Mina::Mina(int s, int w, int m, int p) : Edificio(s, w, m, p)
     mat_que_produce = "piedra";
 }
 
-Mina::Mina(Edificio *edificio): Edificio(edificio){}
+Mina::Mina(Edificio *edificio) : Edificio(edificio) {}
 
-Mina::~Mina(){}
+Mina::~Mina() {}

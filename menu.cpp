@@ -1,7 +1,6 @@
 #include "menu.hpp"
 #include "casillero.hpp"
 
-
 using namespace std;
 
 void mostrar_InstruccionInicial()
@@ -40,11 +39,25 @@ string devolver_rta_usuario()
 {
     string rta = " ";
     cin >> rta;
-    transform(rta.begin(), rta.end(), rta.begin(), ::tolower);
     return rta;
 }
 
-void mostrar_menuInicial(Ciudad &andypolis,Constructor & bob, Recurso & recurso)
+bool char_son_iguales(char &c1, char &c2)
+{
+    if (c1 == c2)
+        return true;
+    else if (toupper(c1) == toupper(c2))
+        return true;
+    return false;
+}
+
+bool strings_son_iguales(string &str1, string &str2)
+{
+    return ((str1.size() == str2.size()) &&
+            equal(str1.begin(), str1.end(), str2.begin(), &char_son_iguales));
+}
+
+void mostrar_menuInicial(Ciudad &andypolis, Constructor &bob, Recurso &recurso)
 {
     system(CLR_SCREEN);
     int opcion_elegida;
@@ -68,7 +81,7 @@ void mostrar_menuInicial(Ciudad &andypolis,Constructor & bob, Recurso & recurso)
             mostrar_menu();
             cin >> opcion_elegida;
         }
-        procesar_opcion(opcion_elegida, andypolis,bob,recurso);
+        procesar_opcion(opcion_elegida, andypolis, bob, recurso);
     } while (opcion_elegida != SALIR);
 }
 
@@ -101,15 +114,14 @@ void volver()
     system(CLR_SCREEN);
 }
 
-void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, Recurso & recurso)
+void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor &bob, Recurso &recurso)
 {
-
+    string nombre_edificio, x, y;
     switch (opcion_elegida)
     {
-  
+
     case CONSTRUIR_EDIFICIO:
-        andypolis.chequear_permisos_edificio("aserradero",bob);
-        andypolis.construir(0,3,"aserradero",bob);
+        andypolis.construir_por_nombre_coordenada(bob);
         volver();
         break;
 
@@ -119,13 +131,12 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, R
         break;
 
     case LISTAR_TODOS:
-        //andypolis.listar_edificios(bob);
-        listar_edificios(andypolis,bob);
+        listar_edificios(andypolis, bob);
         volver();
         break;
 
     case DEMOLER_POR_COORDENADA:
-        andypolis.demoler_edificio(0,3);
+        andypolis.demoler_por_coordenada();
         volver();
         break;
 
@@ -135,7 +146,7 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, R
         break;
 
     case CONSULTAR_COORDENADA:
-        andypolis.consultar_coordenada(3,4);
+        andypolis.consultar_coordenada_cin();
         volver();
         break;
 
@@ -155,9 +166,9 @@ void procesar_opcion(int opcion_elegida, Ciudad &andypolis, Constructor & bob, R
         break;
 
     case SALIR:
-     
+        andypolis.guardar_archivos();
         break;
-    //FALTA emprolijar tooooooodo el codigo
+
     default:
         msjeError("Error: opcion invalida");
     }
@@ -167,4 +178,3 @@ bool es_opcion_valida(int elegida)
 {
     return (elegida >= OPCION_MINIMA && elegida <= OPCION_MAXIMA);
 }
-

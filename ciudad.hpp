@@ -5,15 +5,15 @@
 #include "ubicaciones.hpp"
 #include "lista.hpp"
 
-
 #include "terreno.hpp"
 #include "constructor.hpp"
 #include "recurso.hpp"
 #include "inventario.hpp"
 
-class Ciudad{
+class Ciudad
+{
 
-    Lista<Material*> materiales1;
+    Lista<Material *> materiales1;
     Inventario inventario;
 
     Lista<Ubicacion> ubicaciones;
@@ -25,52 +25,111 @@ class Ciudad{
     int columnas;
     Casillero ***mapa;
 
-    public:
-        Ciudad();
-        Ciudad(const string &,const string &, const string &,Terreno & terreno,Constructor & bob, Recurso & recurso);
-        ~Ciudad();
+public:
+    // PRE:
+    // POS:
+    Ciudad();
 
-        void mostrar_mapa();
+    // PRE:
+    // POS:
+    Ciudad(const string &, const string &, const string &, Terreno &terreno, Constructor &bob, Recurso &recurso);
 
-        void consultar_coordenada(int , int );
-     
-        void construir(int ,int ,const string &, Constructor & bob );
+    // PRE:
+    // POS: Se elimina la Ciudad (se eliminan los casilleros del mapa, el mapa y lo construido (ubicaciones y materiales))
+    ~Ciudad();
 
-        void cargar_ubicaciones(Constructor & bob);
+    // PRE:
+    // POS: se guardan los cambios en los archivos txt de ubicaciones y de materiales
+    void guardar_archivos();
 
-        bool chequear_permisos_edificio(const string & edificio, Constructor & bob);
+    // PRE:
+    // POS: Muestra el mapa por la terminal con sus respectivos colores para cada tipo de casillero y con la inicial de lo que haya en el mismo (material o edificio)
+    void mostrar_mapa();
 
-        //bool chequear_stock(Edificio * edificio, bool);
+    // PRE:
+    // POS:
+    void consultar_coordenada_cin();
 
-        void cargar_ubicaciones(const string& PATH);
+    // PRE:
+    // POS:
+    void consultar_coordenada(int, int);
 
-        void cargar_provisiones(const string & PATH, Recurso & recurso);
+    // PRE:
+    // POS:
+    void construir_por_nombre_coordenada(Constructor &bob);
 
-        void mostrar_inventario();
+    // PRE:
+    // POS:
+    void construir(int, int, const string &, Constructor &bob);
 
-        void agregar_ubicacion(int x,int y,string edificio);
+    // PRE:
+    // POS:
+    void cargar_ubicaciones(Constructor &bob);
 
-        void demoler_edificio(int x, int y); 
+    // PRE:
+    // POS:
+    bool chequear_permisos_edificio(const string &edificio, Constructor &bob);
 
-        bool guardar_ubicaciones();
+    // PRE:
+    // POS:
+    void cargar_ubicaciones(const string &PATH);
 
-        void demoler_todo();
+    // PRE:
+    // POS:
+    void cargar_provisiones(const string &PATH, Recurso &recurso);
 
-        void mostrar_ubicaciones();
+    // PRE:
+    // POS:
+    void mostrar_inventario();
 
-        int construidos(const string &);
+    // PRE:
+    // POS:
+    void agregar_ubicacion(int x, int y, string edificio);
 
-        void recolectar();
+    // PRE:
+    // POS:
+    void demoler_por_coordenada();
+    // PRE:
+    // POS:
+    void demoler_edificio(int x, int y);
 
-        void guardar_materiales();
+    // PRE:
+    // POS:
+    bool guardar_ubicaciones();
 
-        void quitar_ubicacion(int x,int y);
-        
-        void llenarcoordenadatransitable();
+    // PRE:
+    // POS: Elimina los edificios y materiales construidos
+    void demoler_todo();
 
-        void lluvia(Recurso & recurso);
+    // PRE:
+    // POS:
+    void mostrar_ubicaciones();
+
+    // PRE:
+    // POS:
+    int construidos(const string &edificio);
+
+    // PRE:
+    // POS:
+    void recolectar();
+
+    // PRE:
+    // POS:
+    void guardar_materiales();
+
+    // PRE:
+    // POS:
+    void quitar_ubicacion(int x, int y);
+
+    // PRE:
+    // POS:
+    void llenarcoordenadatransitable();
+
+    // PRE:
+    // POS:
+    void lluvia(Recurso &recurso);
 };
 
-void listar_edificios(Ciudad & andypolis, Constructor & bob);
+void listar_edificios(Ciudad &andypolis, Constructor &bob);
 
 #endif //CIUDAD_HPP

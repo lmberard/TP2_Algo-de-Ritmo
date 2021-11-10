@@ -10,9 +10,8 @@
 class Edificio
 {
 protected:
-
     string nombre;
-    string codigo; 
+    string codigo;
 
     int piedra;
     int madera;
@@ -24,55 +23,49 @@ protected:
     int cant_mat_que_produce;
 
 public:
-
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Instancia el edificio con los parametros para la piedra(s), madera(w), metal(s) y cantidad permitida de construccion(p)
     Edificio(int s, int w, int m, int p);
 
-    // PRE:
-    // POS:
-    // virtual ~Edificio() = 0;
+    // PRE: -
+    // POS: Se construye un edificio que es la copia del ingresado. (Constructor copia)
+    Edificio(Edificio *edificio);
 
-    // PRE:
-    // POS:
-    Edificio(Edificio* edificio);
-    
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve el nombre del edificio
     string obtener_nombre();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve la cantidad de unidades de madera necesaria para su construccion
     int obtener_madera();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve la cantidad de unidades de metal necesaria para su construccion
     int obtener_metal();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve la cantidad de unidades de piedra necesaria para su construccion
     int obtener_piedra();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve la cantidad maxima de edificios que se pueden construir
     int obtener_cant_max();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve el codigo del edificio (primera letra de su nombre)
     string obtener_codigo();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve la cantidad del material que produce
     int obtener_cant_mat_producido();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Devuelve el nombre del material que produce
     string obtener_mat_producido();
 
-    // PRE:
-    // POS:
+    // PRE: -
+    // POS: Muestra por la terminal el tipo de edificio y sus atributos
     void mostrar_edificio();
-
 };
 
 #endif // EDIFICIO_HPP

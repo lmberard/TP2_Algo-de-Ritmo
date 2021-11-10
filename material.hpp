@@ -13,34 +13,35 @@ class Material
 protected:
     string nombre;
     string codigo;
-    int cantidad = 1;
+    int cantidad;
 
 public:
     // PRE:
-    // POS:
+    // POS: Se construye un material
     Material();
 
-    Material(int );
+    // PRE:
+    // POS: Se construye un material con una cantidad determinada
+    Material(int cantidad);
 
     // PRE:
-    // POS:
+    // POS: Se destruye el material
     ~Material();
 
     // PRE:
-    // POS:
+    // POS: Devuelve el nombre del material
     string obtener_nombre();
 
-    string obtener_codigo(){
-        return codigo;
-    }
+    // PRE:
+    // POS: Devuelve el codigo del material (primera letra del nombre en ingles)
+    string obtener_codigo();
 
-    int obtener_cantidad(){
-        return cantidad;
-    }
+    // PRE:
+    // POS: Devuelve la cantidad del material
+    int obtener_cantidad();
 
-    void modificar_cantidad(int cantidad){
-        this->cantidad = cantidad;
-    }
+    // PRE:
+    // POS: Modifica la cantidad del material al valor ingresado
+    void modificar_cantidad(int cantidad);
 };
-
 #endif // MATERIAL_HPP

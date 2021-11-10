@@ -2,7 +2,6 @@
 #define MATERIALMETAL_HPP
 #include "material.hpp"
 
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -15,12 +14,15 @@ class Metal : public Material
 
 public:
     // PRE:
-    // POS:
+    // POS: Crea un material metal
     Metal();
 
-    Metal(int );
     // PRE:
-    // POS:
+    // POS: Crea un material metal con una cantidad determinada
+    Metal(int);
+
+    // PRE:
+    // POS: destruye el material metal
     ~Metal();
 };
 

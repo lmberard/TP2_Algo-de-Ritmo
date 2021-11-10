@@ -2,7 +2,6 @@
 #define MATERIALPIEDRA_HPP
 #include "material.hpp"
 
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -15,13 +14,15 @@ class Piedra : public Material
 
 public:
     // PRE:
-    // POS:
+    // POS: construye el material piedra
     Piedra();
 
-    Piedra(int );
+    // PRE:
+    // POS: construye el material piedra con una cantidad determinada
+    Piedra(int);
 
     // PRE:
-    // POS:
+    // POS: destruye el material piedra
     ~Piedra();
 };
 

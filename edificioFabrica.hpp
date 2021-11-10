@@ -6,13 +6,13 @@ class Fabrica : public Edificio
 {
 public:
     // PRE:
-    // POS:
+    // POS: Se crea un edificio Fabrica con los parametros para la piedra(s), madera(w), metal(s) y cantidad permitida de construccion(p)
     Fabrica(int s, int w, int m, int p);
 
     Fabrica(Edificio *edificio);
 
     // PRE:
-    // POS:
+    // POS: Se destruye el edificio Fabrica
     ~Fabrica();
 };
 
