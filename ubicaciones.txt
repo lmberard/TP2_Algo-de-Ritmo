@@ -1,1 +1,4 @@
 aserradero (0, 4)
+mina (5, 4)
+aserradero (1, 4)
+yacimiento (4, 4)

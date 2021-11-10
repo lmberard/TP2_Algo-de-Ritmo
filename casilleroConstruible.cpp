@@ -11,19 +11,21 @@ bool CasilleroConstruible ::agregar(Edificio *edificio)
 {
     if (this->edificio)
     {
-        cout << "ya hay un edificio aca" << endl;
+        msjeError("Ya hay un edificio en esta posicion. No se puede agregar otro");
         return false;
     }
+
     this->edificio = edificio;
     return true;
 }
 
 void CasilleroConstruible ::mostrar()
 {
-    cout << "Soy un casillero construible" << endl;
-    //cout << "estás en la posición " << this->coord_x << " " << this->coord_y << endl;
+    cout << TXT_GREEN_2 << "Es un casillero construible" << END_COLOR << endl;
     if (edificio)
-        cout << edificio->obtener_nombre() << endl;
+        cout << "Hay un edificio del tipo '" << edificio->obtener_nombre() << "' construido en esta coordenada" << endl;
+    else
+        cout << "Tengo lugar para construir un edificio" << endl;
 }
 
 void CasilleroConstruible ::display()

@@ -9,9 +9,12 @@ CasilleroTransitable ::~CasilleroTransitable() {}
 
 void CasilleroTransitable ::mostrar()
 {
-    cout << "Soy un casillero transitable" << endl;
+    cout << TXT_LIGHT_GRAY_247 << "Es un casillero transitable" << END_COLOR << endl;
     if (material)
-        cout << material->obtener_nombre() << endl;
+        cout << "Hay un material del tipo '" << material->obtener_nombre() << "'. No te olvides de recolectarlo!" << endl;
+
+    else
+        cout << "No hay ningun material en esta parte del camino :)" << endl;
 }
 
 void CasilleroTransitable ::display()
@@ -26,7 +29,7 @@ bool CasilleroTransitable ::agregar(Material *material)
 {
     if (this->material)
     {
-        cout << "ya hay un material aca" << endl;
+        msjeError("Ya hay un material en este casillero, no hay lugar para agregar otro :(");
         return false;
     }
     this->material = material;

@@ -6,8 +6,7 @@ CasilleroInaccesible ::~CasilleroInaccesible() {}
 
 void CasilleroInaccesible ::mostrar()
 {
-    cout << "Soy un casillero inaccesible" << endl;
-    //<< this->coord_x << " " << this->coord_y << endl;
+    cout << TXT_BLUE_25 << "Es un casillero inaccesible" << END_COLOR << endl;
 }
 
 void CasilleroInaccesible ::display()

@@ -1,5 +1,6 @@
 #include "ciudad.hpp"
 #include <string>
+#include <iomanip>
 
 Ciudad::Ciudad(const string &PATH1, const string &PATH2, const string &PATH3, Terreno &terreno, Constructor &bob, Recurso &recurso)
 {
@@ -64,6 +65,7 @@ void Ciudad::guardar_archivos()
 
 void Ciudad::mostrar_mapa()
 {
+    msjeInstruccion("MAPA DE ANDYPOLIS:");
     for (int i = 0; i < filas; i++)
     {
         for (int j = 0; j < columnas; j++)
@@ -129,12 +131,23 @@ void Ciudad::construir(int x, int y, const string &eledificio, Constructor &bob)
     if (x < filas && y < columnas)
     {
         Edificio *edificio = bob.construye(eledificio);
-        inventario.chequear_stock(edificio, true);
-        if (mapa[x][y]->agregar(edificio))
-            agregar_ubicacion(x, y, eledificio);
+        if (inventario.chequear_stock(edificio, true))
+        {
+            if (mapa[x][y]->agregar(edificio))
+            {
+                agregar_ubicacion(x, y, eledificio);
+                msjeOK("Se construyo el edificio y se agrego a la lista de ubicaciones");
+            }
+            else
+                delete edificio;
+        }
         else
-            delete edificio;
+            msjeError("No hay materiales suficientes para la construccion de ese edificio :(");
     }
+    if (x > filas)
+        msjeError("Esa coordenada X no existe en el mapa");
+    if (y > columnas)
+        msjeError("Esa coordenada Y no existe en el mapa");
 }
 
 void Ciudad::cargar_ubicaciones(Constructor &bob)
@@ -154,7 +167,7 @@ void Ciudad::cargar_ubicaciones(const string &PATH)
 
     if (!archivo_ubicaciones.is_open())
     {
-        cout << "No se encontro un archivo con nombre \"" << PATH << "\", se va a crear el archivo" << endl;
+        msjeError("No se encontro un archivo con nombre \"" + PATH + "\", se va a crear el archivo");
         archivo_ubicaciones.open(PATH, ios::out);
         archivo_ubicaciones.close();
         archivo_ubicaciones.open(PATH, ios::in);
@@ -205,7 +218,7 @@ void Ciudad::cargar_provisiones(const string &PATH, Recurso &recurso)
 
     if (!archivo_materiales.is_open())
     {
-        cout << "No se encontro un archivo con nombre \"" << PATH << "\", se va a crear el archivo" << endl;
+        msjeError("No se encontro un archivo con nombre \"" + PATH + "\", se va a crear el archivo");
         archivo_materiales.open(PATH, ios::out);
         archivo_materiales.close();
         archivo_materiales.open(PATH, ios::in);
@@ -232,16 +245,17 @@ bool Ciudad::chequear_permisos_edificio(const string &eledificio, Constructor &b
     {
         if (inventario.chequear_stock(edificio, false))
         {
+            msjeOK("Hay materiales suficientes para construir este edificio");
             flag = 1;
             if (edificio->obtener_cant_max() > construidos(eledificio))
             {
-                msjeOK("Que bueno! Todavia hay capacidad para construir edificios de ese estilo!");
+                msjeOK("y todavia hay capacidad para construir edificios de ese estilo!");
                 flag = 1;
             }
             else
             {
                 flag = 0;
-                msjeError("Ya no se pueden construir mas edificios de ese estilo. Llegamos al maximo :(");
+                msjeError("pero ya no se pueden construir mas edificios de ese estilo. Llegamos al maximo :(");
             }
         }
         else
@@ -273,11 +287,17 @@ void Ciudad::demoler_edificio(int x, int y)
 
         if (edificio)
         {
+            msjeInstruccion("Se va a eliminar un edificio del tipo '" + edificio->obtener_nombre() + "'");
             inventario.llenar_stock(edificio);
         }
         mapa[x][y]->demoler();
         quitar_ubicacion(x, y);
+        msjeOK("Se demolio el edificio y se elimino de la lista de ubicaciones");
     }
+    if (x > filas)
+        msjeError("Esa coordenada X no existe en el mapa");
+    if (y > columnas)
+        msjeError("Esa coordenada Y no existe en el mapa");
 }
 
 bool Ciudad::guardar_ubicaciones()
@@ -323,6 +343,12 @@ void Ciudad::mostrar_ubicaciones()
     Lista<Ubicacion> auxiliar;
     int cant = 1;
 
+    cout << left << TXT_BOLD << TXT_UNDERLINE << BGND_BLUE_4
+         << setw(23) << "Cantidad" << '\t'
+         << setw(23) << "Tipo de edificio" << '\t'
+         << setw(23) << "Coord X" << '\t'
+         << setw(23) << "Coord Y"
+         << END_COLOR << endl;
     for (int i = 1; i < ubicaciones.mostrar_cantidad() + 1; i++)
         copia.alta(ubicaciones[i]);
 
@@ -339,12 +365,14 @@ void Ciudad::mostrar_ubicaciones()
                 --j;
             }
         }
-        cout << cant << '\t'
-             << auxiliar[1].nombre << '\t';
+        cout << left
+             << setw(23) << cant << '\t'
+             << setw(23) << auxiliar[1].nombre << '\t';
         for (int i = 1; i < auxiliar.mostrar_cantidad() + 1; i++)
         {
-            cout << auxiliar[i].coord_x << ' '
-                 << auxiliar[i].coord_y << '\t';
+            cout << left
+                 << setw(23) << auxiliar[i].coord_x << '\t'
+                 << setw(23) << auxiliar[i].coord_y << '\t';
         }
         cout << endl;
         cant = 1;
@@ -369,6 +397,7 @@ void Ciudad::recolectar()
     Edificio *edificio;
     int cuenta;
 
+    msjeOK("Se recolectaron los siguientes materiales:");
     for (int i = 1; i < ubicaciones.mostrar_cantidad() + 1; i++)
     {
         edificio = mapa[ubicaciones[i].coord_x][ubicaciones[i].coord_y]->mostrar_edificio();
@@ -377,10 +406,12 @@ void Ciudad::recolectar()
             if (edificio->obtener_mat_producido() == materiales1[j]->obtener_nombre())
             {
                 cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_cant_mat_producido();
+                cout << "\t-> " << edificio->obtener_cant_mat_producido() << " unidades de " << materiales1[j]->obtener_nombre() << " del edificio del tipo '" << edificio->obtener_nombre() << "'" << endl;
                 materiales1[j]->modificar_cantidad(cuenta);
             }
         }
     }
+    msjeOK("Se guardaron los materiales en la lista de materiales. Pueden ser usados para construir nuevos edificios :)");
 }
 
 void Ciudad::quitar_ubicacion(int x, int y)
@@ -410,32 +441,41 @@ void Ciudad::lluvia(Recurso &recurso)
 
     if (coordenadasTransitables.mostrar_cantidad() > 6)
     {
+        cout << "LLUVIA DE RECURSOS!" << endl;
         int cant_metal = rand() % (1 + 4 - 2) + 2;
+        cout << "Cantidad de metales generados: " << cant_metal << endl;
 
         while (cant_metal)
         {
             numero = rand() % (1 + coordenadasTransitables.mostrar_cantidad() - 1) + 1;
             mapa[coordenadasTransitables[numero].coord_x][coordenadasTransitables[numero].coord_y]->agregar(recurso.dar_material("metal"));
+            cout << "\t-> (" << coordenadasTransitables[numero].coord_x << ", " << coordenadasTransitables[numero].coord_y << ")" << endl;
             materiales.alta(coordenadasTransitables[numero]);
             coordenadasTransitables.baja(numero);
             cant_metal--;
         }
 
         int cant_piedra = rand() % (1 + 2 - 1) + 1;
+        cout << "Cantidad de piedras generadas: " << cant_piedra << endl;
+
         while (cant_piedra)
         {
             numero = rand() % (1 + coordenadasTransitables.mostrar_cantidad() - 1) + 1;
             mapa[coordenadasTransitables[numero].coord_x][coordenadasTransitables[numero].coord_y]->agregar(recurso.dar_material("piedra"));
+            cout << "\t-> (" << coordenadasTransitables[numero].coord_x << ", " << coordenadasTransitables[numero].coord_y << ")" << endl;
             materiales.alta(coordenadasTransitables[numero]);
             coordenadasTransitables.baja(numero);
             cant_piedra--;
         }
 
         int cant_madera = rand() % (2);
+        cout << "Cantidad de maderas generadas: " << cant_madera << endl;
+
         while (cant_madera)
         {
             numero = rand() % (1 + coordenadasTransitables.mostrar_cantidad() - 1) + 1;
             mapa[coordenadasTransitables[numero].coord_x][coordenadasTransitables[numero].coord_y]->agregar(recurso.dar_material("madera"));
+            cout << "\t-> (" << coordenadasTransitables[numero].coord_x << ", " << coordenadasTransitables[numero].coord_y << ")" << endl;
             materiales.alta(coordenadasTransitables[numero]);
             coordenadasTransitables.baja(numero);
             cant_madera--;
@@ -449,17 +489,28 @@ void listar_edificios(Ciudad &andypolis, Constructor &bob)
     int cant_edificios = bob.cant_edificios();
     Edificio *edificio;
 
+    cout << left << TXT_BOLD << TXT_UNDERLINE << BGND_BLUE_4
+         << setw(23) << "Nombre" << '\t'
+         << setw(23) << "Cant de madera" << '\t'
+         << setw(23) << "Cant de metal" << '\t'
+         << setw(23) << "Cant de piedra" << '\t'
+         << setw(23) << "Cant maxima" << '\t'
+         << setw(23) << "Se pueden construir.." << '\t'
+         << setw(23) << "Cant de produccion" << '\t'
+         << setw(23) << "Tipo de material que produce"
+         << END_COLOR << endl;
     for (int i = 1; i < cant_edificios + 1; i++)
     {
         edificio = bob.mostrar_edificio(i);
-        cout << edificio->obtener_nombre() << '\t'
-             << edificio->obtener_madera() << '\t'
-             << edificio->obtener_metal() << '\t'
-             << edificio->obtener_piedra() << '\t'
-             << edificio->obtener_cant_max() << '\t'
-             << edificio->obtener_cant_max() - andypolis.construidos(edificio->obtener_nombre()) << '\t'
-             << edificio->obtener_cant_mat_producido() << ' '
-             << edificio->obtener_mat_producido()
+        cout << left
+             << setw(23) << edificio->obtener_nombre() << '\t'
+             << setw(23) << edificio->obtener_madera() << '\t'
+             << setw(23) << edificio->obtener_metal() << '\t'
+             << setw(23) << edificio->obtener_piedra() << '\t'
+             << setw(23) << edificio->obtener_cant_max() << '\t'
+             << setw(23) << edificio->obtener_cant_max() - andypolis.construidos(edificio->obtener_nombre()) << '\t'
+             << setw(23) << edificio->obtener_cant_mat_producido() << '\t'
+             << setw(23) << edificio->obtener_mat_producido()
              << endl;
     }
 }

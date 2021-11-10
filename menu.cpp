@@ -93,7 +93,7 @@ void validar_opcion(int opcion_elegida)
         {
             cin.clear();
             cin.ignore(100, '\n');
-            msjeError("Se tiene que ingresar un numero entero del" + to_string(OPCION_MINIMA) + "al" + to_string(OPCION_MAXIMA) + "\nIntentemos de nuevo:");
+            msjeError("Se tiene que ingresar un numero entero del " + to_string(OPCION_MINIMA) + "al " + to_string(OPCION_MAXIMA) + "\nIntentemos de nuevo:");
             mostrar_menu();
             cin >> opcion_elegida;
         }
