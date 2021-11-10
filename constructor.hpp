@@ -1,6 +1,6 @@
 #ifndef CONSTRUCTOR_H
 #define CONSTRUCTOR_H
-
+#include <fstream>
 #include "lista.hpp"
 
 #include "edificio.hpp"
@@ -42,4 +42,4 @@ public:
     Edificio *mostrar_edificio(int i);
 };
 
-#endif //CONSTRUCTOR_H
+#endif // CONSTRUCTOR_H

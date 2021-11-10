@@ -1,6 +1,1 @@
-<<<<<<< HEAD
 aserradero (0, 4)
-=======
-escuela (3, 4)
-aserradero (0, 3)
->>>>>>> b107033e1ea951691992af71fc5c7820d54fb9ca

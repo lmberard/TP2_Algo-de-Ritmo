@@ -1,6 +1,6 @@
 #ifndef CIUDAD_HPP
 #define CIUDAD_HPP
-
+#include <string>
 #include "colors.hpp"
 #include "ubicaciones.hpp"
 #include "lista.hpp"
@@ -131,4 +131,4 @@ public:
 
 void listar_edificios(Ciudad &andypolis, Constructor &bob);
 
-#endif //CIUDAD_HPP
+#endif // CIUDAD_HPP

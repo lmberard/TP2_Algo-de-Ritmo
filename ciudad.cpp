@@ -1,4 +1,5 @@
 #include "ciudad.hpp"
+#include <string>
 
 Ciudad::Ciudad(const string &PATH1, const string &PATH2, const string &PATH3, Terreno &terreno, Constructor &bob, Recurso &recurso)
 {
@@ -102,16 +103,26 @@ void Ciudad::demoler_por_coordenada()
 
 void Ciudad::construir_por_nombre_coordenada(Constructor &bob)
 {
-    string x, y, nombre_edificio;
+    string x, y, nombre_edificio, aux;
     msjeInstruccion("Ingrese el nombre del edificio que quiere construir:");
     cin >> nombre_edificio;
-    chequear_permisos_edificio(nombre_edificio, bob);
-    msjeInstruccion("Ingrese las coordenadas donde quiere construirlo.");
-    msjeInstruccion("Coordenada X:");
-    cin >> x;
-    msjeInstruccion("Coordenada Y:");
-    cin >> y;
-    construir(stoi(x), stoi(y), nombre_edificio, bob);
+    if (nombre_edificio == "planta")
+    {
+        cin >> aux;
+        nombre_edificio = nombre_edificio + " " + aux;
+    }
+
+    if (chequear_permisos_edificio(nombre_edificio, bob))
+    {
+        msjeInstruccion("Ingrese las coordenadas donde quiere construirlo.");
+        msjeInstruccion("Coordenada X:");
+        cin >> x;
+        msjeInstruccion("Coordenada Y:");
+        cin >> y;
+        construir(stoi(x), stoi(y), nombre_edificio, bob);
+    }
+    else
+        msjeError("No existe ese edificio para construir");
 }
 void Ciudad::construir(int x, int y, const string &eledificio, Constructor &bob)
 {
@@ -169,8 +180,8 @@ void Ciudad::cargar_ubicaciones(const string &PATH)
 
             ubicaciones.alta(ubicacion);
         }
-        /*else{
-
+        else
+        {
             getline(archivo_ubicaciones, aux, ' ');
             ubicacion.nombre = nombre + " " + aux;
 
@@ -183,9 +194,8 @@ void Ciudad::cargar_ubicaciones(const string &PATH)
             getline(archivo_ubicaciones, coord_y, ')');
             ubicacion.coord_y = stoi(coord_y);
             getline(archivo_ubicaciones, aux);
-             ubicaciones.alta(ubicacion);
-
-        }*/
+            ubicaciones.alta(ubicacion);
+        }
     }
 }
 
@@ -224,7 +234,10 @@ bool Ciudad::chequear_permisos_edificio(const string &eledificio, Constructor &b
         {
             flag = 1;
             if (edificio->obtener_cant_max() > construidos(eledificio))
+            {
+                msjeOK("Que bueno! Todavia hay capacidad para construir edificios de ese estilo!");
                 flag = 1;
+            }
             else
             {
                 flag = 0;
@@ -238,7 +251,6 @@ bool Ciudad::chequear_permisos_edificio(const string &eledificio, Constructor &b
     else
     {
         flag = 0;
-        msjeOK("Que bueno! Todavia hay capacidad para construir edificios de ese estilo!");
     }
     return flag;
 }
@@ -254,7 +266,7 @@ void Ciudad::agregar_ubicacion(int x, int y, string edificio)
 
 void Ciudad::demoler_edificio(int x, int y)
 {
-    //int cuenta = 0;
+    // int cuenta = 0;
     if (x < filas && y < columnas)
     {
         Edificio *edificio = mapa[x][y]->mostrar_edificio();
@@ -262,20 +274,6 @@ void Ciudad::demoler_edificio(int x, int y)
         if (edificio)
         {
             inventario.llenar_stock(edificio);
-            /*
-    for(int j = 1; j < materiales1.mostrar_cantidad()+1; j++ ){
-        if(materiales1[j]->obtener_nombre() == "piedra"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_piedra()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
-        }
-        if(materiales1[j]->obtener_nombre() == "madera"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_madera()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
-        }
-        if(materiales1[j]->obtener_nombre() == "metal"){
-            cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_metal()/2; 
-            materiales1[j]->modificar_cantidad(cuenta);
-        }*/
         }
         mapa[x][y]->demoler();
         quitar_ubicacion(x, y);

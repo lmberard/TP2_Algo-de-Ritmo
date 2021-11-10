@@ -9,9 +9,9 @@ CasilleroTransitable ::~CasilleroTransitable() {}
 
 void CasilleroTransitable ::mostrar()
 {
-    //cout << "Soy un casillero transitable y tengo " << this->material->obtener_cantidad() << " de "
-    cout << this->material->obtener_nombre() << endl;
-    //cout << "estás en la posición " << this->coord_x << " " << this->coord_y << endl;
+    cout << "Soy un casillero transitable" << endl;
+    if (material)
+        cout << material->obtener_nombre() << endl;
 }
 
 void CasilleroTransitable ::display()

@@ -12,10 +12,12 @@ Constructor::Constructor(const string &PATH)
         archivo_edificios.open(PATH, ios::in);
     }
 
-    string nombre, piedra, madera, metal, permitidos;
+    string nombre, piedra, madera, metal, permitidos, aux;
     while (archivo_edificios >> nombre)
     {
 
+        if (nombre == "planta")
+            archivo_edificios >> aux;
         archivo_edificios >> piedra;
         archivo_edificios >> madera;
         archivo_edificios >> metal;
