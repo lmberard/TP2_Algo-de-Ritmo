@@ -8,7 +8,6 @@
 #include "material.hpp"
 #include "edificio.hpp"
 
-
 using namespace std;
 
 class Casillero
@@ -34,15 +33,17 @@ public:
     // POS:
     virtual bool agregar(Edificio *);
 
-    virtual Edificio* mostrar_edificio();
+    virtual Edificio *mostrar_edificio();
 
     virtual void demoler() = 0;
 
-    virtual bool estransitable(){
+    virtual bool estransitable()
+    {
         return false;
     }
 
-    virtual bool agregar(Material * material){
+    virtual bool agregar(Material *material)
+    {
         return false;
     }
 };

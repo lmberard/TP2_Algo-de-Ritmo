@@ -123,9 +123,8 @@ void Ciudad::construir_por_nombre_coordenada(Constructor &bob)
         cin >> y;
         construir(stoi(x), stoi(y), nombre_edificio, bob);
     }
-    else
-        msjeError("No existe ese edificio para construir");
 }
+
 void Ciudad::construir(int x, int y, const string &eledificio, Constructor &bob)
 {
     if (x < filas && y < columnas)
@@ -133,10 +132,21 @@ void Ciudad::construir(int x, int y, const string &eledificio, Constructor &bob)
         Edificio *edificio = bob.construye(eledificio);
         if (inventario.chequear_stock(edificio, true))
         {
-            if (mapa[x][y]->agregar(edificio))
+            if (!mapa[x][y]->mostrar_edificio())
             {
-                agregar_ubicacion(x, y, eledificio);
-                msjeOK("Se construyo el edificio y se agrego a la lista de ubicaciones");
+                string rta;
+                msjeInstruccion("Desea confirmar la construccion?(si/no)");
+                cin >> rta;
+                if (rta == "si")
+                {
+                    mapa[x][y]->agregar(edificio);
+                    agregar_ubicacion(x, y, eledificio);
+                    msjeOK("Se construyo el edificio y se agrego a la lista de ubicaciones");
+                }
+                else if (rta == "no")
+                    msjeInstruccion("No se construyo el edificio.");
+                else
+                    msjeError("Opcion invalida. Ingrese 'si' o 'no'");
             }
             else
                 delete edificio;
@@ -264,6 +274,7 @@ bool Ciudad::chequear_permisos_edificio(const string &eledificio, Constructor &b
     }
     else
     {
+        msjeError("No existe ese tipo de edificio. Intente con otro nombre");
         flag = 0;
     }
     return flag;
@@ -288,11 +299,23 @@ void Ciudad::demoler_edificio(int x, int y)
         if (edificio)
         {
             msjeInstruccion("Se va a eliminar un edificio del tipo '" + edificio->obtener_nombre() + "'");
-            inventario.llenar_stock(edificio);
+            string rta;
+            msjeInstruccion("Desea confirmar la demolicion?(si/no)");
+            cin >> rta;
+            if (rta == "si")
+            {
+                inventario.llenar_stock(edificio);
+                mapa[x][y]->demoler();
+                quitar_ubicacion(x, y);
+                msjeOK("Se demolio el edificio y se elimino de la lista de ubicaciones");
+            }
+            else if (rta == "no")
+                msjeInstruccion("No se destruyo el edificio.");
+            else
+                msjeError("Opcion invalida. Ingrese 'si' o 'no'");
         }
-        mapa[x][y]->demoler();
-        quitar_ubicacion(x, y);
-        msjeOK("Se demolio el edificio y se elimino de la lista de ubicaciones");
+        else
+            msjeError("No hay edificio construido ahi");
     }
     if (x > filas)
         msjeError("Esa coordenada X no existe en el mapa");
