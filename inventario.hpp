@@ -2,8 +2,8 @@
 #define INVENTARIO_HPP
 
 #include "lista.hpp"
-#include "recurso.hpp"
 #include "edificio.hpp"
+#include "recurso.hpp"
 #include <fstream>
 class Inventario
 {
@@ -37,4 +37,4 @@ public:
     ~Inventario();
 };
 
-#endif //INVENTARIO_HPP
+#endif

@@ -8,6 +8,7 @@
 #include "terreno.hpp"
 #include "constructor.hpp"
 #include "recurso.hpp"
+#include "material.hpp"
 #include "inventario.hpp"
 
 class Ciudad
@@ -18,9 +19,7 @@ class Ciudad
 
     Lista<Ubicacion> ubicaciones;
     Lista<Ubicacion> materiales;
-
     Lista<Ubicacion> coordenadasTransitables;
-
     int filas;
     int columnas;
     Casillero ***mapa;
