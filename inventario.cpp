@@ -52,7 +52,7 @@ bool Inventario::chequear_stock(Edificio *edificio, bool construir)
             cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_piedra();
             if (cuenta < 0)
             {
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
+                msjeError("Faltan unidades del material del tipo: " + materiales1[j]->obtener_nombre());
                 flag = 0;
             }
             if (construir)
@@ -63,7 +63,7 @@ bool Inventario::chequear_stock(Edificio *edificio, bool construir)
             cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_madera();
             if (cuenta < 0)
             {
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
+                msjeError("Faltan unidades del material del tipo: " + materiales1[j]->obtener_nombre());
                 flag = 0;
             }
             if (construir)
@@ -74,7 +74,7 @@ bool Inventario::chequear_stock(Edificio *edificio, bool construir)
             cuenta = materiales1[j]->obtener_cantidad() - edificio->obtener_metal();
             if (cuenta < 0)
             {
-                cout << "falta " << materiales1[j]->obtener_nombre() << endl;
+                msjeError("Faltan unidades del material del tipo: " + materiales1[j]->obtener_nombre());
                 flag = 0;
             }
             if (construir)
@@ -90,20 +90,24 @@ void Inventario::llenar_stock(Edificio *edificio)
     int cuenta = 0;
     for (int j = 1; j < materiales1.mostrar_cantidad() + 1; j++)
     {
+        msjeOK("Se reciclaron los siguientes materiales:");
         if (materiales1[j]->obtener_nombre() == "piedra")
         {
             cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_piedra() / 2;
             materiales1[j]->modificar_cantidad(cuenta);
+            cout << "\t-> Se agregaron " << cuenta << " de unidades de piedra" << endl;
         }
         if (materiales1[j]->obtener_nombre() == "madera")
         {
             cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_madera() / 2;
             materiales1[j]->modificar_cantidad(cuenta);
+            cout << "\t-> Se agregaron " << cuenta << " de unidades de madera" << endl;
         }
         if (materiales1[j]->obtener_nombre() == "metal")
         {
             cuenta = materiales1[j]->obtener_cantidad() + edificio->obtener_metal() / 2;
             materiales1[j]->modificar_cantidad(cuenta);
+            cout << "\t-> Se agregaron " << cuenta << " de unidades de metal" << endl;
         }
     }
 }
