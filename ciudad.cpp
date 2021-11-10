@@ -343,12 +343,6 @@ void Ciudad::mostrar_ubicaciones()
     Lista<Ubicacion> auxiliar;
     int cant = 1;
 
-    cout << left << TXT_BOLD << TXT_UNDERLINE << BGND_BLUE_4
-         << setw(23) << "Cantidad" << '\t'
-         << setw(23) << "Tipo de edificio" << '\t'
-         << setw(23) << "Coord X" << '\t'
-         << setw(23) << "Coord Y"
-         << END_COLOR << endl;
     for (int i = 1; i < ubicaciones.mostrar_cantidad() + 1; i++)
         copia.alta(ubicaciones[i]);
 
@@ -365,14 +359,14 @@ void Ciudad::mostrar_ubicaciones()
                 --j;
             }
         }
-        cout << left
-             << setw(23) << cant << '\t'
-             << setw(23) << auxiliar[1].nombre << '\t';
+        cout << TXT_BOLD << TXT_UNDERLINE << BGND_DARK_BLUE_17 << "Tipo de edificio: " << auxiliar[1].nombre << END_COLOR << endl;
+        cout << "\t-> Cantidad construida: " << cant << endl;
+        cout << "\t-> Coordenadas:" << endl;
+
         for (int i = 1; i < auxiliar.mostrar_cantidad() + 1; i++)
         {
-            cout << left
-                 << setw(23) << auxiliar[i].coord_x << '\t'
-                 << setw(23) << auxiliar[i].coord_y << '\t';
+            cout << "\t\t-> (" << auxiliar[i].coord_x << ", "
+                 << auxiliar[i].coord_y << ')' << endl;
         }
         cout << endl;
         cant = 1;
@@ -443,7 +437,7 @@ void Ciudad::lluvia(Recurso &recurso)
     {
         cout << "LLUVIA DE RECURSOS!" << endl;
         int cant_metal = rand() % (1 + 4 - 2) + 2;
-        cout << "Cantidad de metales generados: " << cant_metal << endl;
+        cout << TXT_BOLD << TXT_UNDERLINE << BGND_DARK_BLUE_17 << "Cantidad de metales generados: " << cant_metal << END_COLOR << endl;
 
         while (cant_metal)
         {
@@ -456,7 +450,7 @@ void Ciudad::lluvia(Recurso &recurso)
         }
 
         int cant_piedra = rand() % (1 + 2 - 1) + 1;
-        cout << "Cantidad de piedras generadas: " << cant_piedra << endl;
+        cout << TXT_BOLD << TXT_UNDERLINE << BGND_DARK_BLUE_17 << "Cantidad de piedras generadas: " << cant_piedra << END_COLOR << endl;
 
         while (cant_piedra)
         {
@@ -469,7 +463,7 @@ void Ciudad::lluvia(Recurso &recurso)
         }
 
         int cant_madera = rand() % (2);
-        cout << "Cantidad de maderas generadas: " << cant_madera << endl;
+        cout << TXT_BOLD << TXT_UNDERLINE << BGND_DARK_BLUE_17 << "Cantidad de maderas generadas: " << cant_madera << END_COLOR << endl;
 
         while (cant_madera)
         {

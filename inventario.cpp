@@ -1,4 +1,5 @@
 #include "inventario.hpp"
+#include <iomanip>
 
 Inventario::Inventario()
 {
@@ -26,10 +27,15 @@ void Inventario::cargar(const string &PATH, Recurso &recurso)
 
 void Inventario::mostrar_inventario()
 {
+    cout << left << TXT_BOLD << TXT_UNDERLINE << BGND_BLUE_4
+         << setw(23) << "Nombre" << '\t'
+         << setw(23) << "Cantidad"
+         << END_COLOR << endl;
     for (int i = 1; i < materiales1.mostrar_cantidad() + 1; i++)
     {
-        cout << materiales1[i]->obtener_nombre() << '\t'
-             << materiales1[i]->obtener_cantidad() << ' '
+        cout << left
+             << setw(23) << materiales1[i]->obtener_nombre() << '\t'
+             << setw(23) << materiales1[i]->obtener_cantidad()
              << endl;
     }
 }
@@ -104,7 +110,7 @@ void Inventario::llenar_stock(Edificio *edificio)
 
 Inventario::~Inventario()
 {
-    //ofstream archivo_materiales("materiales.txt");
+    // ofstream archivo_materiales("materiales.txt");
     for (int i = 1; i < materiales1.mostrar_cantidad() + 1; i++)
     {
         // archivo_materiales << materiales1[i]->obtener_nombre() << ' ' << materiales1[i]->obtener_cantidad() << '\n';
