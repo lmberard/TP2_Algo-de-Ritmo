@@ -185,8 +185,8 @@ void Ciudad::cargar_ubicaciones(const string &PATH)
 
     Ubicacion ubicacion;
 
-    string nombre, aux, coord_x, coord_y;
-    while (getline(archivo_ubicaciones, nombre, ' '))
+    string nombre, aux, coord_x, coord_y, aux2;
+    while (archivo_ubicaciones >> nombre)
     {
         if (nombre != "planta")
         {
@@ -205,8 +205,9 @@ void Ciudad::cargar_ubicaciones(const string &PATH)
         }
         else
         {
-            getline(archivo_ubicaciones, aux, ' ');
+            archivo_ubicaciones >> aux2;
             ubicacion.nombre = nombre + " " + aux;
+            cout << ubicacion.nombre << endl;
 
             getline(archivo_ubicaciones, aux, ' ');
 
